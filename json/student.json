@@ -1,0 +1,15 @@
+[{
+    "id":"2097e146-b527-4d39-a596-6f2a538ad19e",
+    "firstName":"Seamus",
+    "lastName":"Fibblejips",
+    "username":"sfibblejips",
+    "password":"1234567890",
+    "class":"Sophomore",
+    "advisor":[{
+        //ADVISOR PLACEHOLDER
+    }],
+    "gpa":"3.0",
+    "studentID":"N96093372",
+    "hasScholarship":"true",
+    "majorProgress":"34"
+}]
