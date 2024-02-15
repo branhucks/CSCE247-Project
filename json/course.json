@@ -1,10 +1,10 @@
 [{
     "id":"edb184c5-fe43-40bb-a6af-d4a2b11874f7",
-    "courseName":"Software Engineering",
-    "courseID":"CSCE 247",
+    "courseName":"Algorithmic Design I",
+    "courseID":"CSCE 145",
     "requirement":"C",
     "semester":"both",
-    "description":"Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing.",
+    "description":"Problem-solving, algorithmic design, and programming. Two lecture hours and four laboratory hours per week. Open to all majors.",
     "prerequisites":[{
         "course":[{
             //<HASHMAP PLACEHOLDER>
@@ -12,26 +12,30 @@
     }],
     "corequisites":[{
         "id":"edb184c5-fe43-40bb-a6af-d4a2b11874f7",
-        "courseName":"Software Engineering",
-        "courseID":"CSCE 247",
-        "requirement":"C",
-        "semester":[{ //another enum here
-            "Fall",
-            "Spring",
-            "Both"
-        }],
-        "description":"Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing.",
-        "prerequisites":[{
-            "course":[{
-                //<HASHMAP PLACEHOLDER>
-            }]
-        }],
+        "courseName":"Basic College Mathematics",
+        "courseID":"MATH 111",
+        "requirement":"D",
+        "semester":"Both",
+        "description":"Basic college algebra; linear and quadratic equations, inequalities, functions and graphs of functions, exponential and logarithm functions, systems of equations",
+        "prerequisites":"null",
         "corequisites":"null",
         "creditHours":"3",
         "passingGrade":"C",
-        "completedClass":"false"
+        "completedClass":"true"
+    },{
+        "id":"edb184c5-fe43-40bb-a6af-d4a2b11874f7",
+        "courseName":"Pre-Calculus Mathematics",
+        "courseID":"MATH 115",
+        "requirement":"D",
+        "semester":"Both",
+        "description":"Topics in algebra and trigonometry specifically needed for MATH 141, MATH 142, MATH 241. Subsets of the real line, absolute value; polynomial, rational, inverse, logarithmic, exponential functions; circular functions; analytic trigonometry",
+        "prerequisites":"null",
+        "corequisites":"null",
+        "creditHours":"4",
+        "passingGrade":"D",
+        "completedClass":"true" 
     }],
     "creditHours":"3",
     "passingGrade":"C", //idk if this and requirement same thing
-    "completedClass":"false"
+    "completedClass":"true"
 }]
