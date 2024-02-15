@@ -1,5 +1,8 @@
-[
-    {
-        
-    }
-]
+[{
+    "id":"2097e146-b527-4d39-a596-6f2a538ad19e",
+    "firstName":"Thomas",
+    "lastName":"Schrank",
+    "username":"tschrank",
+    "password":"youThought",
+    "class":"Sophomore"
+}]

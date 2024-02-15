@@ -3,11 +3,7 @@
     "courseName":"Software Engineering",
     "courseID":"CSCE 247",
     "requirement":"C",
-    "semester":[{ //Enum probably done differently
-        "Fall",
-        "Spring",
-        "Both"
-    }],
+    "semester":"both",
     "description":"Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing.",
     "prerequisites":[{
         "course":[{
