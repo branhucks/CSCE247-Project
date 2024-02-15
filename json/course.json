@@ -3,9 +3,39 @@
     "courseName":"Software Engineering",
     "courseID":"CSCE 247",
     "requirement":"C",
-    "semester":[{
+    "semester":[{ //Enum probably done differently
         "Fall",
         "Spring",
         "Both"
-    }]
+    }],
+    "description":"Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing.",
+    "prerequisites":[{
+        "course":[{
+            //<HASHMAP PLACEHOLDER>
+        }]
+    }],
+    "corequisites":[{
+        "id":"edb184c5-fe43-40bb-a6af-d4a2b11874f7",
+        "courseName":"Software Engineering",
+        "courseID":"CSCE 247",
+        "requirement":"C",
+        "semester":[{ //another enum here
+            "Fall",
+            "Spring",
+            "Both"
+        }],
+        "description":"Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing.",
+        "prerequisites":[{
+            "course":[{
+                //<HASHMAP PLACEHOLDER>
+            }]
+        }],
+        "corequisites":"null",
+        "creditHours":"3",
+        "passingGrade":"C",
+        "completedClass":"false"
+    }],
+    "creditHours":"3",
+    "passingGrade":"C", //idk if this and requirement same thing
+    "completedClass":"false"
 }]
