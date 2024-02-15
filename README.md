@@ -1,2 +1,1 @@
-# JSONfiles
-JSON files for UML Diagram
+# CSCE247 - Project
