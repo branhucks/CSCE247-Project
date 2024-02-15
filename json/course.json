@@ -1,5 +1,11 @@
-[
-    {
-        
-    }
-]
+[{
+    "id":"edb184c5-fe43-40bb-a6af-d4a2b11874f7",
+    "courseName":"Software Engineering",
+    "courseID":"CSCE 247",
+    "requirement":"C",
+    "semester":[{
+        "Fall",
+        "Spring",
+        "Both"
+    }]
+}]
