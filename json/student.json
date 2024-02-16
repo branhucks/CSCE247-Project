@@ -17,7 +17,6 @@
         "electiveCourses": {
             "ElectiveType": "LibArts",  
             "Electives": {
-                "electiveType": "LibArts",
                 "credits": 3,
                 "electiveCourses": []
             }
