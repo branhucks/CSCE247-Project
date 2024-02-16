@@ -1,4 +1,8 @@
 [{
     "id": "99368d8a-bbcf-4a29-a0bb-77ab99e38be0",
-    
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "username": "janedoe",
+    "password": "p@ssw0rd_",
+    "advisees": []
 }]
