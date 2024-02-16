@@ -1,8 +1,18 @@
 [{
     "id": "0bb48d41-c5ab-4f52-b5a7-a0b57c670eb9",
-    "requiredCourses": [],
-    "finishedCourses": [],
-    "electiveCourses": [],
+    "requiredCourses": [{
+        "id": "edb184c5-fe43-40bb-a6af-d4a2b11874f7"
+    }],
+    "finishedCourses": [{
+        "id": "dd072d6f-cbde-416a-a7be-77de65eac8c3"
+    }],
+    "electiveCourses": [{
+        "ElectiveType": "LibArts",  
+        "Electives": {
+            "credits": 3,
+            "electiveCourses": []
+        }
+    }],
     "applicationArea": "ELCT",
     "hoursNeeded": 125,
     "hoursCompleted": 98

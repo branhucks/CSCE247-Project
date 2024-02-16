@@ -12,7 +12,12 @@
             "courseID": "CSCE 146",
             "requirement": "Major Requirement",
             "semester": "BOTH",
-            "description": "Continuation of CSCE 145. Rigorous development of algorithms and computer programs; elementary data structures. Three lecture hours and two laboratory hours per week. Open to all majors."
+            "description": "Continuation of CSCE 145. Rigorous development of algorithms and computer programs; elementary data structures. Three lecture hours and two laboratory hours per week. Open to all majors.",
+            "prerequisites": [],
+            "corequisites": null,
+            "creditHours": 3,
+            "passingGrade": "C",
+            "completedClass": true
         },
         "minGrade": 70
     }],

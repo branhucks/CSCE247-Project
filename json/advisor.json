@@ -4,5 +4,7 @@
     "lastName": "Doe",
     "username": "janedoe",
     "password": "p@ssw0rd_",
-    "advisees": []
+    "advisees": [{
+        "id": "edb184c5-fe43-40bb-a6af-d4a2b11874f7"
+    }]
 }]
