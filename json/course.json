@@ -6,8 +6,8 @@
     "semester": "BOTH",
     "description": "Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing.",
     "prerequisites": [{
-        "course": {
-            "id": "palceholder",
+        "Course": {
+            "id": "dd072d6f-cbde-416a-a7be-77de65eac8c3",
             "courseName": "Algorithmic Design II",
             "courseID": "CSCE 146",
             "requirement": "Major Requirement",

@@ -1,15 +1,32 @@
 [{
-    "id":"2097e146-b527-4d39-a596-6f2a538ad19e",
-    "firstName":"Seamus",
-    "lastName":"Fibblejips",
-    "username":"sfibblejips",
-    "password":"1234567890",
-    "class":"Sophomore",
-    "advisor":[{
-        //ADVISOR PLACEHOLDER
+    "id": "2097e146-b527-4d39-a596-6f2a538ad19e",
+    "firstName": "John",
+    "lastName": "Doe",
+    "username": "johndoe",
+    "password": "p@ssw0rd",
+    "class": "Junior",
+    "advisor": [{
+        "id": "ADVISOR ID",
+        "advisees": []
     }],
-    "gpa":"3.0",
-    "studentID":"N96093372",
-    "hasScholarship":"true",
-    "majorProgress":"34"
+    "gpa": 3.5,
+    "major": [{
+        "id": "0bb48d41-c5ab-4f52-b5a7-a0b57c670eb9",
+        "requiredCourses": [],
+        "finishedCourses": [],
+        "electiveCourses": {
+            "ElectiveType": "LibArts",  
+            "Electives": {
+                "electiveType": "LibArts",
+                "credits": 3,
+                "electiveCourses": []
+            }
+        },
+        "applicationArea": "ELCT",
+        "hoursNeeded": 125,
+        "hoursCompleted": 98
+    }],
+    "studentID": "E08578583",
+    "hasScholarship": true,
+    "majorProgress": 78
 }]
