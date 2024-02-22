@@ -1,24 +1,29 @@
-public class SemesterPlan extends Course {
+import java.util.ArrayList;
+
+public class SemesterPlan {
     private ArrayList<Course> courses;
 
     public SemesterPlan(ArrayList<Course> courses) {
-        super();
         this.courses = courses;
     }
 
     public ArrayList<Course> listCompletedCourses() {
-        return courses;
+        // TODO
+        return null;
     }
 
     public ArrayList<Course> listInProgressCourses() {
-        return courses;
+        // TODO
+        return null;
     }
 
     public ArrayList<Course> listIncompleteCourses() {
-        return courses;
+        // TODO
+        return null;
     }
 
     public SemesterPlan viewSemesterPlan() {
-        return semesterPlan;
+        // TODO
+        return null;
     }
 }
