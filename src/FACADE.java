@@ -1,105 +1,123 @@
+import java.util.ArrayList;
+import java.util.UUID;
+
 public class FACADE {
     private User user;
     private UserList userList;
     private CourseList courseList;
-    private MajorList majorList;
-    private Course course;
-    private SemesterPlan semesterPlan;
 
     FACADE() {
-
+        this.userList = UserList.getInstance();
+        this.courseList = CourseList.getInstance();
+        this.majorList = MajorList.getInstance();
     }
 
     public User login(String username, String password) {
-        return user;
+        // TODO
+        return null;
     }
 
     public void logout() {
-
+        // TODO
     }
 
     public User registerUser(String firstName, String lastName, String username, String password) {
-        return user;
+        // TODO
+        return null;
     }
 
     public CourseList getCourseList() {
-        return courseList;
+        return this.courseList;
     }
 
     public UserList getUseList() {
-        return userList;
+        return this.userList;
     }
 
     public MajorList getMajorList() {
-        return majorList;
+        return this.majorList;
     }
 
     public SemesterPlan viewSemesterPlan() {
-        return semesterPlan;
+        // TODO
+        return null;
     }
 
     public Student searchStudent(String studentID) {
-        return Student;
+        // TODO
+        return null;
     }
 
     public String viewCourseDetails(String courseID) {
-        return "Course";
+        // TODO
+        return null;
     }
 
     public Course findCourse(String courseID) {
-        return course;
+        // TODO
+        return null;
     }
 
-    public SemesterPlan createSemesterPlan(ArrayList<Course>) {
-        return semesterPlan;
+    public SemesterPlan createSemesterPlan(ArrayList<Course> courses) {
+        // TODO
+        return null;
     }
 
     public String makeNote(Student student) {
-        return "note";
+        // TODO
+        return null;
     }
 
     public SemesterPlan viewWhatIf(Major major) {
-        return semesterPlan;
+        // TODO
+        return null;
     }
 
     public void viewMajorProgression() {
-
+        // TODO
     }
 
     public void printTranscript() {
-
+        // TODO
     }
 
     public ArrayList<Course> selectCourses() {
-        return courses;
+        // TODO
+        return null;
     }
 
     public ArrayList<Student> viewAdvisees() {
-        return advisees;
+        // TODO
+        return null;
     }
 
     public void enterGrades(Student student, ArrayList<Course> courses) {
-
+        // TODO
     }
 
     public ArrayList<Course> viewCompletedCourses() {
-        return courses;
+        // TODO
+        return null;
     }
 
     public ArrayList<Course> viewInProgressCourses() {
-        return courses;
+        // TODO
+        return null;
     }
 
     public ArrayList<Course> viewIncompleteCourses() {
-        return courses;
+        // TODO
+        return null;
     }
 
-    public ArrayList<PrereqOptions> viewPrerequisites() {
-        return prerequisites;
+    public ArrayList<PrereqOptions> viewPrerequisites(String courseID) {
+        // TODO
+        return null;
     }
 
     public Student selectStudentProfile(String studentID) {
-        return student;
+        // TODO
+        return null;
     }
 
     public boolean riskOfFailure(int gpa) {
