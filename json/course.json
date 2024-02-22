@@ -21,7 +21,7 @@
         },
         "minGrade": 70
     }],
-    "corequisites": null,
+    "corequisites": [],
     "creditHours": "3",
     "passingGrade": "C", 
     "completedClass": false
