@@ -5,25 +5,27 @@ public class FACADE {
     private User user;
     private UserList userList;
     private CourseList courseList;
+    private MajorList majorList;
 
     FACADE() {
-        this.userList = UserList.getInstance();
-        this.courseList = CourseList.getInstance();
-        this.majorList = MajorList.getInstance();
+        userList = UserList.getInstance();
+        courseList = CourseList.getInstance();
+        majorList = MajorList.getInstance();
     }
 
-    public User login(String username, String password) {
-        // TODO
-        return null;
+    public boolean login(String username) {
+        if (!userList.haveUser(username))
+            return false;
+        user = userList.getUser(username);
+        return true;
     }
 
     public void logout() {
-        // TODO
+        userList.saveUsers();
     }
 
-    public User registerUser(String firstName, String lastName, String username, String password) {
-        // TODO
-        return null;
+    public boolean registerUser(String firstName, String lastName, String username, String password) {
+        return userList.addUser(username, firstName, lastName, password);
     }
 
     public CourseList getCourseList() {
