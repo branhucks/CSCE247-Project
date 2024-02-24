@@ -8,7 +8,7 @@ public class Major {
 
     private ArrayList<Course> finishedCourses;
     private HashMap<ElectiveType, Electives> electiveCourses; 
-    private applicationArea applicationArea;
+    private ApplicationArea applicationArea;
     private int hoursNeeded;
     private int hoursCompleted;
 
@@ -18,7 +18,7 @@ public class Major {
     public Major(UUID id, ArrayList<Course> requiredCourses, int hoursNeeded){
 
     }
-    public int getProgress(ArrayList<Courses> finishedCourses){
+    public int getProgress(ArrayList<Course> finishedCourses){
         return 0;
     } 
     public void addCourse(){

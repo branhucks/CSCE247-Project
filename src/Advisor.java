@@ -23,7 +23,7 @@ public class Advisor extends User {
         return null;
     }
 
-    public void makeNote(Student student String note) {
+    public void makeNote(Student student, String note) {
         // TODO
     }
 
