@@ -5,22 +5,19 @@ public class User {
     protected String firstName;
     protected String lastName;
     protected String username;
-    protected String password;
 
-    public User(String firstName, String lastName, String username, String password) {
+    public User(String username, String firstName, String lastName) {
         this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
-        this.password = password;
     }
 
-    public User(UUID id, String firstName, String lastName, String username, String password) {
+    public User(UUID id, String username, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
-        this.password = password;
     }
 
     public UUID getID() {
@@ -49,14 +46,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
 }
