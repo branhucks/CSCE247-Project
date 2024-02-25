@@ -1,10 +1,10 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Advisor extends User {
     private ArrayList<Student> advisees;
 
-    public Advisor(ArrayList<Student> advisees) {
+    public Advisor(String username, String firstName, String lastName, ArrayList<Student> advisees) {
+        super(username, firstName, lastName);
         this.advisees = advisees;
     }
 
