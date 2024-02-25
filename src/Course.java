@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Course{
+public class Course {
 
     private UUID id;
     private String courseID;
@@ -15,20 +15,22 @@ public class Course{
     private boolean completedClass;
 
     public Course(String courseName, String courseID, String requirement,
-     Semester semester, String description, ArrayList<PrereqOptions> prerequisites,
-     ArrayList<Course> corequisisteList, int creditHours, char passingGrade){
+            Semester semester, String description, ArrayList<PrereqOptions> prerequisites,
+            ArrayList<Course> corequisisteList, int creditHours, char passingGrade) {
 
     }
-    public Course(UUID id, String courseName, String courseID, String requirement, 
-    Semester semester, String description, ArrayList<PrereqOptions> prerequisites, 
-    ArrayList<Course> corequisisteList, int creditHours, char passingGrade){
+
+    public Course(UUID id, String courseName, String courseID, String requirement,
+            Semester semester, String description, ArrayList<PrereqOptions> prerequisites,
+            ArrayList<Course> corequisisteList, int creditHours, char passingGrade) {
 
     }
-    public String viewCourseDetails(String courseID){
-        String ret;
-        return ret;
+
+    public String viewCourseDetails(String courseID) {
+        return null;
     }
-    public ArrayList<PrereqOptions> printPrerequisites(Course course){
-        return this.course.prerequisites;
-    } 
+
+    public ArrayList<PrereqOptions> printPrerequisites(Course course) {
+        return null;
+    }
 }
