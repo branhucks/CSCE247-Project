@@ -31,4 +31,34 @@ public class DataLoader extends DataConstants {
         }
         return null;
     }
+
+    public static ArrayList<User> getStudents() {
+        ArrayList<User> studentList = new ArrayList<>();
+
+        ArrayList<User> userList = getUsers();
+        if (userList != null) {
+            for (User user : userList) {
+                if (user.getUserType().equalsIgnoreCase("Student")) {
+                    studentList.add(user);
+                }
+            }
+        }
+
+        return studentList;
+    }
+
+    public static ArrayList<User> getAdvisors() {
+        ArrayList<User> advisorList = new ArrayList<>();
+
+        ArrayList<User> userList = getUsers();
+        if (userList != null) {
+            for (User user : userList) {
+                if (user.getUserType().equalsIgnoreCase("Advisor")) {
+                    advisorList.add(user);
+                }
+            }
+        }
+
+        return advisorList;
+    }
 }
