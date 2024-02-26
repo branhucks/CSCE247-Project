@@ -52,7 +52,7 @@ public class User {
     }
 
     public String getUserType() {
-        return username;
+        return userType;
     }
 
     public void setUserType(String userType) {
