@@ -37,10 +37,10 @@ public class UserList {
         return userList;
     }
 
-    public boolean addUser(String username, String firstName, String lastName) {
+    public boolean addUser(String username, String firstName, String lastName, String userType) {
         if (haveUser(username))
             return false;
-        userList.add(new User(username, firstName, lastName));
+        userList.add(new User(username, firstName, lastName, userType));
         return true;
     }
 

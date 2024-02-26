@@ -12,8 +12,8 @@ public class Student extends User {
     private SemesterPlan semesterPlan;
 
     public Student(String studentID, Advisor advisor, Major major, Year classYear,
-            String username, String firstName, String lastName) {
-        super(username, firstName, lastName);
+            String username, String firstName, String lastName, String userType) {
+        super(username, firstName, lastName, userType);
         this.studentID = studentID;
         this.advisor = advisor;
         this.major = major;

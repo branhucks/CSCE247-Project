@@ -23,8 +23,8 @@ public class FACADE {
         userList.saveUsers();
     }
 
-    public boolean registerUser(String username, String firstName, String lastName) {
-        return userList.addUser(username, firstName, lastName);
+    public boolean registerUser(String username, String firstName, String lastName, String userType) {
+        return userList.addUser(username, firstName, lastName, userType);
     }
 
     public User getUser() {

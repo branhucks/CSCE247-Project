@@ -66,8 +66,9 @@ public class UI {
         String username = getField("Username");
         String firstName = getField("First Name");
         String lastName = getField("Last Name");
+        String userType = getField("User Type");
 
-        if (facade.registerUser(username, firstName, lastName)) {
+        if (facade.registerUser(username, firstName, lastName, userType)) {
             System.out.println("You have successfully created an account.");
         } else {
             System.out.println("Sorry an account with that username already exists.");
