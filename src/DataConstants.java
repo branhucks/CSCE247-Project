@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public abstract class DataConstants {
     // USER
     protected static final String USER_FILE_NAME = "./src/users.json";
@@ -17,9 +15,10 @@ public abstract class DataConstants {
     protected static final String MAJOR_HOURS_NEEDED = "hoursNeeded";
 
     // COURSE
-    protected static final String COURSE_COURSE_FILE = "./src/courses.json";
+    protected static final String COURSE_FILE_NAME = "./src/courses.json";
     protected static final String COURSE_ID = "id";
     protected static final String COURSE_COURSE_NAME = "courseName";
     protected static final String COURSE_COURSE_ID = "courseID";
     protected static final String COURSE_REQUIREMENT = "requirement";
+    protected static final String COURSE_CREDIT_HOURS = "creditHours";
 }
