@@ -91,7 +91,7 @@ public class Course {
 
     private void checkComplete()
     {
-        if (id!=null&&courseName!=null&&courseID!=null&&requirement!=null&&semester!=null&&description!=null&&creditHours!=null&&passingGrade!=null) {
+        if (id!=null&&courseName!=null&&courseID!=null&&requirement!=null&&semester!=null&&description!=null&&creditHours!=0&&passingGrade!=' ') {
             setCompletedClass(false);
         }
         else 
@@ -124,6 +124,7 @@ public class Course {
     public char getPassingGrade() {
         return passingGrade;
     }
+    
     
 
 
