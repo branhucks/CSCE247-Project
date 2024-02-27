@@ -50,4 +50,60 @@ public class Major {
     public String getMajorName() {
         return majorName;
     }
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public ArrayList<Course> getRequiredCourses() {
+        return this.requiredCourses;
+    }
+
+    public void setRequiredCourses(ArrayList<Course> requiredCourses) {
+        this.requiredCourses = requiredCourses;
+    }
+
+    public ArrayList<Course> getFinishedCourses() {
+        return this.finishedCourses;
+    }
+
+    public void setFinishedCourses(ArrayList<Course> finishedCourses) {
+        this.finishedCourses = finishedCourses;
+    }
+
+    public HashMap<ElectiveType,Electives> getElectiveCourses() {
+        return this.electiveCourses;
+    }
+
+    public void setElectiveCourses(HashMap<ElectiveType,Electives> electiveCourses) {
+        this.electiveCourses = electiveCourses;
+    }
+
+    public ApplicationArea getApplicationArea() {
+        return this.applicationArea;
+    }
+
+    public void setApplicationArea(ApplicationArea applicationArea) {
+        this.applicationArea = applicationArea;
+    }
+
+    public int getHoursNeeded() {
+        return this.hoursNeeded;
+    }
+
+    public void setHoursNeeded(int hoursNeeded) {
+        this.hoursNeeded = hoursNeeded;
+    }
+
+    public int getHoursCompleted() {
+        return this.hoursCompleted;
+    }
+
+    public void setHoursCompleted(int hoursCompleted) {
+        this.hoursCompleted = hoursCompleted;
+    }
 }
