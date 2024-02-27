@@ -24,6 +24,8 @@ public class DataLoader extends DataConstants {
                 String lastName = (String) personJSON.get(USER_LAST_NAME);
                 String userType = (String) personJSON.get(USER_USER_TYPE);
                 userList.add(new User(id, username, firstName, lastName, userType));
+                // studentList.add(Student )
+                // Additional attributes
             }
             return userList;
         } catch (Exception e) {
