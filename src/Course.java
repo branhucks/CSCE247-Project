@@ -12,7 +12,7 @@ public class Course {
     private ArrayList<PrereqOptions> prerequisites;
     private ArrayList<Course> corequisites;
     private int creditHours;
-    private char passingGrade;
+    private int passingGrade;
     private boolean completedClass;
 
     public Course(String courseName, String courseID, String requirement, int creditHours) {
@@ -30,8 +30,7 @@ public class Course {
         this.creditHours = creditHours;
     }
 
-    public Course getCourse()
-    {
+    public Course getCourse() {
         return this;
     }
 
@@ -44,7 +43,7 @@ public class Course {
         this.courseName = courseName;
         checkComplete();
     }
-    
+
     public void setCourseID(String courseID) {
         this.courseID = courseID;
         checkComplete();
@@ -84,18 +83,16 @@ public class Course {
         this.passingGrade = passingGrade;
         checkComplete();
     }
-    
+
     public void setCompletedClass(boolean completedClass) {
         this.completedClass = completedClass;
     }
 
-    private void checkComplete()
-    {
-        if (id!=null&&courseName!=null&&courseID!=null&&requirement!=null&&semester!=null&&description!=null&&creditHours!=0&&passingGrade!=' ') {
+    private void checkComplete() {
+        if (id != null && courseName != null && courseID != null && requirement != null && semester != null
+                && description != null && creditHours != 0 && passingGrade != ' ') {
             setCompletedClass(false);
-        }
-        else 
-        {
+        } else {
             setCompletedClass(true);
         }
     }
@@ -103,38 +100,42 @@ public class Course {
     public UUID getId() {
         return id;
     }
+
     public String getCourseName() {
         return courseName;
     }
+
     public String getCourseID() {
         return courseID;
-    } 
+    }
+
     public String getRequirement() {
         return requirement;
     }
+
     public Semester getSemester() {
         return semester;
     }
+
     public String getDescription() {
         return description;
     }
+
     public int getCreditHours() {
         return creditHours;
     }
-    public char getPassingGrade() {
+
+    public int getPassingGrade() {
         return passingGrade;
     }
-    
-    
-
 
     public ArrayList<PrereqOptions> printPrerequisites(Course course) {
         return null;
     }
 
-    
-    
     public String toString() {
-        return "UUID: "+id+"\nCourse Name: "+courseName+"\nCourse ID: "+courseID+"\nRequirement: "+requirement+"\nSemester: "+semester+"\nCourse Description: "+description+"\nCredit Hours: "+creditHours+"\nPassing Grade: "+passingGrade;
+        return "UUID: " + id + "\nCourse Name: " + courseName + "\nCourse ID: " + courseID + "\nRequirement: "
+                + requirement + "\nSemester: " + semester + "\nCourse Description: " + description + "\nCredit Hours: "
+                + creditHours + "\nPassing Grade: " + passingGrade;
     }
 }

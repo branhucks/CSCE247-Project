@@ -18,8 +18,8 @@ public class PrereqOptions {
     }
 
     public void addPrerequisite(ArrayList<Course> list) {
-        for(Course tempCourse : list) {
-            this.course.put(tempCourse, tempCourse.getMinGrade());
+        for (Course tempCourse : list) {
+            this.course.put(tempCourse, tempCourse.getPassingGrade());
         }
     }
 }
