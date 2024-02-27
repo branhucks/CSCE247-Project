@@ -30,9 +30,12 @@ public class Course {
         this.creditHours = creditHours;
     }
 
-    public String viewCourseDetails(String courseID) {
-        return null;
+    public Course getCourse()
+    {
+        return this;
     }
+
+    
 
     public ArrayList<PrereqOptions> printPrerequisites(Course course) {
         return null;
@@ -44,5 +47,9 @@ public class Course {
 
     public String getCourseID() {
         return courseID;
+    } 
+    
+    public String toString() {
+        return "UUID: "+id+"\nCourse Name: "+courseName+"\nCourse ID: "+courseID+"\nRequirement: "+requirement+"\nSemester: "+semester+"\nCourse Description: "+description+"\nCredit Hours: "+creditHours+"\nPassing Grade: "+passingGrade;
     }
 }
