@@ -15,14 +15,19 @@ public class Course {
     private char passingGrade;
     private boolean completedClass;
 
-    public Course(String courseName, String courseID, String requirement,
-            int creditHours) {
-
+    public Course(String courseName, String courseID, String requirement, int creditHours) {
+        this.courseName = courseName;
+        this.courseID = courseID;
+        this.requirement = requirement;
+        this.creditHours = creditHours;
     }
 
-    public Course(UUID id, String courseName, String courseID, String requirement,
-            int creditHours) {
-
+    public Course(UUID id, String courseName, String courseID, String requirement, int creditHours) {
+        this.id = id;
+        this.courseName = courseName;
+        this.courseID = courseID;
+        this.requirement = requirement;
+        this.creditHours = creditHours;
     }
 
     public String viewCourseDetails(String courseID) {
