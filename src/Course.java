@@ -40,4 +40,8 @@ public class Course {
     public String getCourseID() {
         return courseID;
     }
+
+    public int getCreditHours(){
+        return this.creditHours;
+    }
 }
