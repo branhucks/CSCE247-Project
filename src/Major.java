@@ -25,13 +25,13 @@ public class Major {
         this.hoursNeeded = hoursNeeded;
     }
 
-    //TODO check to see if error
+    // TODO check to see if error
     public int getProgress(ArrayList<Course> finishedCourses) {
         double total = 0;
-        for(Course course: finishedCourses)
-            total+=course.getCreditHours();
+        for (Course course : finishedCourses)
+            total += course.getCreditHours();
         total = this.hoursCompleted;
-        int ret = (int)((total/this.hoursNeeded)*100);
+        int ret = (int) ((total / this.hoursNeeded) * 100);
         return ret;
     }
 
@@ -51,11 +51,11 @@ public class Major {
         return majorName;
     }
 
-    public UUID getId() {
+    public UUID getID() {
         return this.id;
     }
 
-    public void setId(UUID id) {
+    public void setID(UUID id) {
         this.id = id;
     }
 
@@ -75,11 +75,11 @@ public class Major {
         this.finishedCourses = finishedCourses;
     }
 
-    public HashMap<ElectiveType,Electives> getElectiveCourses() {
+    public HashMap<ElectiveType, Electives> getElectiveCourses() {
         return this.electiveCourses;
     }
 
-    public void setElectiveCourses(HashMap<ElectiveType,Electives> electiveCourses) {
+    public void setElectiveCourses(HashMap<ElectiveType, Electives> electiveCourses) {
         this.electiveCourses = electiveCourses;
     }
 

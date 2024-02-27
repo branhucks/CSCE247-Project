@@ -33,13 +33,56 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
-    public static boolean saveCourses() {
-        // TODO
-        return true;
+    public static void saveCourses() {
+        CourseList courses = CourseList.getInstance();
+        ArrayList<Course> courseList = courses.getCourses();
+        JSONArray jsonCourses = new JSONArray();
+
+        for (int i = 0; i < courseList.size(); i++) {
+            jsonCourses.add(getCourseJSON(courseList.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(COURSE_FILE_NAME)) {
+            file.write(jsonCourses.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static boolean saveMajors() {
-        // TODO
-        return true;
+    public static JSONObject getCourseJSON(Course course) {
+        JSONObject courseDetails = new JSONObject();
+        courseDetails.put(COURSE_ID, course.getID().toString());
+        courseDetails.put(COURSE_COURSE_NAME, course.getCourseName());
+        courseDetails.put(COURSE_COURSE_ID, course.getCourseID());
+        courseDetails.put(COURSE_REQUIREMENT, course.getRequirement());
+        courseDetails.put(COURSE_CREDIT_HOURS, course.getCreditHours());
+        return courseDetails;
+    }
+
+    public static void saveMajors() {
+        MajorList majors = MajorList.getInstance();
+        ArrayList<Major> majorList = majors.getMajors();
+        JSONArray jsonMajors = new JSONArray();
+
+        for (int i = 0; i < majorList.size(); i++) {
+            jsonMajors.add(getMajorJSON(majorList.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter(MAJOR_FILE_NAME)) {
+            file.write(jsonMajors.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static JSONObject getMajorJSON(Major major) {
+        JSONObject majorDetails = new JSONObject();
+        majorDetails.put(MAJOR_ID, major.getID().toString());
+        majorDetails.put(MAJOR_MAJOR_NAME, major.getMajorName());
+        majorDetails.put(MAJOR_REQUIRED_COURSES, major.getRequiredCourses());
+        majorDetails.put(MAJOR_HOURS_NEEDED, major.getHoursNeeded());
+        return majorDetails;
     }
 }

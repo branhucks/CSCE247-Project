@@ -34,7 +34,7 @@ public class Course {
         return this;
     }
 
-    public void setId(UUID id) {
+    public void setID(UUID id) {
         this.id = id;
         checkComplete();
     }
@@ -97,7 +97,7 @@ public class Course {
         }
     }
 
-    public UUID getId() {
+    public UUID getID() {
         return id;
     }
 
