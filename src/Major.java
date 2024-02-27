@@ -13,6 +13,10 @@ public class Major {
     private int hoursCompleted;
 
     public Major(String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
+        this.majorName = majorName;
+        this.requiredCourses = new ArrayList<Course>();
+        this.finishedCourses = finishedCourses;
+        
 
     }
 
