@@ -78,7 +78,11 @@ public class Course {
     private boolean checkComplete()
     {
         if (id!=null&&courseName!=null&&courseID!=null&&requirement!=null&&semester!=null&&description!=null&&creditHours!=null&&passingGrade!=null) {
-            
+            return false;
+        }
+        else 
+        {
+            return true;
         }
     }
 
