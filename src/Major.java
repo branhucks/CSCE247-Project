@@ -13,27 +13,34 @@ public class Major {
     private int hoursCompleted;
 
     public Major(String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
-
+        this.majorName = majorName;
+        this.requiredCourses = new ArrayList<Course>();
+        this.hoursNeeded = hoursNeeded;
     }
 
     public Major(UUID id, String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
-
+        this.id = id;
+        this.majorName = majorName;
+        this.requiredCourses = new ArrayList<Course>();
+        this.hoursNeeded = hoursNeeded;
     }
 
+    //TODO check to see if error
     public int getProgress(ArrayList<Course> finishedCourses) {
-        return 0;
+        double total = 0;
+        for(Course course: finishedCourses)
+            total+=course.getCreditHours();
+        total = this.hoursCompleted;
+        int ret = (int)((total/this.hoursNeeded)*100);
+        return ret;
     }
 
-    public void addCourse() {
-
+    public void addCourse(Course course) {
+        requiredCourses.add(course);
     }
 
-    public void editCourse() {
-
-    }
-
-    public void removeCourse() {
-
+    public void removeCourse(Course course) {
+        requiredCourses.remove(course);
     }
 
     public void setMajorName(String majorName) {
