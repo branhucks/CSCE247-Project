@@ -61,4 +61,8 @@ public class DataLoader extends DataConstants {
 
         return advisorList;
     }
+
+    public static ArrayList<Major> getMajors() {
+        return null;
+    }
 }

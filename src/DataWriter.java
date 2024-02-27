@@ -33,12 +33,12 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
-    public boolean saveCourses() {
+    public static boolean saveCourses() {
         // TODO
         return true;
     }
 
-    public boolean saveMajors() {
+    public static boolean saveMajors() {
         // TODO
         return true;
     }

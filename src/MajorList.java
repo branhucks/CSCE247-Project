@@ -5,18 +5,31 @@ public class MajorList {
     private ArrayList<Major> majorList;
 
     private MajorList() {
-
+        majorList = DataLoader.getMajors();
     }
 
     public static MajorList getInstance() {
-        return null;
+        if (majors == null) {
+            majors = new MajorList();
+        }
+        return majors;
     }
 
-    public boolean haveMajor() {
+    public boolean haveMajor(String majorName) {
+        for (Major major : majorList) {
+            if (major.getMajorName().equals(majorName)) {
+                return true;
+            }
+        }
         return false;
     }
 
-    public User getMajor() {
+    public Major getMajor(String majorName) {
+        for (Major major : majorList) {
+            if (major.getMajorName().equals(majorName)) {
+                return major;
+            }
+        }
         return null;
     }
 
@@ -24,11 +37,14 @@ public class MajorList {
         return majorList;
     }
 
-    public boolean addMajor() {
+    public boolean addMajor(String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
+        if (haveMajor(majorName))
+            return false;
+        majorList.add(new Major(majorName, requiredCourses, hoursNeeded));
         return true;
     }
 
     public void saveMajors() {
-
+        DataWriter.saveMajors();
     }
 }

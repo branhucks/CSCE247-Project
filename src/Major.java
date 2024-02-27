@@ -4,6 +4,7 @@ import java.util.UUID;
 
 public class Major {
     private UUID id;
+    private String majorName;
     private ArrayList<Course> requiredCourses;
     private ArrayList<Course> finishedCourses;
     private HashMap<ElectiveType, Electives> electiveCourses;
@@ -11,11 +12,11 @@ public class Major {
     private int hoursNeeded;
     private int hoursCompleted;
 
-    public Major(ArrayList<Course> requiredCourses, int hoursNeeded) {
+    public Major(String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
 
     }
 
-    public Major(UUID id, ArrayList<Course> requiredCourses, int hoursNeeded) {
+    public Major(UUID id, String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
 
     }
 
@@ -33,5 +34,13 @@ public class Major {
 
     public void removeCourse() {
 
+    }
+
+    public void setMajorName(String majorName) {
+        this.majorName = majorName;
+    }
+
+    public String getMajorName() {
+        return majorName;
     }
 }
