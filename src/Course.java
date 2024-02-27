@@ -136,8 +136,4 @@ public class Course {
     public String toString() {
         return "UUID: "+id+"\nCourse Name: "+courseName+"\nCourse ID: "+courseID+"\nRequirement: "+requirement+"\nSemester: "+semester+"\nCourse Description: "+description+"\nCredit Hours: "+creditHours+"\nPassing Grade: "+passingGrade;
     }
-
-    public int getCreditHours(){
-        return this.creditHours;
-    }
 }
