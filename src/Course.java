@@ -91,7 +91,7 @@ public class Course {
 
     private void checkComplete()
     {
-        if (id!=null&&courseName!=null&&courseID!=null&&requirement!=null&&semester!=null&&description!=null&&creditHours!=null&&passingGrade!=null) {
+        if (id!=null&&courseName!=null&&courseID!=null&&requirement!=null&&semester!=null&&description!=null&&creditHours!=0&&passingGrade!=' ') {
             setCompletedClass(false);
         }
         else 
@@ -125,6 +125,7 @@ public class Course {
         return passingGrade;
     }
     
+    
 
 
     public ArrayList<PrereqOptions> printPrerequisites(Course course) {
@@ -135,9 +136,5 @@ public class Course {
     
     public String toString() {
         return "UUID: "+id+"\nCourse Name: "+courseName+"\nCourse ID: "+courseID+"\nRequirement: "+requirement+"\nSemester: "+semester+"\nCourse Description: "+description+"\nCredit Hours: "+creditHours+"\nPassing Grade: "+passingGrade;
-    }
-
-    public int getCreditHours(){
-        return this.creditHours;
     }
 }
