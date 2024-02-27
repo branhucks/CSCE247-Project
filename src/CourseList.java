@@ -5,18 +5,31 @@ public class CourseList {
     private ArrayList<Course> courseList;
 
     private CourseList() {
-
+        courseList = DataLoader.getCourses();
     }
 
     public static CourseList getInstance() {
-        return null;
+        if (courses == null) {
+            courses = new CourseList();
+        }
+        return courses;
     }
 
     public boolean haveCourse(String courseID) {
+        for (Course course : courseList) {
+            if (course.getCourseID().equals(courseID)) {
+                return true;
+            }
+        }
         return false;
     }
 
-    public User getCourse(String courseID) {
+    public Course getCourse(String courseID) {
+        for (Course course : courseList) {
+            if (course.getCourseID().equals(courseID)) {
+                return course;
+            }
+        }
         return null;
     }
 
@@ -24,11 +37,16 @@ public class CourseList {
         return courseList;
     }
 
-    public boolean addCourse() {
+    public boolean addCourse(String courseName, String courseID, String requirement,
+            int creditHours) {
+        if (haveCourse(courseID))
+            return false;
+        courseList.add(new Course(courseName, courseID, requirement,
+                creditHours));
         return true;
     }
 
     public void saveCourses() {
-
+        DataWriter.saveCourses();
     }
 }

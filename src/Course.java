@@ -4,6 +4,7 @@ import java.util.UUID;
 public class Course {
 
     private UUID id;
+    private String courseName;
     private String courseID;
     private String requirement;
     private Semester semester;
@@ -15,14 +16,12 @@ public class Course {
     private boolean completedClass;
 
     public Course(String courseName, String courseID, String requirement,
-            Semester semester, String description, ArrayList<PrereqOptions> prerequisites,
-            ArrayList<Course> corequisisteList, int creditHours, char passingGrade) {
+            int creditHours) {
 
     }
 
     public Course(UUID id, String courseName, String courseID, String requirement,
-            Semester semester, String description, ArrayList<PrereqOptions> prerequisites,
-            ArrayList<Course> corequisisteList, int creditHours, char passingGrade) {
+            int creditHours) {
 
     }
 
@@ -32,5 +31,13 @@ public class Course {
 
     public ArrayList<PrereqOptions> printPrerequisites(Course course) {
         return null;
+    }
+
+    public void setCourseID(String courseID) {
+        this.courseID = courseID;
+    }
+
+    public String getCourseID() {
+        return courseID;
     }
 }

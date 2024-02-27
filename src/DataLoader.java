@@ -65,4 +65,8 @@ public class DataLoader extends DataConstants {
     public static ArrayList<Major> getMajors() {
         return null;
     }
+
+    public static ArrayList<Course> getCourses() {
+        return null;
+    }
 }
