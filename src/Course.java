@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * The Course class represents a course in the system.
+ */
 public class Course {
-
     private UUID id;
     private String courseName;
     private String courseID;
@@ -15,6 +17,14 @@ public class Course {
     private int passingGrade;
     private boolean completedClass;
 
+    /**
+     * Creates a new Course instance
+     * 
+     * @param courseName  | the name of the course
+     * @param courseID    | the course's identifier
+     * @param requirement | the requirement type
+     * @param creditHours | number of credit hours for the course
+     */
     public Course(String courseName, String courseID, String requirement, int creditHours) {
         this.courseName = courseName;
         this.courseID = courseID;
@@ -22,6 +32,15 @@ public class Course {
         this.creditHours = creditHours;
     }
 
+    /**
+     * Creates a new Course instance (OVERLOADED)
+     * 
+     * @param id          | the course's UUID
+     * @param courseName
+     * @param courseID
+     * @param requirement
+     * @param creditHours
+     */
     public Course(UUID id, String courseName, String courseID, String requirement, int creditHours) {
         this.id = id;
         this.courseName = courseName;
@@ -30,6 +49,7 @@ public class Course {
         this.creditHours = creditHours;
     }
 
+    // Getters and Setters
     public Course getCourse() {
         return this;
     }
@@ -88,6 +108,9 @@ public class Course {
         this.completedClass = completedClass;
     }
 
+    /**
+     * Checks if the course has been completed
+     */
     private void checkComplete() {
         if (id != null && courseName != null && courseID != null && requirement != null && semester != null
                 && description != null && creditHours != 0 && passingGrade != ' ') {
@@ -129,10 +152,21 @@ public class Course {
         return passingGrade;
     }
 
+    /**
+     * Prints all required prerequisites
+     * 
+     * @param course | the course to be identified
+     * @return | a list of prerequisites
+     */
     public ArrayList<PrereqOptions> printPrerequisites(Course course) {
         return null;
     }
 
+    /**
+     * Display the course's information
+     * 
+     * @return | a String representation of the course's information
+     */
     public String toString() {
         return "UUID: " + id + "\nCourse Name: " + courseName + "\nCourse ID: " + courseID + "\nRequirement: "
                 + requirement + "\nSemester: " + semester + "\nCourse Description: " + description + "\nCredit Hours: "

@@ -1,3 +1,6 @@
+/**
+ * The abstract class contains constants for JSON file
+ */
 public abstract class DataConstants {
     // USER
     protected static final String USER_FILE_NAME = "./src/users.json";

@@ -4,11 +4,21 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+/**
+ * This class is responsible for writing the data to the JSON files.
+ * The class is composed of three major methods: saving the list of Students and
+ * Advisors to the users JSON file, saving the list of Courses to the courses
+ * JSON file, and saving the list of Majors to the majors JSON file.
+ */
 public class DataWriter extends DataConstants {
 
+    /**
+     * Saves the list of users (composed of Students and Advisors) to a JSON file.
+     */
     public static void saveUsers(ArrayList<Student> students, ArrayList<Advisor> advisors) {
         JSONArray jsonUsers = new JSONArray();
 
+        // Creation of Objects in JSON
         for (Student student : students) {
             jsonUsers.add(getStudentJSON(student));
         }
@@ -16,6 +26,7 @@ public class DataWriter extends DataConstants {
             jsonUsers.add(getAdvisorJSON(advisor));
         }
 
+        // Write to the JSON file
         try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
             file.write(jsonUsers.toJSONString());
             file.flush();
@@ -24,6 +35,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Creates a JSONObject from the given User object
+     * 
+     * @param student | the Student object to create the JSONObect from
+     * @return | the JSONObject created from the User object
+     */
     public static JSONObject getStudentJSON(Student student) {
         JSONObject userDetails = new JSONObject();
         userDetails.put(USER_ID, student.getID().toString());
@@ -38,6 +55,12 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
+    /**
+     * Creates a JSONObject from the given User object
+     * 
+     * @param advisor | the Advisor object to create the JSONObect from
+     * @return | the JSONObject created from the User object
+     */
     public static JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject userDetails = new JSONObject();
         userDetails.put(USER_ID, advisor.getID().toString());
@@ -49,15 +72,20 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
+    /**
+     * Saves the list of courses to a JSON file.
+     */
     public static void saveCourses() {
         CourseList courses = CourseList.getInstance();
         ArrayList<Course> courseList = courses.getCourses();
         JSONArray jsonCourses = new JSONArray();
 
+        // Creation of Objects in JSON
         for (int i = 0; i < courseList.size(); i++) {
             jsonCourses.add(getCourseJSON(courseList.get(i)));
         }
 
+        // Write the JSON file
         try (FileWriter file = new FileWriter(COURSE_FILE_NAME)) {
             file.write(jsonCourses.toJSONString());
             file.flush();
@@ -66,6 +94,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Creates a JSONObject from the given Course object
+     * 
+     * @param course | the Course object to create the JSONObject from
+     * @return | the JSONObject created from the Course object
+     */
     public static JSONObject getCourseJSON(Course course) {
         JSONObject courseDetails = new JSONObject();
         courseDetails.put(COURSE_ID, course.getID().toString());
@@ -76,15 +110,20 @@ public class DataWriter extends DataConstants {
         return courseDetails;
     }
 
+    /**
+     * Saves the list of majors to a JSON file.
+     */
     public static void saveMajors() {
         MajorList majors = MajorList.getInstance();
         ArrayList<Major> majorList = majors.getMajors();
         JSONArray jsonMajors = new JSONArray();
 
+        // Creation of Objects in JSON
         for (int i = 0; i < majorList.size(); i++) {
             jsonMajors.add(getMajorJSON(majorList.get(i)));
         }
 
+        // Write the JSON file
         try (FileWriter file = new FileWriter(MAJOR_FILE_NAME)) {
             file.write(jsonMajors.toJSONString());
             file.flush();
@@ -93,6 +132,12 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    /**
+     * Creates a JSONObject from the given Major object
+     * 
+     * @param major | the Major object to create the JSONObject from
+     * @return | the JSONObject created from the Major object
+     */
     public static JSONObject getMajorJSON(Major major) {
         JSONObject majorDetails = new JSONObject();
         majorDetails.put(MAJOR_ID, major.getID().toString());

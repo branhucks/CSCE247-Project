@@ -1,3 +1,6 @@
+/**
+ * An enumeration repesenting the different types of electives
+ */
 public enum ElectiveType {
     CMW,
     ARP,

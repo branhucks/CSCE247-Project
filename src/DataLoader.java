@@ -6,8 +6,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * This class loads the data from the JSON files and converts them into
+ * corresponding objects (i.e., Student, Advisor, Course, Major).
+ */
 public class DataLoader extends DataConstants {
 
+    /**
+     * Loads the students from the users JSON file
+     * 
+     * @return | an ArrayList of Student objects
+     */
     public static ArrayList<Student> getStudents() {
         ArrayList<Student> studentList = new ArrayList<>();
 
@@ -39,6 +48,11 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
+    /**
+     * Loads the advisors from the users JSON file
+     * 
+     * @return | an ArrayList of Advisor objects
+     */
     public static ArrayList<Advisor> getAdvisors() {
         ArrayList<Advisor> advisorList = new ArrayList<>();
 
@@ -66,6 +80,11 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
+    /**
+     * Loads the majors from the majors JSON file
+     * 
+     * @return | an ArrayList of Major objects
+     */
     public static ArrayList<Major> getMajors() {
         ArrayList<Major> majorList = new ArrayList<Major>();
 
@@ -89,6 +108,11 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
+    /**
+     * Loads the courses from the courses JSON file
+     * 
+     * @return | an ArrayList of Course objects
+     */
     public static ArrayList<Course> getCourses() {
         ArrayList<Course> courseList = new ArrayList<Course>();
 

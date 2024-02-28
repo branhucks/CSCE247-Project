@@ -1,5 +1,8 @@
 import java.util.UUID;
 
+/**
+ * The User class represents a user in the system.
+ */
 public class User {
     protected UUID id;
     protected String firstName;
@@ -7,6 +10,14 @@ public class User {
     protected String username;
     protected String userType;
 
+    /**
+     * Creates a new User instance
+     * 
+     * @param username  | username of the user
+     * @param firstName | first name of the user
+     * @param lastName  | last name of the user
+     * @param userType  | user type of the user
+     */
     public User(String username, String firstName, String lastName, String userType) {
         this.id = UUID.randomUUID();
         this.firstName = firstName;
@@ -15,6 +26,15 @@ public class User {
         this.userType = userType;
     }
 
+    /**
+     * Creates a new User instance (OVERLOADED)
+     * 
+     * @param id        | the user's UUID
+     * @param username
+     * @param firstName
+     * @param lastName
+     * @param userType
+     */
     public User(UUID id, String username, String firstName, String lastName, String userType) {
         this.id = id;
         this.firstName = firstName;
@@ -23,6 +43,7 @@ public class User {
         this.userType = userType;
     }
 
+    // Getters and Setters
     public UUID getID() {
         return id;
     }

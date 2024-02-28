@@ -1,9 +1,17 @@
 import java.util.HashMap;
 import java.util.ArrayList;
 
+/**
+ * PrereqOptions class
+ */
 public class PrereqOptions {
     private HashMap<Course, Integer> course;
 
+    /**
+     * Creates a new PrereqOptions instance
+     * 
+     * @param course | the prerequisite course
+     */
     public PrereqOptions(HashMap<Course, Integer> course) {
         this.course = course;
     }

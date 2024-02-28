@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
+/**
+ * The Major class represents a major in the system.
+ * 
+ */
 public class Major {
     private UUID id;
     private String majorName;
@@ -12,12 +16,27 @@ public class Major {
     private int hoursNeeded;
     private int hoursCompleted;
 
+    /**
+     * Creates a new Major instance
+     * 
+     * @param majorName       | the major's name
+     * @param requiredCourses | the major's required courses
+     * @param hoursNeeded     | the major's required hours
+     */
     public Major(String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
         this.majorName = majorName;
         this.requiredCourses = new ArrayList<Course>();
         this.hoursNeeded = hoursNeeded;
     }
 
+    /**
+     * Creats a new Major instance (OVERLOADED)
+     * 
+     * @param id              | the major's UUID
+     * @param majorName
+     * @param requiredCourses
+     * @param hoursNeeded
+     */
     public Major(UUID id, String majorName, ArrayList<Course> requiredCourses, int hoursNeeded) {
         this.id = id;
         this.majorName = majorName;
@@ -25,7 +44,12 @@ public class Major {
         this.hoursNeeded = hoursNeeded;
     }
 
-    // TODO check to see if error
+    /**
+     * Calculates the student's progress within their major
+     * 
+     * @param finishedCourses | a list of completed courses
+     * @return | an integer representation of the progress
+     */
     public int getProgress(ArrayList<Course> finishedCourses) {
         double total = 0;
         for (Course course : finishedCourses)
@@ -35,14 +59,25 @@ public class Major {
         return ret;
     }
 
+    /**
+     * Adding a course to the major
+     * 
+     * @param course | the course to be added
+     */
     public void addCourse(Course course) {
         requiredCourses.add(course);
     }
 
+    /**
+     * Removing a course from the major
+     * 
+     * @param course | the course to be removed
+     */
     public void removeCourse(Course course) {
         requiredCourses.remove(course);
     }
 
+    // Getters and Setters
     public void setMajorName(String majorName) {
         this.majorName = majorName;
     }
