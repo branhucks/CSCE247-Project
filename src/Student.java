@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Student extends User {
     private Year classYear;
@@ -11,12 +10,44 @@ public class Student extends User {
     private int majorProgress;
     private SemesterPlan semesterPlan;
 
-    public Student(String studentID, Advisor advisor, Major major, Year classYear,
-            String username, String firstName, String lastName, String userType) {
+    public Student(String username, String firstName, String lastName, String userType, String studentID,
+            Advisor advisor, Major major, Year classYear) {
         super(username, firstName, lastName, userType);
         this.studentID = studentID;
         this.advisor = advisor;
         this.major = major;
+        this.classYear = classYear;
+    }
+
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    public Advisor getAdvisor() {
+        return advisor;
+    }
+
+    public void setAdvisor(Advisor advisor) {
+        this.advisor = advisor;
+    }
+
+    public Major getMajor() {
+        return major;
+    }
+
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+
+    public Year getClassYear() {
+        return classYear;
+    }
+
+    public void setClassYear(Year classYear) {
         this.classYear = classYear;
     }
 

@@ -8,6 +8,14 @@ public class Advisor extends User {
         this.advisees = advisees;
     }
 
+    public ArrayList<Student> getAdvisees() {
+        return advisees;
+    }
+
+    public void setAdvisees(ArrayList<Student> advisees) {
+        this.advisees = advisees;
+    }
+
     public Student searchStudent(String studentID) {
         // TODO
         return null;

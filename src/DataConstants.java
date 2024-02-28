@@ -7,6 +7,15 @@ public abstract class DataConstants {
     protected static final String USER_LAST_NAME = "lastName";
     protected static final String USER_USER_TYPE = "userType";
 
+    // STUDENT
+    protected static final String STUDENT_STUDENT_ID = "studentID";
+    protected static final String STUDENT_ADVISOR = "advisor";
+    protected static final String STUDENT_MAJOR = "major";
+    protected static final String STUDENT_CLASS_YEAR = "classYear";
+
+    // ADVISOR
+    protected static final String ADVISOR_ADVISEES = "advisees";
+
     // MAJOR
     protected static final String MAJOR_FILE_NAME = "./src/majors.json";
     protected static final String MAJOR_ID = "id";

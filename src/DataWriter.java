@@ -6,13 +6,14 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
 
-    public static void saveUsers() {
-        UserList users = UserList.getInstance();
-        ArrayList<User> userList = users.getUsers();
+    public static void saveUsers(ArrayList<Student> students, ArrayList<Advisor> advisors) {
         JSONArray jsonUsers = new JSONArray();
 
-        for (int i = 0; i < userList.size(); i++) {
-            jsonUsers.add(getUserJSON(userList.get(i)));
+        for (Student student : students) {
+            jsonUsers.add(getStudentJSON(student));
+        }
+        for (Advisor advisor : advisors) {
+            jsonUsers.add(getAdvisorJSON(advisor));
         }
 
         try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
@@ -23,13 +24,28 @@ public class DataWriter extends DataConstants {
         }
     }
 
-    public static JSONObject getUserJSON(User user) {
+    public static JSONObject getStudentJSON(Student student) {
         JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, user.getID().toString());
-        userDetails.put(USER_USERNAME, user.getUsername());
-        userDetails.put(USER_FIRST_NAME, user.getFirstName());
-        userDetails.put(USER_LAST_NAME, user.getLastName());
-        userDetails.put(USER_USER_TYPE, user.getUserType());
+        userDetails.put(USER_ID, student.getID().toString());
+        userDetails.put(USER_USERNAME, student.getUsername());
+        userDetails.put(USER_FIRST_NAME, student.getFirstName());
+        userDetails.put(USER_LAST_NAME, student.getLastName());
+        userDetails.put(USER_USER_TYPE, student.getUserType());
+        userDetails.put(STUDENT_STUDENT_ID, student.getStudentID());
+        userDetails.put(STUDENT_ADVISOR, student.getAdvisor());
+        userDetails.put(STUDENT_MAJOR, student.getMajor());
+        userDetails.put(STUDENT_CLASS_YEAR, student.getClassYear());
+        return userDetails;
+    }
+
+    public static JSONObject getAdvisorJSON(Advisor advisor) {
+        JSONObject userDetails = new JSONObject();
+        userDetails.put(USER_ID, advisor.getID().toString());
+        userDetails.put(USER_USERNAME, advisor.getUsername());
+        userDetails.put(USER_FIRST_NAME, advisor.getFirstName());
+        userDetails.put(USER_LAST_NAME, advisor.getLastName());
+        userDetails.put(USER_USER_TYPE, advisor.getUserType());
+        userDetails.put(ADVISOR_ADVISEES, advisor.getAdvisees());
         return userDetails;
     }
 
