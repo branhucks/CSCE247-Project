@@ -31,11 +31,12 @@ public class Student extends User {
      * @param majorProgress  | the student's major progress
      * @param semesterPlan   | the student's semester plan
      */
-    public Student(String username, String firstName, String lastName, String userType, String studentID, Major major,
-            Year classYear, double gpa, boolean hasScholarship, int majorProgress,
+    public Student(String username, String firstName, String lastName, String userType, String studentID,
+            Advisor advisor, Major major, Year classYear, double gpa, boolean hasScholarship, int majorProgress,
             SemesterPlan semesterPlan) {
         super(username, firstName, lastName, userType);
         this.studentID = studentID;
+        this.advisor = advisor;
         this.major = major;
         this.classYear = classYear;
         this.gpa = gpa;
@@ -100,7 +101,7 @@ public class Student extends User {
         this.hasScholarship = hasScholarship;
     }
 
-    public int getMajorProgress() {
+    public double getMajorProgress() {
         return majorProgress;
     }
 
@@ -114,6 +115,10 @@ public class Student extends User {
 
     public void setSemesterPlan(SemesterPlan semesterPlan) {
         this.semesterPlan = semesterPlan;
+    }
+
+    public ArrayList<Course> getSelectedCourses() {
+        return selectedCourses;
     }
 
     /**
@@ -232,8 +237,5 @@ public class Student extends User {
     public boolean riskOfFailure(double gpa) {
         // TODO
         return false;
-    }
-    public void assignAdvisor() {
-        
     }
 }
