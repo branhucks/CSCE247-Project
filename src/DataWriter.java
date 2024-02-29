@@ -52,6 +52,10 @@ public class DataWriter extends DataConstants {
         userDetails.put(STUDENT_ADVISOR, student.getAdvisor());
         userDetails.put(STUDENT_MAJOR, student.getMajor());
         userDetails.put(STUDENT_CLASS_YEAR, student.getClassYear());
+        userDetails.put(STUDENT_GPA, student.getGPA());
+        userDetails.put(STUDENT_HAS_SCHOLARSHIP, student.getHasScholarship());
+        userDetails.put(STUDENT_MAJOR_PROGRESS, student.getMajorProgress());
+        userDetails.put(STUDENT_SEMESTER_PLAN, student.getSemesterPlan());
         return userDetails;
     }
 
@@ -106,7 +110,13 @@ public class DataWriter extends DataConstants {
         courseDetails.put(COURSE_COURSE_NAME, course.getCourseName());
         courseDetails.put(COURSE_COURSE_ID, course.getCourseID());
         courseDetails.put(COURSE_REQUIREMENT, course.getRequirement());
+        courseDetails.put(COURSE_SEMESTER, course.getSemester());
+        courseDetails.put(COURSE_DESCRIPTION, course.getDescription());
+        courseDetails.put(COURSE_PREREQUISITES, course.getPrerequisites());
+        courseDetails.put(COURSE_COREQUISITES, course.getCorequisites());
         courseDetails.put(COURSE_CREDIT_HOURS, course.getCreditHours());
+        courseDetails.put(COURSE_PASSING_GRADE, course.getPassingGrade());
+        courseDetails.put(COURSE_COMPLETED_CLASS, course.getCompletedClass());
         return courseDetails;
     }
 

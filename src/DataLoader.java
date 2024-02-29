@@ -37,8 +37,13 @@ public class DataLoader extends DataConstants {
                     Advisor advisor = (Advisor) personJSON.get(STUDENT_ADVISOR);
                     Major major = (Major) personJSON.get(STUDENT_MAJOR);
                     Year classYear = (Year) personJSON.get(STUDENT_CLASS_YEAR);
+                    double gpa = (double) personJSON.get(STUDENT_GPA);
+                    boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
+                    int majorProgress = (int) personJSON.get(STUDENT_MAJOR_PROGRESS);
+                    SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
                     studentList.add(
-                            new Student(username, firstName, lastName, userType, studentID, advisor, major, classYear));
+                            new Student(username, firstName, lastName, userType, studentID, advisor, major, classYear,
+                                    gpa, hasScholarship, majorProgress, semesterPlan));
                 }
             }
             return studentList;
@@ -96,7 +101,6 @@ public class DataLoader extends DataConstants {
                 JSONObject majorJSON = (JSONObject) majorsJSON.get(i);
                 UUID id = UUID.fromString((String) majorJSON.get(MAJOR_ID));
                 String majorName = (String) majorJSON.get(MAJOR_MAJOR_NAME);
-                // RETURNS JSONARRAY HAVE TO DEAL WITH THAT
                 ArrayList<Course> requiredCourses = (ArrayList<Course>) majorJSON.get(MAJOR_REQUIRED_COURSES);
                 int hoursNeeded = (int) majorJSON.get(MAJOR_HOURS_NEEDED);
                 majorList.add(new Major(id, majorName, requiredCourses, hoursNeeded));
@@ -125,9 +129,18 @@ public class DataLoader extends DataConstants {
                 UUID id = UUID.fromString((String) courseJSON.get(COURSE_ID));
                 String courseName = (String) courseJSON.get(COURSE_COURSE_NAME);
                 String courseID = (String) courseJSON.get(COURSE_COURSE_ID);
-                String requirement = (String) courseJSON.get(MAJOR_HOURS_NEEDED);
+                String requirement = (String) courseJSON.get(COURSE_REQUIREMENT);
+                Semester semester = (Semester) courseJSON.get(COURSE_SEMESTER);
+                String description = (String) courseJSON.get(COURSE_DESCRIPTION);
+                ArrayList<PrereqOptions> prerequisites = (ArrayList<PrereqOptions>) courseJSON
+                        .get(COURSE_PREREQUISITES);
+                ArrayList<Course> corequisites = (ArrayList<Course>) courseJSON.get(COURSE_COREQUISITES);
                 int creditHours = (int) courseJSON.get(COURSE_CREDIT_HOURS);
-                courseList.add(new Course(id, courseName, courseID, requirement, creditHours));
+                int passingGrade = (int) courseJSON.get(COURSE_PASSING_GRADE);
+                boolean completedClass = (boolean) courseJSON.get(COURSE_COMPLETED_CLASS);
+                courseList.add(new Course(id, courseName, courseID, requirement, semester, description, prerequisites,
+                        corequisites,
+                        creditHours, passingGrade, completedClass));
             }
             return courseList;
         } catch (Exception e) {

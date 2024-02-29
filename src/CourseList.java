@@ -69,18 +69,26 @@ public class CourseList {
     /**
      * Add a Course to the list
      * 
-     * @param courseName  | name of the course
-     * @param courseID    | the course's ID
-     * @param requirement | the course requirement type
-     * @param creditHours | the credit hours for the course
-     * @return | true or flase whether it was added successfully
+     * @param courseName     | the name of the course
+     * @param courseID       | the course's identifier
+     * @param requirement    | the requirement type
+     * @param semester       | the semester it is available
+     * @param description    | the course's description
+     * @param prerequisites  | the course's prerequisites
+     * @param corequisites   | the course's corequisites
+     * @param creditHours    | credit hours for the course
+     * @param passingGrade   | the passing grade for the course
+     * @param completedClass | if the class is completed
+     * @return | true or false depending on if the course was added successfully
      */
-    public boolean addCourse(String courseName, String courseID, String requirement,
-            int creditHours) {
+    public boolean addCourse(String courseName, String courseID, String requirement, Semester semester,
+            String description,
+            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade,
+            boolean completedClass) {
         if (haveCourse(courseID))
             return false;
-        courseList.add(new Course(courseName, courseID, requirement,
-                creditHours));
+        courseList.add(new Course(courseName, courseID, requirement, semester, description, prerequisites, corequisites,
+                creditHours, passingGrade, completedClass));
         return true;
     }
 

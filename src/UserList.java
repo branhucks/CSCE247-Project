@@ -101,7 +101,8 @@ public class UserList {
             return false;
         }
         if (userType.equalsIgnoreCase("Student")) {
-            students.add(new Student(username, firstName, lastName, userType, null, null, null, null));
+            students.add(new Student(username, firstName, lastName, userType, null, null, null, null, 0.0, false, 0,
+                    null));
         } else if (userType.equalsIgnoreCase("Advisor")) {
             advisors.add(new Advisor(username, firstName, lastName, userType, null));
         }
