@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
  * The Student class represents a student in the system
@@ -13,7 +12,6 @@ public class Student extends User {
     private boolean hasScholarship;
     private int majorProgress;
     private SemesterPlan semesterPlan;
-    private ArrayList<Course> selectedCourses;
 
     /**
      * Creates a new Student instance
@@ -31,19 +29,17 @@ public class Student extends User {
      * @param majorProgress  | the student's major progress
      * @param semesterPlan   | the student's semester plan
      */
-    public Student(String username, String firstName, String lastName, String userType, String studentID,
-            Advisor advisor, Major major, Year classYear, double gpa, boolean hasScholarship, int majorProgress,
+    public Student(String username, String firstName, String lastName, String userType, String studentID, Major major,
+            Year classYear, double gpa, boolean hasScholarship, int majorProgress,
             SemesterPlan semesterPlan) {
         super(username, firstName, lastName, userType);
         this.studentID = studentID;
-        this.advisor = advisor;
         this.major = major;
         this.classYear = classYear;
         this.gpa = gpa;
         this.hasScholarship = hasScholarship;
         this.majorProgress = majorProgress;
         this.semesterPlan = semesterPlan;
-        this.selectedCourses = new ArrayList<Course>();
     }
 
     // Getters and Setters
@@ -101,7 +97,7 @@ public class Student extends User {
         this.hasScholarship = hasScholarship;
     }
 
-    public double getMajorProgress() {
+    public int getMajorProgress() {
         return majorProgress;
     }
 
@@ -115,10 +111,6 @@ public class Student extends User {
 
     public void setSemesterPlan(SemesterPlan semesterPlan) {
         this.semesterPlan = semesterPlan;
-    }
-
-    public ArrayList<Course> getSelectedCourses() {
-        return selectedCourses;
     }
 
     /**
@@ -158,8 +150,9 @@ public class Student extends User {
      * 
      * @return | a list of courses
      */
-    public void selectCourses(String courseID) {
-        selectedCourses.add(findCourse(courseID));
+    public ArrayList<Course> selectCourses() {
+        // TODO
+        return null;
     }
 
     /**
@@ -183,8 +176,8 @@ public class Student extends User {
      * @return | a course
      */
     public Course findCourse(String courseID) {
-        CourseList courseList = CourseList.getInstance();
-        return courseList.getCourse(courseID);
+        // TODO
+        return null;
     }
 
     /**
