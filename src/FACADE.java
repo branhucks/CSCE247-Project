@@ -8,6 +8,7 @@ public class FACADE {
 
     FACADE() {
         userList = UserList.getInstance();
+        userList.loadAdvisors();
         courseList = CourseList.getInstance();
         majorList = MajorList.getInstance();
     }

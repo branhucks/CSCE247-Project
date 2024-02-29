@@ -34,15 +34,14 @@ public class DataLoader extends DataConstants {
                     String lastName = (String) personJSON.get(USER_LAST_NAME);
                     String userType = (String) personJSON.get(USER_USER_TYPE);
                     String studentID = (String) personJSON.get(STUDENT_STUDENT_ID);
-                    Advisor advisor = (Advisor) personJSON.get(STUDENT_ADVISOR);
                     Major major = (Major) personJSON.get(STUDENT_MAJOR);
                     Year classYear = (Year) personJSON.get(STUDENT_CLASS_YEAR);
                     double gpa = (double) personJSON.get(STUDENT_GPA);
                     boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
-                    int majorProgress = (int) personJSON.get(STUDENT_MAJOR_PROGRESS);
+                    int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();
                     SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
                     studentList.add(
-                            new Student(username, firstName, lastName, userType, studentID, advisor, major, classYear,
+                            new Student(username, firstName, lastName, userType, studentID, major, classYear,
                                     gpa, hasScholarship, majorProgress, semesterPlan));
                 }
             }
@@ -74,8 +73,17 @@ public class DataLoader extends DataConstants {
                     String firstName = (String) personJSON.get(USER_FIRST_NAME);
                     String lastName = (String) personJSON.get(USER_LAST_NAME);
                     String userType = (String) personJSON.get(USER_USER_TYPE);
-                    ArrayList<Student> advisees = (ArrayList<Student>) personJSON.get(ADVISOR_ADVISEES);
-                    advisorList.add(new Advisor(username, firstName, lastName, userType, advisees));
+                    JSONArray adviseesJSON = (JSONArray) personJSON.get(ADVISOR_ADVISEES);
+                    ArrayList<Student> advisees = new ArrayList<>();
+                    for (int j = 0; j < peopleJSON.size(); j++) {
+                        Student student = UserList.getInstance().getStudentByUUID(null);
+                    }
+                    Advisor advisor = new Advisor(username, firstName, lastName, userType, advisees);
+                    // loop through students array and add the advisor to the student
+                    for (Student student : DataLoader.getStudents()) {
+                        student.setAdvisor(advisor);
+                    }
+                    advisorList.add(advisor);
                 }
             }
             return advisorList;

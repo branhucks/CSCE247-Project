@@ -14,7 +14,18 @@ public class UserList {
      */
     private UserList() {
         students = DataLoader.getStudents();
+    }
+
+    public void loadAdvisors() {
         advisors = DataLoader.getAdvisors();
+    }
+
+    // get student by UUID
+    public Student getStudentByUUID(UUID uuid) {
+        for (User user : students) {
+            if (user.getID().equals(uuid))
+                return user;
+        }
     }
 
     /**
