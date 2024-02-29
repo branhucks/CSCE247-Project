@@ -57,6 +57,9 @@ public class Student extends User {
     }
 
     public void setAdvisor(Advisor advisor) {
+        if (advisor == null) {
+            this.advisor = null;
+        }
         this.advisor = advisor;
     }
 
@@ -65,6 +68,9 @@ public class Student extends User {
     }
 
     public void setMajor(Major major) {
+        if (major == null) {
+            this.major = null;
+        }
         this.major = major;
     }
 

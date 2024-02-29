@@ -1,21 +1,17 @@
 [
     {
+        "lastName": "Hucks",
+        "hasScholarship": false,
+        "majorProgress": 0.0,
+        "semesterPlan": null,
         "studentID": null,
         "firstName": "Brandon",
-        "lastName": "Hucks",
         "advisor": null,
         "major": null,
-        "id": "baf7996d-b731-4ff5-af76-bd6d2e726b3c",
+        "gpa": 0.0,
+        "id": "50cb6ddf-0475-42e5-8159-91dc8962537f",
         "userType": "Student",
         "classYear": null,
         "username": "bhucks"
-    },
-    {
-        "firstName": "Kyle",
-        "lastName": "Long",
-        "id": "cb391bbc-aec4-44eb-91bb-5bc69a72da17",
-        "userType": "Advisor",
-        "advisees": null,
-        "username": "klong"
     }
 ]
