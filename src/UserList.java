@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * A UserList class (Singeton Design Pattern)
@@ -14,7 +15,19 @@ public class UserList {
      */
     private UserList() {
         students = DataLoader.getStudents();
+    }
+
+    public void loadAdvisors() {
         advisors = DataLoader.getAdvisors();
+    }
+
+    // get student by UUID
+    public Student getStudentByUUID(UUID uuid) {
+        for (Student student : students) {
+            if (student.getID().equals(uuid))
+                return student;
+        }
+        return null;
     }
 
     /**
@@ -101,7 +114,7 @@ public class UserList {
             return false;
         }
         if (userType.equalsIgnoreCase("Student")) {
-            students.add(new Student(username, firstName, lastName, userType, null, null, null, null, 0.0, false, 0,
+            students.add(new Student(username, firstName, lastName, userType, null, null, null, 0.0, false, 0,
                     null));
         } else if (userType.equalsIgnoreCase("Advisor")) {
             advisors.add(new Advisor(username, firstName, lastName, userType, null));

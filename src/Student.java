@@ -31,12 +31,11 @@ public class Student extends User {
      * @param majorProgress  | the student's major progress
      * @param semesterPlan   | the student's semester plan
      */
-    public Student(String username, String firstName, String lastName, String userType, String studentID,
-            Advisor advisor, Major major, Year classYear, double gpa, boolean hasScholarship, int majorProgress,
+    public Student(String username, String firstName, String lastName, String userType, String studentID, Major major,
+            Year classYear, double gpa, boolean hasScholarship, int majorProgress,
             SemesterPlan semesterPlan) {
         super(username, firstName, lastName, userType);
         this.studentID = studentID;
-        this.advisor = advisor;
         this.major = major;
         this.classYear = classYear;
         this.gpa = gpa;
