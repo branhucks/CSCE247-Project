@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class FACADE {
     private User user;
@@ -27,14 +26,6 @@ public class FACADE {
 
     public boolean registerUser(String username, String firstName, String lastName, String userType) {
         return userList.addUser(username, firstName, lastName, userType);
-    }
-
-    public ArrayList<Course> getAllCourses() {
-        return this.courseList.getCourses();
-    }
-
-    public Course getCourseByCode(String courseID) {
-        return this.courseList.getCourse(courseID);
     }
 
     public User getUser() {
@@ -69,8 +60,8 @@ public class FACADE {
     }
 
     public Course findCourse(String courseID) {
-        CourseList courseList = CourseList.getInstance();
-        return courseList.getCourse(courseID);
+        // TODO
+        return null;
     }
 
     public SemesterPlan createSemesterPlan(ArrayList<Course> courses) {
@@ -140,10 +131,6 @@ public class FACADE {
             return false;
         else
             return true;
-    }
-
-    public ArrayList<Course> getStudentCourses(String studentId){
-        return searchStudent(studentId).getSelectedCourses();
     }
 
 }
