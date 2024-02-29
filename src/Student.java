@@ -98,7 +98,7 @@ public class Student extends User {
         this.hasScholarship = hasScholarship;
     }
 
-    public double getMajorProgress() {
+    public int getMajorProgress() {
         return majorProgress;
     }
 

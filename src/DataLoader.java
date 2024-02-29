@@ -39,7 +39,7 @@ public class DataLoader extends DataConstants {
                     Year classYear = (Year) personJSON.get(STUDENT_CLASS_YEAR);
                     double gpa = (double) personJSON.get(STUDENT_GPA);
                     boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
-                    int majorProgress = (int) personJSON.get(STUDENT_MAJOR_PROGRESS);
+                    int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();
                     SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
                     studentList.add(
                             new Student(username, firstName, lastName, userType, studentID, advisor, major, classYear,

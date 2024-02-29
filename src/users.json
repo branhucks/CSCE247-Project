@@ -1,17 +1,1 @@
-[
-    {
-        "lastName": "Hucks",
-        "hasScholarship": false,
-        "majorProgress": 0.0,
-        "semesterPlan": null,
-        "studentID": null,
-        "firstName": "Brandon",
-        "advisor": null,
-        "major": null,
-        "gpa": 0.0,
-        "id": "50cb6ddf-0475-42e5-8159-91dc8962537f",
-        "userType": "Student",
-        "classYear": null,
-        "username": "bhucks"
-    }
-]
+[{"lastName":"Hucks","hasScholarship":false,"majorProgress":0,"semesterPlan":null,"studentID":null,"firstName":"Brandon","advisor":null,"major":null,"gpa":0.0,"id":"f8e85e43-2af1-474e-a1e8-67313af9b467","userType":"Student","classYear":null,"username":"bhucks"}]
