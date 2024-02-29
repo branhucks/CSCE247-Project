@@ -59,8 +59,8 @@ public class FACADE {
     }
 
     public Course findCourse(String courseID) {
-        // TODO
-        return null;
+        CourseList courseList = CourseList.getInstance();
+        return courseList.getCourse(courseID);
     }
 
     public SemesterPlan createSemesterPlan(ArrayList<Course> courses) {
@@ -130,6 +130,10 @@ public class FACADE {
             return false;
         else
             return true;
+    }
+
+    public ArrayList<Course> getStudentCourses(String studentId){
+        return searchStudent(studentId).getSelectedCourses();
     }
 
 }

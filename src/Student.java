@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
  * The Student class represents a student in the system
@@ -12,6 +13,7 @@ public class Student extends User {
     private boolean hasScholarship;
     private int majorProgress;
     private SemesterPlan semesterPlan;
+    private ArrayList<Course> selectedCourses;
 
     /**
      * Creates a new Student instance
@@ -41,6 +43,7 @@ public class Student extends User {
         this.hasScholarship = hasScholarship;
         this.majorProgress = majorProgress;
         this.semesterPlan = semesterPlan;
+        this.selectedCourses = new ArrayList<Course>();
     }
 
     // Getters and Setters
@@ -151,9 +154,8 @@ public class Student extends User {
      * 
      * @return | a list of courses
      */
-    public ArrayList<Course> selectCourses() {
-        // TODO
-        return null;
+    public void selectCourses(String courseID) {
+        selectedCourses.add(findCourse(courseID));
     }
 
     /**
@@ -177,8 +179,8 @@ public class Student extends User {
      * @return | a course
      */
     public Course findCourse(String courseID) {
-        // TODO
-        return null;
+        CourseList courseList = CourseList.getInstance();
+        return courseList.getCourse(courseID);
     }
 
     /**
