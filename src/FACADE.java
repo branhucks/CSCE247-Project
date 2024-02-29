@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class FACADE {
     private User user;
@@ -25,6 +26,14 @@ public class FACADE {
 
     public boolean registerUser(String username, String firstName, String lastName, String userType) {
         return userList.addUser(username, firstName, lastName, userType);
+    }
+
+    public ArrayList<Course> getAllCourses() {
+        return this.courseList.getCourses();
+    }
+
+    public Course getCourseByCode(String courseID) {
+        return this.courseList.getCourse(courseID);
     }
 
     public User getUser() {

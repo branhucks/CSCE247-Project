@@ -89,4 +89,11 @@ public class Advisor extends User {
     public void enterGrades(Student student, ArrayList<Course> courses) {
         // TODO
     }
+
+/*public void addStudent(String studentID) {
+        for(Student s : advisees) {
+            if(this.searchStudent(s.getStudentID()) != null)
+                this.advisees.add(studentID);
+        }
+    }*/ //WORK IN PROGRESS
 }

@@ -232,4 +232,7 @@ public class Student extends User {
         // TODO
         return false;
     }
+    public void assignAdvisor() {
+        
+    }
 }
