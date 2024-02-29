@@ -101,7 +101,7 @@ public class Student extends User {
         this.hasScholarship = hasScholarship;
     }
 
-    public double getMajorProgress() {
+    public int getMajorProgress() {
         return majorProgress;
     }
 
@@ -233,5 +233,8 @@ public class Student extends User {
     public boolean riskOfFailure(double gpa) {
         // TODO
         return false;
+    }
+    public void assignAdvisor() {
+        
     }
 }
