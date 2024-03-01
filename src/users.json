@@ -9,7 +9,7 @@
         "advisor": null,
         "major": null,
         "gpa": 0.0,
-        "id": "cadc053c-9695-462c-8262-491ce0d4acaf",
+        "id": "5357b959-fb7e-4140-8fc9-26e6d6705abf",
         "userType": "Student",
         "classYear": null,
         "username": "bhucks"
@@ -17,9 +17,9 @@
     {
         "firstName": "Kyle",
         "lastName": "Long",
-        "id": "2f1bac95-635b-4617-afd5-e1ec48709506",
+        "id": "ee906128-b58f-4b3c-9352-0b215f726d0b",
         "userType": "Advisor",
-        "advisees": null,
+        "advisees": [],
         "username": "klong"
     }
 ]
