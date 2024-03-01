@@ -1,5 +1,6 @@
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 import org.json.simple.JSONArray;
@@ -110,8 +111,11 @@ public class DataLoader extends DataConstants {
                 UUID id = UUID.fromString((String) majorJSON.get(MAJOR_ID));
                 String majorName = (String) majorJSON.get(MAJOR_MAJOR_NAME);
                 ArrayList<Course> requiredCourses = (ArrayList<Course>) majorJSON.get(MAJOR_REQUIRED_COURSES);
-                int hoursNeeded = (int) majorJSON.get(MAJOR_HOURS_NEEDED);
-                majorList.add(new Major(id, majorName, requiredCourses, hoursNeeded));
+                HashMap<ElectiveType, Electives> electives = (HashMap<ElectiveType, Electives>) majorJSON
+                        .get(MAJOR_ELECTIVES);
+                ApplicationArea applicationArea = (ApplicationArea) majorJSON.get(MAJOR_APPLICATION_AREA);
+                int creditsRequired = ((Long) majorJSON.get(MAJOR_CREDITS_REQUIRED)).intValue();
+                majorList.add(new Major(id, majorName, requiredCourses, electives, applicationArea, creditsRequired));
             }
             return majorList;
         } catch (Exception e) {

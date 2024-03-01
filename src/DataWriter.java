@@ -153,7 +153,9 @@ public class DataWriter extends DataConstants {
         majorDetails.put(MAJOR_ID, major.getID().toString());
         majorDetails.put(MAJOR_MAJOR_NAME, major.getMajorName());
         majorDetails.put(MAJOR_REQUIRED_COURSES, major.getRequiredCourses());
-        majorDetails.put(MAJOR_HOURS_NEEDED, major.getHoursNeeded());
+        majorDetails.put(MAJOR_ELECTIVES, major.getElectives());
+        majorDetails.put(MAJOR_APPLICATION_AREA, major.getApplicationArea());
+        majorDetails.put(MAJOR_CREDITS_REQUIRED, major.getCreditsRequired());
         return majorDetails;
     }
 }

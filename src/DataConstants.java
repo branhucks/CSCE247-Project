@@ -28,7 +28,9 @@ public abstract class DataConstants {
     protected static final String MAJOR_ID = "id";
     protected static final String MAJOR_MAJOR_NAME = "majorName";
     protected static final String MAJOR_REQUIRED_COURSES = "requiredCourses";
-    protected static final String MAJOR_HOURS_NEEDED = "hoursNeeded";
+    protected static final String MAJOR_ELECTIVES = "electives";
+    protected static final String MAJOR_APPLICATION_AREA = "applicationArea";
+    protected static final String MAJOR_CREDITS_REQUIRED = "creditsRequired";
 
     // COURSE
     protected static final String COURSE_FILE_NAME = "./src/courses.json";
