@@ -11,7 +11,7 @@ public class CourseList {
     /**
      * Creates a new CourseList instance
      */
-    private CourseList() {
+    public CourseList() {
         courseList = DataLoader.getCourses();
     }
 

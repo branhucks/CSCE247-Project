@@ -13,7 +13,7 @@ public class MajorList {
     /**
      * Creates a new MajorList instance
      */
-    private MajorList() {
+    public MajorList() {
         majorList = DataLoader.getMajors();
     }
 

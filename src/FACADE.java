@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class FACADE {
     private User user;
@@ -57,6 +58,7 @@ public class FACADE {
      */
     public void logout() {
         userList.saveUsers();
+        majorList.saveMajors();
     }
 
     /**
@@ -109,13 +111,20 @@ public class FACADE {
         return null;
     }
 
+    public boolean addMajor(String majorName, ArrayList<String> requiredCourses,
+            HashMap<ElectiveType, Electives> electives,
+            ApplicationArea applicationArea,
+            int creditsRequired) {
+        return majorList.addMajor(majorName, requiredCourses, electives, applicationArea, creditsRequired);
+    }
+
     /**
      * Gets all of the majors
      * 
      * @return | a list of majors
      */
     public ArrayList<Major> getMajors() {
-        return null;
+        return this.majorList.getMajors();
     }
 
     /**

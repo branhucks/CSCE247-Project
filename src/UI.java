@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class UI {
     private static final String WELCOME_MESSAGE = "Welcome to the University of South Carolina DegreeWorks";
-    private String[] menuOptions = { "Create Account", "Login", "Logout" };
+    private String[] menuOptions = { "Create Account", "Login", "Add Major", "Logout" };
     private Scanner scanner;
     private FACADE facade;
 
@@ -36,6 +36,9 @@ public class UI {
                     break;
                 case (1):
                     login();
+                    break;
+                case (2):
+                    addMajor();
                     break;
             }
         }
@@ -83,6 +86,16 @@ public class UI {
             System.out.println("Welcome " + user.getFirstName() + " " + user.getLastName());
         } else {
             System.out.println("Invalid username.");
+        }
+    }
+
+    private void addMajor() {
+        String majorName = getField("Major Name");
+
+        if (facade.addMajor(majorName, null, null, null, 129)) {
+            System.out.println("You have successfully added a major.");
+        } else {
+            System.out.println("The major already exists.");
         }
     }
 

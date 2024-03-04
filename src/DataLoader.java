@@ -112,8 +112,6 @@ public class DataLoader extends DataConstants {
                 JSONObject majorJSON = (JSONObject) majorsJSON.get(i);
                 String id = (String) majorJSON.get(MAJOR_ID);
                 String majorName = (String) majorJSON.get(MAJOR_MAJOR_NAME);
-                // ArrayList<Course> requiredCourses = (ArrayList<Course>)
-                // majorJSON.get(MAJOR_REQUIRED_COURSES);
                 JSONArray coursesJSON = (JSONArray) majorJSON.get(MAJOR_REQUIRED_COURSES);
                 ArrayList<String> requiredCourses = new ArrayList<>();
                 for (int j = 0; j < coursesJSON.size(); j++) {

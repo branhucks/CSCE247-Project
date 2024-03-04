@@ -138,6 +138,7 @@ public class DataWriter extends DataConstants {
             file.write(jsonMajors.toJSONString());
             file.flush();
         } catch (IOException e) {
+            System.out.println("Error writing to majors.json");
             e.printStackTrace();
         }
     }
