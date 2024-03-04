@@ -43,7 +43,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getStudentJSON(Student student) {
         JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, student.getID().toString());
+        userDetails.put(USER_ID, student.getUUID().toString());
         userDetails.put(USER_USERNAME, student.getUsername());
         userDetails.put(USER_FIRST_NAME, student.getFirstName());
         userDetails.put(USER_LAST_NAME, student.getLastName());
@@ -67,7 +67,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, advisor.getID().toString());
+        userDetails.put(USER_ID, advisor.getUUID().toString());
         userDetails.put(USER_USERNAME, advisor.getUsername());
         userDetails.put(USER_FIRST_NAME, advisor.getFirstName());
         userDetails.put(USER_LAST_NAME, advisor.getLastName());
@@ -106,7 +106,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getCourseJSON(Course course) {
         JSONObject courseDetails = new JSONObject();
-        courseDetails.put(COURSE_ID, course.getID().toString());
+        courseDetails.put(COURSE_ID, course.getUUID().toString());
         courseDetails.put(COURSE_COURSE_NAME, course.getCourseName());
         courseDetails.put(COURSE_COURSE_ID, course.getCourseID());
         courseDetails.put(COURSE_REQUIREMENT, course.getRequirement());
@@ -150,7 +150,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getMajorJSON(Major major) {
         JSONObject majorDetails = new JSONObject();
-        majorDetails.put(MAJOR_ID, major.getID().toString());
+        majorDetails.put(MAJOR_ID, major.getUUID().toString());
         majorDetails.put(MAJOR_MAJOR_NAME, major.getMajorName());
         majorDetails.put(MAJOR_REQUIRED_COURSES, major.getRequiredCourses());
         majorDetails.put(MAJOR_ELECTIVES, major.getElectives());

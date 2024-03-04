@@ -9,17 +9,39 @@
         "advisor": null,
         "major": null,
         "gpa": 0.0,
-        "id": "5357b959-fb7e-4140-8fc9-26e6d6705abf",
+        "id": "5e173ee5-a7df-4e12-8ca6-eee7860c61d2",
         "userType": "Student",
         "classYear": null,
         "username": "bhucks"
     },
     {
+        "lastName": "Hucks",
+        "hasScholarship": false,
+        "majorProgress": 0,
+        "semesterPlan": null,
+        "studentID": null,
+        "firstName": "Charles",
+        "advisor": null,
+        "major": null,
+        "gpa": 0.0,
+        "id": "e7f72044-c5f0-4072-9d47-90e9a657b169",
+        "userType": "Student",
+        "classYear": null,
+        "username": "chucks"
+    },
+    {
         "firstName": "Kyle",
         "lastName": "Long",
-        "id": "ee906128-b58f-4b3c-9352-0b215f726d0b",
+        "id": "64038913-037a-4340-b936-20e0db272e85",
         "userType": "Advisor",
-        "advisees": [],
+        "advisees": [
+            {
+                "id": "e7f72044-c5f0-4072-9d47-90e9a657b169"
+            },
+            {
+                "id": "5e173ee5-a7df-4e12-8ca6-eee7860c61d2"
+            }
+        ],
         "username": "klong"
     }
 ]

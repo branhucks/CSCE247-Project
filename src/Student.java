@@ -4,6 +4,7 @@ import java.util.ArrayList;
  * The Student class represents a student in the system
  */
 public class Student extends User {
+    private String uuid;
     private Year classYear;
     private Advisor advisor;
     private double gpa;
@@ -29,10 +30,11 @@ public class Student extends User {
      * @param majorProgress  | the student's major progress
      * @param semesterPlan   | the student's semester plan
      */
-    public Student(String username, String firstName, String lastName, String userType, String studentID, Major major,
+    public Student(String uuid, String username, String firstName, String lastName, String userType, String studentID,
+            Major major,
             Year classYear, double gpa, boolean hasScholarship, int majorProgress,
             SemesterPlan semesterPlan) {
-        super(username, firstName, lastName, userType);
+        super(uuid, username, firstName, lastName, userType);
         this.studentID = studentID;
         this.major = major;
         this.classYear = classYear;

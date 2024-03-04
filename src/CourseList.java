@@ -28,6 +28,20 @@ public class CourseList {
     }
 
     /**
+     * Gets a course from the list of courses by UUID
+     * 
+     * @param uuid | the course's UUID to be searched
+     * @return | the course found
+     */
+    public Course getCourseByUUID(String uuid) {
+        for (Course course : courseList) {
+            if (course.getUUID().equals(uuid))
+                return course;
+        }
+        return null;
+    }
+
+    /**
      * Validates whether the course exists
      * 
      * @param courseID | the course's ID to search

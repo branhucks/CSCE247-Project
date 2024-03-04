@@ -1,15 +1,14 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.UUID;
 
 /**
  * The Major class represents a major in the system.
  * 
  */
 public class Major {
-    private UUID id;
+    private String id;
     private String majorName;
-    private ArrayList<Course> requiredCourses;
+    private ArrayList<String> requiredCourses;
     private HashMap<ElectiveType, Electives> electives;
     private ApplicationArea applicationArea;
     private int creditsRequired;
@@ -19,32 +18,36 @@ public class Major {
      * 
      * @param majorName       | the major's name
      * @param requiredCourses | the major's required courses
-     * @param hoursNeeded     | the major's required hours
+     * @param electives       | the list of electives
+     * @param applicationArea | the chosen application area
+     * @param creditsRequired | the total number of required credits
      */
-    public Major(String majorName, ArrayList<Course> requiredCourses, HashMap<ElectiveType, Electives> electives,
+    public Major(String majorName, ArrayList<String> requiredCourses, HashMap<ElectiveType, Electives> electives,
             ApplicationArea applicationArea,
             int creditsRequired) {
         this.majorName = majorName;
-        this.requiredCourses = new ArrayList<Course>();
+        this.requiredCourses = new ArrayList<String>();
         this.electives = new HashMap<ElectiveType, Electives>();
         this.applicationArea = applicationArea;
         this.creditsRequired = creditsRequired;
     }
 
     /**
-     * Creats a new Major instance (OVERLOADED)
+     * Creates a new Major instance (OVERLOADED)
      * 
      * @param id              | the major's UUID
      * @param majorName
      * @param requiredCourses
-     * @param hoursNeeded
+     * @param electives
+     * @param applicationArea
+     * @param creditsRequired
      */
-    public Major(UUID id, String majorName, ArrayList<Course> requiredCourses,
+    public Major(String id, String majorName, ArrayList<String> requiredCourses,
             HashMap<ElectiveType, Electives> electives, ApplicationArea applicationArea,
             int creditsRequired) {
         this.id = id;
         this.majorName = majorName;
-        this.requiredCourses = new ArrayList<Course>();
+        this.requiredCourses = new ArrayList<String>();
         this.electives = new HashMap<ElectiveType, Electives>();
         this.applicationArea = applicationArea;
         this.creditsRequired = creditsRequired;
@@ -55,8 +58,8 @@ public class Major {
      * 
      * @param course | the course to be added
      */
-    public void addCourse(Course course) {
-        requiredCourses.add(course);
+    public void addRequiredCourse(String uuid) {
+        requiredCourses.add(uuid);
     }
 
     /**
@@ -64,8 +67,8 @@ public class Major {
      * 
      * @param course | the course to be removed
      */
-    public void removeCourse(Course course) {
-        requiredCourses.remove(course);
+    public void removeRequiredCourse(String uuid) {
+        requiredCourses.remove(uuid);
     }
 
     // Getters and Setters
@@ -77,19 +80,15 @@ public class Major {
         return majorName;
     }
 
-    public UUID getID() {
+    public String getUUID() {
         return this.id;
     }
 
-    public void setID(UUID id) {
-        this.id = id;
-    }
-
-    public ArrayList<Course> getRequiredCourses() {
+    public ArrayList<String> getRequiredCourses() {
         return this.requiredCourses;
     }
 
-    public void setRequiredCourses(ArrayList<Course> requiredCourses) {
+    public void setRequiredCourses(ArrayList<String> requiredCourses) {
         this.requiredCourses = requiredCourses;
     }
 

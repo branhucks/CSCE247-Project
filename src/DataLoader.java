@@ -29,7 +29,7 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
 
                 if (personJSON.get(USER_USER_TYPE).equals("Student")) {
-                    UUID id = UUID.fromString((String) personJSON.get(USER_ID));
+                    String id = (String) personJSON.get(USER_ID);
                     String username = (String) personJSON.get(USER_USERNAME);
                     String firstName = (String) personJSON.get(USER_FIRST_NAME);
                     String lastName = (String) personJSON.get(USER_LAST_NAME);
@@ -42,7 +42,7 @@ public class DataLoader extends DataConstants {
                     int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();
                     SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
                     studentList.add(
-                            new Student(username, firstName, lastName, userType, studentID, major, classYear,
+                            new Student(id, username, firstName, lastName, userType, studentID, major, classYear,
                                     gpa, hasScholarship, majorProgress, semesterPlan));
                 }
             }
@@ -69,17 +69,19 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
 
                 if (personJSON.get(USER_USER_TYPE).equals("Advisor")) {
-                    UUID id = UUID.fromString((String) personJSON.get(USER_ID));
+                    String id = (String) personJSON.get(USER_ID);
                     String username = (String) personJSON.get(USER_USERNAME);
                     String firstName = (String) personJSON.get(USER_FIRST_NAME);
                     String lastName = (String) personJSON.get(USER_LAST_NAME);
                     String userType = (String) personJSON.get(USER_USER_TYPE);
                     JSONArray adviseesJSON = (JSONArray) personJSON.get(ADVISOR_ADVISEES);
-                    ArrayList<Student> advisees = new ArrayList<>();
-                    for (int j = 0; j < peopleJSON.size(); j++) {
-                        Student student = UserList.getInstance().getStudentByUUID(null);
+                    ArrayList<String> advisees = new ArrayList<>();
+                    for (int j = 0; j < adviseesJSON.size(); j++) {
+                        JSONObject studentJSON = (JSONObject) adviseesJSON.get(j);
+                        String studentID = (String) studentJSON.get(USER_ID);
+                        advisees.add(studentID);
                     }
-                    Advisor advisor = new Advisor(username, firstName, lastName, userType, advisees);
+                    Advisor advisor = new Advisor(id, username, firstName, lastName, userType, advisees);
                     // loop through students array and add the advisor to the student
                     for (Student student : DataLoader.getStudents()) {
                         student.setAdvisor(advisor);
@@ -108,9 +110,17 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < majorsJSON.size(); i++) {
                 JSONObject majorJSON = (JSONObject) majorsJSON.get(i);
-                UUID id = UUID.fromString((String) majorJSON.get(MAJOR_ID));
+                String id = (String) majorJSON.get(MAJOR_ID);
                 String majorName = (String) majorJSON.get(MAJOR_MAJOR_NAME);
-                ArrayList<Course> requiredCourses = (ArrayList<Course>) majorJSON.get(MAJOR_REQUIRED_COURSES);
+                // ArrayList<Course> requiredCourses = (ArrayList<Course>)
+                // majorJSON.get(MAJOR_REQUIRED_COURSES);
+                JSONArray coursesJSON = (JSONArray) majorJSON.get(MAJOR_REQUIRED_COURSES);
+                ArrayList<String> requiredCourses = new ArrayList<>();
+                for (int j = 0; j < coursesJSON.size(); j++) {
+                    JSONObject courseJSON = (JSONObject) coursesJSON.get(j);
+                    String courseUUID = (String) courseJSON.get(COURSE_ID);
+                    requiredCourses.add(courseUUID);
+                }
                 HashMap<ElectiveType, Electives> electives = (HashMap<ElectiveType, Electives>) majorJSON
                         .get(MAJOR_ELECTIVES);
                 ApplicationArea applicationArea = (ApplicationArea) majorJSON.get(MAJOR_APPLICATION_AREA);
@@ -138,7 +148,7 @@ public class DataLoader extends DataConstants {
 
             for (int i = 0; i < coursesJSON.size(); i++) {
                 JSONObject courseJSON = (JSONObject) coursesJSON.get(i);
-                UUID id = UUID.fromString((String) courseJSON.get(COURSE_ID));
+                String id = (String) courseJSON.get(COURSE_ID);
                 String courseName = (String) courseJSON.get(COURSE_COURSE_NAME);
                 String courseID = (String) courseJSON.get(COURSE_COURSE_ID);
                 String requirement = (String) courseJSON.get(COURSE_REQUIREMENT);
@@ -151,8 +161,7 @@ public class DataLoader extends DataConstants {
                 int passingGrade = (int) courseJSON.get(COURSE_PASSING_GRADE);
                 boolean completedClass = (boolean) courseJSON.get(COURSE_COMPLETED_CLASS);
                 courseList.add(new Course(id, courseName, courseID, requirement, semester, description, prerequisites,
-                        corequisites,
-                        creditHours, passingGrade, completedClass));
+                        corequisites, creditHours, passingGrade, completedClass));
             }
             return courseList;
         } catch (Exception e) {

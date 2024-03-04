@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * A MajorList class (Singeton Design Pattern)
@@ -75,11 +76,12 @@ public class MajorList {
      * @param hoursNeeded     | the major's required hours
      * @return
      */
-    public boolean addMajor(String majorName, ArrayList<Course> requiredCourses,
+    public boolean addMajor(String majorName, ArrayList<String> requiredCourses,
             HashMap<ElectiveType, Electives> electives, ApplicationArea applicationArea, int creditsRequired) {
         if (haveMajor(majorName))
             return false;
-        majorList.add(new Major(majorName, requiredCourses, electives, applicationArea, creditsRequired));
+        majorList.add(new Major((UUID.randomUUID()).toString(), majorName, requiredCourses, electives, applicationArea,
+                creditsRequired));
         return true;
     }
 

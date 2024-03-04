@@ -6,25 +6,23 @@ import java.util.UUID;
  * Provides method to access and modify users in the list
  */
 public class UserList {
-    private static UserList users;
-    private ArrayList<Student> students;
-    private ArrayList<Advisor> advisors;
+    public static UserList users;
+    public ArrayList<Student> students;
+    public ArrayList<Advisor> advisors;
 
     /**
      * Creates a new CourseList instance
      */
-    private UserList() {
+    public UserList() {
         students = DataLoader.getStudents();
-    }
-
-    public void loadAdvisors() {
         advisors = DataLoader.getAdvisors();
+
     }
 
-    // get student by UUID
-    public Student getStudentByUUID(UUID uuid) {
+    // Get student by UUID
+    public Student getStudentByUUID(String uuid) {
         for (Student student : students) {
-            if (student.getID().equals(uuid))
+            if (student.getUUID().equals(uuid))
                 return student;
         }
         return null;
@@ -114,10 +112,10 @@ public class UserList {
             return false;
         }
         if (userType.equalsIgnoreCase("Student")) {
-            students.add(new Student(username, firstName, lastName, userType, null, null, null, 0.0, false, 0,
-                    null));
+            students.add(new Student((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null,
+                    null, null, 0.0, false, 0, null));
         } else if (userType.equalsIgnoreCase("Advisor")) {
-            advisors.add(new Advisor(username, firstName, lastName, userType, null));
+            advisors.add(new Advisor((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null));
         }
         return true;
     }

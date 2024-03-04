@@ -4,7 +4,8 @@ import java.util.ArrayList;
  * The Advisor class represents an advisor in the system.
  */
 public class Advisor extends User {
-    private ArrayList<Student> advisees;
+    private String uuid;
+    private ArrayList<String> advisees;
 
     /**
      * Creates a new Advisor instance
@@ -15,8 +16,9 @@ public class Advisor extends User {
      * @param userType  | user type of advisor
      * @param advisees  | list of advisees
      */
-    public Advisor(String username, String firstName, String lastName, String userType, ArrayList<Student> advisees) {
-        super(username, firstName, lastName, userType);
+    public Advisor(String uuid, String username, String firstName, String lastName, String userType,
+            ArrayList<String> advisees) {
+        super(uuid, username, firstName, lastName, userType);
         this.advisees = advisees;
     }
 
@@ -25,7 +27,7 @@ public class Advisor extends User {
      * 
      * @return | an ArrayList of students
      */
-    public ArrayList<Student> getAdvisees() {
+    public ArrayList<String> getAdvisees() {
         return advisees;
     }
 
@@ -34,7 +36,7 @@ public class Advisor extends User {
      * 
      * @param advisees | list of advisees
      */
-    public void setAdvisees(ArrayList<Student> advisees) {
+    public void setAdvisees(ArrayList<String> advisees) {
         this.advisees = advisees;
     }
 
@@ -54,7 +56,7 @@ public class Advisor extends User {
      * 
      * @return | list of advisees
      */
-    public ArrayList<Student> viewAdvisees() {
+    public ArrayList<String> viewAdvisees() {
         // TODO
         return this.advisees;
     }
@@ -90,10 +92,12 @@ public class Advisor extends User {
         // TODO
     }
 
-/*public void addStudent(String studentID) {
-        for(Student s : advisees) {
-            if(this.searchStudent(s.getStudentID()) != null)
-                this.advisees.add(studentID);
-        }
-    }*/ //WORK IN PROGRESS
+    /*
+     * public void addStudent(String studentID) {
+     * for(Student s : advisees) {
+     * if(this.searchStudent(s.getStudentID()) != null)
+     * this.advisees.add(studentID);
+     * }
+     * }
+     */ // WORK IN PROGRESS
 }

@@ -1,10 +1,10 @@
-import java.util.UUID;
+//import java.util.UUID;
 
 /**
  * The User class represents a user in the system.
  */
 public class User {
-    protected UUID id;
+    protected String id;
     protected String firstName;
     protected String lastName;
     protected String username;
@@ -19,7 +19,7 @@ public class User {
      * @param userType  | user type of the user
      */
     public User(String username, String firstName, String lastName, String userType) {
-        this.id = UUID.randomUUID();
+        // this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -35,7 +35,7 @@ public class User {
      * @param lastName
      * @param userType
      */
-    public User(UUID id, String username, String firstName, String lastName, String userType) {
+    public User(String id, String username, String firstName, String lastName, String userType) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -44,7 +44,7 @@ public class User {
     }
 
     // Getters and Setters
-    public UUID getID() {
+    public String getUUID() {
         return id;
     }
 

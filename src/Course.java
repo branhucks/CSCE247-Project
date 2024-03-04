@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 /**
  * The Course class represents a course in the system.
  */
 public class Course {
-    private UUID id;
+    private String id;
     private String courseName;
     private String courseID;
     private String requirement;
@@ -61,7 +60,7 @@ public class Course {
      * @param passingGrade
      * @param completedClass
      */
-    public Course(UUID id, String courseName, String courseID, String requirement, Semester semester,
+    public Course(String id, String courseName, String courseID, String requirement, Semester semester,
             String description,
             ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade,
             boolean completedClass) {
@@ -71,8 +70,8 @@ public class Course {
         this.requirement = requirement;
         this.semester = semester;
         this.description = description;
-        this.prerequisites = prerequisites;
-        this.corequisites = corequisites;
+        this.prerequisites = new ArrayList<PrereqOptions>();
+        this.corequisites = new ArrayList<Course>();
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
         this.completedClass = completedClass;
@@ -81,11 +80,6 @@ public class Course {
     // Getters and Setters
     public Course getCourse() {
         return this;
-    }
-
-    public void setID(UUID id) {
-        this.id = id;
-        checkComplete();
     }
 
     public void setCourseName(String courseName) {
@@ -137,7 +131,7 @@ public class Course {
         this.completedClass = completedClass;
     }
 
-    public UUID getID() {
+    public String getUUID() {
         return id;
     }
 

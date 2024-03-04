@@ -4,8 +4,8 @@ import java.util.ArrayList;
  * Electives class
  */
 public class Electives {
-    private int credits;
-    private ArrayList<Course> electiveCourses;
+    private int minHours;
+    private ArrayList<Course> courses;
 
     /**
      * Creates a new instance of Electives
@@ -13,8 +13,9 @@ public class Electives {
      * @param credits         | credit hours for each elective
      * @param electiveCourses | the elective courses
      */
-    public Electives(int credits, ArrayList<Course> electiveCourses) {
-
+    public Electives(int minHours, ArrayList<Course> courses) {
+        this.minHours = minHours;
+        courses = new ArrayList<Course>();
     }
 
     /**
@@ -24,6 +25,6 @@ public class Electives {
      * @return | a list of courses
      */
     public ArrayList<Course> listElectives(ElectiveType electiveType) {
-        return this.electiveCourses;
+        return this.courses;
     }
 }
