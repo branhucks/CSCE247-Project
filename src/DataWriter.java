@@ -43,7 +43,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getStudentJSON(Student student) {
         JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, student.getUUID().toString());
+        userDetails.put(USER_ID, student.getUUID());
         userDetails.put(USER_USERNAME, student.getUsername());
         userDetails.put(USER_FIRST_NAME, student.getFirstName());
         userDetails.put(USER_LAST_NAME, student.getLastName());
@@ -67,12 +67,18 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, advisor.getUUID().toString());
+        userDetails.put(USER_ID, advisor.getUUID());
         userDetails.put(USER_USERNAME, advisor.getUsername());
         userDetails.put(USER_FIRST_NAME, advisor.getFirstName());
         userDetails.put(USER_LAST_NAME, advisor.getLastName());
         userDetails.put(USER_USER_TYPE, advisor.getUserType());
-        userDetails.put(ADVISOR_ADVISEES, advisor.getAdvisees());
+        JSONArray adviseesArray = new JSONArray();
+        for (String uuid : advisor.getAdvisees()) {
+            JSONObject adviseeObject = new JSONObject();
+            adviseeObject.put(USER_ID, uuid);
+            adviseesArray.add(adviseeObject);
+        }
+        userDetails.put(ADVISOR_ADVISEES, adviseesArray);
         return userDetails;
     }
 
@@ -106,7 +112,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getCourseJSON(Course course) {
         JSONObject courseDetails = new JSONObject();
-        courseDetails.put(COURSE_ID, course.getUUID().toString());
+        courseDetails.put(COURSE_ID, course.getUUID());
         courseDetails.put(COURSE_COURSE_NAME, course.getCourseName());
         courseDetails.put(COURSE_COURSE_ID, course.getCourseID());
         courseDetails.put(COURSE_REQUIREMENT, course.getRequirement());
@@ -151,9 +157,15 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getMajorJSON(Major major) {
         JSONObject majorDetails = new JSONObject();
-        majorDetails.put(MAJOR_ID, major.getUUID().toString());
+        majorDetails.put(MAJOR_ID, major.getUUID());
         majorDetails.put(MAJOR_MAJOR_NAME, major.getMajorName());
-        majorDetails.put(MAJOR_REQUIRED_COURSES, major.getRequiredCourses());
+        JSONArray coursesArray = new JSONArray();
+        for (String uuid : major.getRequiredCourses()) {
+            JSONObject courseObject = new JSONObject();
+            courseObject.put(COURSE_ID, uuid);
+            coursesArray.add(courseObject);
+        }
+        majorDetails.put(MAJOR_REQUIRED_COURSES, coursesArray);
         majorDetails.put(MAJOR_ELECTIVES, major.getElectives());
         majorDetails.put(MAJOR_APPLICATION_AREA, major.getApplicationArea());
         majorDetails.put(MAJOR_CREDITS_REQUIRED, major.getCreditsRequired());

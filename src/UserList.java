@@ -16,14 +16,32 @@ public class UserList {
     public UserList() {
         students = DataLoader.getStudents();
         advisors = DataLoader.getAdvisors();
-
     }
 
-    // Get student by UUID
+    /**
+     * Get student by UUID
+     * 
+     * @param uuid | the student's UUID
+     * @return | the student retrived
+     */
     public Student getStudentByUUID(String uuid) {
         for (Student student : students) {
             if (student.getUUID().equals(uuid))
                 return student;
+        }
+        return null;
+    }
+
+    /**
+     * Get advisor by UUID
+     * 
+     * @param uuid | the advisor's UUID
+     * @return | the advisor retrieved
+     */
+    public Advisor getAdvisorByUUID(String uuid) {
+        for (Advisor advisor : advisors) {
+            if (advisor.getUUID().equals(uuid))
+                return advisor;
         }
         return null;
     }

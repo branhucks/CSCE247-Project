@@ -10,6 +10,7 @@ public class Advisor extends User {
     /**
      * Creates a new Advisor instance
      * 
+     * @param uuid      | the advisor's uuid
      * @param username  | username of advisor
      * @param firstName | first name of advisor
      * @param lastName  | last name of advisor

@@ -17,6 +17,7 @@ public class Student extends User {
     /**
      * Creates a new Student instance
      * 
+     * @param uuid           | the student's uuid
      * @param username       | username of the student
      * @param firstName      | first name of the student
      * @param lastName       | last name of the student

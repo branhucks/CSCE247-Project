@@ -18,6 +18,20 @@ public class MajorList {
     }
 
     /**
+     * Get major by UUID
+     * 
+     * @param uuid | the major's UUID
+     * @return | the major retrieved
+     */
+    public Major getMajorByUUID(String uuid) {
+        for (Major major : majorList) {
+            if (major.getUUID().equals(uuid))
+                return major;
+        }
+        return null;
+    }
+
+    /**
      * Gets an instance of the MajorList
      * 
      * @return | MajorList instance

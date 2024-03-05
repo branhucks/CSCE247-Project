@@ -28,10 +28,10 @@ public class CourseList {
     }
 
     /**
-     * Gets a course from the list of courses by UUID
+     * Get course by UUID
      * 
-     * @param uuid | the course's UUID to be searched
-     * @return | the course found
+     * @param uuid | the course's UUID
+     * @return | the course retrieved
      */
     public Course getCourseByUUID(String uuid) {
         for (Course course : courseList) {

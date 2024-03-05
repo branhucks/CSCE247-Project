@@ -111,6 +111,16 @@ public class FACADE {
         return null;
     }
 
+    /**
+     * Adds a Major to the system
+     * 
+     * @param majorName       | the name of the major
+     * @param requiredCourses | the major's required courses
+     * @param electives       | the major's elective courses
+     * @param applicationArea | a possible application area
+     * @param creditsRequired | total amount of credits
+     * @return | true or false depending on if the major was successfully added
+     */
     public boolean addMajor(String majorName, ArrayList<String> requiredCourses,
             HashMap<ElectiveType, Electives> electives,
             ApplicationArea applicationArea,
