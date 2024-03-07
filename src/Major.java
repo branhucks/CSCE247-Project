@@ -117,6 +117,7 @@ public class Major {
     }
 
     /**
+     * THIS METHOD NEEDS TO BE IMPLEMENTED DIFFERENTLY
      * Calculates the student's progress within their major
      * 
      * @param finishedCourses | a list of completed courses

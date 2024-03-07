@@ -3,6 +3,8 @@ import java.util.HashMap;
 
 public class FACADE {
     private User user;
+    private Student student;
+    private Advisor advisor;
     private UserList userList;
     private CourseList courseList;
     private MajorList majorList;
@@ -41,6 +43,33 @@ public class FACADE {
     }
 
     /**
+     * Getter for User
+     * 
+     * @return | a User
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Getter for Student
+     * 
+     * @return | a Student
+     */
+    public Student getStudent() {
+        return student;
+    }
+
+    /**
+     * Getter for Advisor
+     * 
+     * @return | an Advisor
+     */
+    public Advisor getAdvisor() {
+        return advisor;
+    }
+
+    /**
      * Login to the system with given username
      * 
      * @param username |username of the user logging in
@@ -50,15 +79,21 @@ public class FACADE {
         if (!userList.haveUser(username))
             return false;
         user = userList.getUser(username);
+        if (user instanceof Student) {
+            student = (Student) user;
+        } else if (user instanceof Advisor) {
+            advisor = (Advisor) user;
+        }
         return true;
     }
 
     /**
-     * Logout and save all user objects
+     * Logout and save all user, major, and course objects
      */
     public void logout() {
         userList.saveUsers();
         majorList.saveMajors();
+        courseList.saveCourses();
     }
 
     /**
@@ -75,40 +110,12 @@ public class FACADE {
     }
 
     /**
-     * Getter for User
-     * 
-     * @return | a User
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
      * Get all courses
      * 
      * @return | list of all courses
      */
     public ArrayList<Course> getAllCourses() {
         return this.courseList.getCourses();
-    }
-
-    /**
-     * Get a course from the list of courses by the course ID
-     * 
-     * @param courseID | the course's ID to search
-     * @return | the course
-     */
-    public Course getCourseByCode(String courseID) {
-        return this.courseList.getCourse(courseID);
-    }
-
-    /**
-     * Gets the courses the student has selected
-     * 
-     * @return | a list of courses
-     */
-    public ArrayList<Course> getStudentCourses() {
-        return null;
     }
 
     /**
@@ -138,12 +145,32 @@ public class FACADE {
     }
 
     /**
+     * Get a course from the list of courses by the course ID
+     * 
+     * @param courseID | the course's ID to search
+     * @return | the course
+     */
+    public Course getCourseByCode(String courseID) {
+        return this.courseList.getCourse(courseID);
+    }
+
+    /**
+     * NEEDS COMPLETED
+     * Gets the courses the student has selected
+     * 
+     * @return | a list of courses
+     */
+    public ArrayList<String> getStudentCourses() {
+        return null;
+    }
+
+    /**
      * Gets the student's major progress
      * 
      * @return | an integer representation of the user's progress
      */
     public int getStudentProgress() {
-        return 0;
+        return student.getStudentProgress();
     }
 
     /**
@@ -152,14 +179,14 @@ public class FACADE {
      * @return | a Semester Plan
      */
     public SemesterPlan getEightSemesterPlan() {
-        return null;
+        return student.getSemesterPlan();
     }
 
     /**
      * Creates a transcript of the student's data
      */
     public void makeTranscript() {
-
+        student.printTranscript();
     }
 
     /*

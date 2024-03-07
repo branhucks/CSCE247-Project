@@ -117,6 +117,29 @@ public class Student extends User {
     }
 
     /**
+     * NEEDS COMPLETED
+     * Select the courses for the plan
+     * 
+     * @return | a list of courses
+     */
+    public ArrayList<String> selectCourses(ArrayList<String> requiredCourses) {
+        // TODO
+        return null;
+    }
+
+    /**
+     * NEEDS COMPLETED
+     * View the student's major progression
+     * 
+     * @return | an integer representation of the student's major progress
+     */
+    public int getStudentProgress() {
+        // TODO
+        return 0;
+    }
+
+    /**
+     * NEEDS COMPLETED
      * Creates an eight semester plan
      * 
      * @param courses | the courses to create the plan from
@@ -125,6 +148,14 @@ public class Student extends User {
     public SemesterPlan createSemesterPlan(ArrayList<Course> courses) {
         // TODO
         return null;
+    }
+
+    /**
+     * NEEDS COMPLETED
+     * Prints a copy of the transcript
+     */
+    public void printTranscript() {
+        // TODO
     }
 
     /**
@@ -146,30 +177,6 @@ public class Student extends User {
     public SemesterPlan viewWhatIf(Major major) {
         // TODO
         return null;
-    }
-
-    /**
-     * Select the courses for the plan
-     * 
-     * @return | a list of courses
-     */
-    public ArrayList<Course> selectCourses() {
-        // TODO
-        return null;
-    }
-
-    /**
-     * Prints a copy of the transcript
-     */
-    public void printTranscript() {
-        // TODO
-    }
-
-    /**
-     * View the student's major progression
-     */
-    public void viewMajorProgression() {
-        // TODO
     }
 
     /**
