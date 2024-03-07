@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * A CourseList class (Singeton Design Pattern)
@@ -101,8 +102,8 @@ public class CourseList {
             boolean completedClass) {
         if (haveCourse(courseID))
             return false;
-        courseList.add(new Course(courseName, courseID, requirement, semester, description, prerequisites, corequisites,
-                creditHours, passingGrade, completedClass));
+        courseList.add(new Course((UUID.randomUUID()).toString(), courseName, courseID, requirement, semester,
+                description, prerequisites, corequisites, creditHours, passingGrade, completedClass));
         return true;
     }
 

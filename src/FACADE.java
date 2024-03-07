@@ -109,6 +109,13 @@ public class FACADE {
         return userList.addUser(username, firstName, lastName, userType);
     }
 
+    public boolean addCourse(String courseName, String courseID, String requirement, Semester semester,
+            String description, ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites,
+            int creditHours, int passingGrade, boolean completedClass) {
+        return courseList.addCourse(courseName, courseID, requirement, semester, description, prerequisites,
+                corequisites, creditHours, passingGrade, completedClass);
+    }
+
     /**
      * Get all courses
      * 
@@ -140,7 +147,7 @@ public class FACADE {
      * 
      * @return | a list of majors
      */
-    public ArrayList<Major> getMajors() {
+    public ArrayList<Major> getAllMajors() {
         return this.majorList.getMajors();
     }
 

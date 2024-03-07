@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class UI {
     private static final String WELCOME_MESSAGE = "Welcome to the University of South Carolina DegreeWorks";
-    private String[] menuOptions = { "Create Account", "Login", "Add Major", "Logout" };
+    private String[] menuOptions = { "Create Account", "Login", "Add Major", "Add Course", "Logout" };
     private Scanner scanner;
     private FACADE facade;
 
@@ -39,6 +39,9 @@ public class UI {
                     break;
                 case (2):
                     addMajor();
+                    break;
+                case (3):
+                    addCourse();
                     break;
             }
         }
@@ -96,6 +99,17 @@ public class UI {
             System.out.println("You have successfully added a major.");
         } else {
             System.out.println("The major already exists.");
+        }
+    }
+
+    private void addCourse() {
+        String courseName = getField("Course Name");
+        String courseID = getField("Course ID");
+
+        if (facade.addCourse(courseName, courseID, null, null, null, null, null, 3, 70, false)) {
+            System.out.println("You have successfully added a course.");
+        } else {
+            System.out.println("The course already exists");
         }
     }
 

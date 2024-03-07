@@ -6,7 +6,7 @@ import java.util.HashMap;
  * 
  */
 public class Major {
-    private String id;
+    private String uuid;
     private String majorName;
     private ArrayList<String> requiredCourses;
     private HashMap<ElectiveType, Electives> electives;
@@ -35,17 +35,17 @@ public class Major {
     /**
      * Creates a new Major instance (OVERLOADED)
      * 
-     * @param id              | the major's UUID
+     * @param uuid            | the major's UUID
      * @param majorName
      * @param requiredCourses
      * @param electives
      * @param applicationArea
      * @param creditsRequired
      */
-    public Major(String id, String majorName, ArrayList<String> requiredCourses,
+    public Major(String uuid, String majorName, ArrayList<String> requiredCourses,
             HashMap<ElectiveType, Electives> electives, ApplicationArea applicationArea,
             int creditsRequired) {
-        this.id = id;
+        this.uuid = uuid;
         this.majorName = majorName;
         this.requiredCourses = new ArrayList<String>();
         this.electives = new HashMap<ElectiveType, Electives>();
@@ -81,7 +81,7 @@ public class Major {
     }
 
     public String getUUID() {
-        return this.id;
+        return this.uuid;
     }
 
     public ArrayList<String> getRequiredCourses() {
