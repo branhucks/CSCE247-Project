@@ -13,28 +13,30 @@ public class Student extends User {
     private boolean hasScholarship;
     private int majorProgress;
     private SemesterPlan semesterPlan;
+    private ArrayList<String> completedCourses;
 
     /**
      * Creates a new Student instance
      * 
-     * @param uuid           | the student's uuid
-     * @param username       | username of the student
-     * @param firstName      | first name of the student
-     * @param lastName       | last name of the student
-     * @param userType       | user type of the student
-     * @param studentID      | student's ID
-     * @param advisor        | the student's advisor
-     * @param major          | the student's major
-     * @param classYear      | the student's year
-     * @param gpa            | the student's gpa
-     * @param hasScholarship | whether the student has a scholarship or not
-     * @param majorProgress  | the student's major progress
-     * @param semesterPlan   | the student's semester plan
+     * @param uuid             | the student's uuid
+     * @param username         | username of the student
+     * @param firstName        | first name of the student
+     * @param lastName         | last name of the student
+     * @param userType         | user type of the student
+     * @param studentID        | student's ID
+     * @param advisor          | the student's advisor
+     * @param major            | the student's major
+     * @param classYear        | the student's year
+     * @param gpa              | the student's gpa
+     * @param hasScholarship   | whether the student has a scholarship or not
+     * @param majorProgress    | the student's major progress
+     * @param semesterPlan     | the student's semester plan
+     * @param completedCourses
      */
     public Student(String uuid, String username, String firstName, String lastName, String userType, String studentID,
             Major major,
             Year classYear, double gpa, boolean hasScholarship, int majorProgress,
-            SemesterPlan semesterPlan) {
+            SemesterPlan semesterPlan, ArrayList<String> completedCourses) {
         super(uuid, username, firstName, lastName, userType);
         this.studentID = studentID;
         this.major = major;
@@ -43,6 +45,7 @@ public class Student extends User {
         this.hasScholarship = hasScholarship;
         this.majorProgress = majorProgress;
         this.semesterPlan = semesterPlan;
+        completedCourses = new ArrayList<String>();
     }
 
     // Getters and Setters
@@ -116,15 +119,15 @@ public class Student extends User {
         this.semesterPlan = semesterPlan;
     }
 
+    public ArrayList<String> getCompletedCourses() {
+        return completedCourses;
+    }
+
     /**
-     * NEEDS COMPLETED
-     * Select the courses for the plan
-     * 
-     * @return | a list of courses
+     * Add a course to the list of completed courses
      */
-    public ArrayList<String> selectCourses(ArrayList<String> requiredCourses) {
-        // TODO
-        return null;
+    public void addCompletedCourse(String uuid) {
+        completedCourses.add(uuid);
     }
 
     /**

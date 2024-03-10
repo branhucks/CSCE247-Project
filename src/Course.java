@@ -14,25 +14,22 @@ public class Course {
     private ArrayList<Course> corequisites;
     private int creditHours;
     private int passingGrade;
-    private boolean completedClass;
 
     /**
      * Creates a new Course instance
      * 
-     * @param courseName     | the name of the course
-     * @param courseID       | the course's identifier
-     * @param requirement    | the requirement type
-     * @param semester       | the semester it is available
-     * @param description    | the course's description
-     * @param prerequisites  | the course's prerequisites
-     * @param corequisites   | the course's corequisites
-     * @param creditHours    | credit hours for the course
-     * @param passingGrade   | the passing grade for the course
-     * @param completedClass | if the class is completed
+     * @param courseName    | the name of the course
+     * @param courseID      | the course's identifier
+     * @param requirement   | the requirement type
+     * @param semester      | the semester it is available
+     * @param description   | the course's description
+     * @param prerequisites | the course's prerequisites
+     * @param corequisites  | the course's corequisites
+     * @param creditHours   | credit hours for the course
+     * @param passingGrade  | the passing grade for the course
      */
     public Course(String courseName, String courseID, String requirement, Semester semester, String description,
-            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade,
-            boolean completedClass) {
+            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade) {
         this.courseName = courseName;
         this.courseID = courseID;
         this.requirement = requirement;
@@ -42,13 +39,12 @@ public class Course {
         this.corequisites = new ArrayList<Course>();
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
-        this.completedClass = completedClass;
     }
 
     /**
      * Creates a new Course instance (OVERLOADED)
      * 
-     * @param uuid           | the course's UUID
+     * @param uuid          | the course's UUID
      * @param courseName
      * @param courseID
      * @param requirement
@@ -58,12 +54,10 @@ public class Course {
      * @param corequisites
      * @param creditHours
      * @param passingGrade
-     * @param completedClass
      */
     public Course(String uuid, String courseName, String courseID, String requirement, Semester semester,
             String description,
-            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade,
-            boolean completedClass) {
+            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade) {
         this.uuid = uuid;
         this.courseName = courseName;
         this.courseID = courseID;
@@ -74,7 +68,6 @@ public class Course {
         this.corequisites = new ArrayList<Course>();
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
-        this.completedClass = completedClass;
     }
 
     // Getters and Setters
@@ -118,10 +111,6 @@ public class Course {
         this.passingGrade = passingGrade;
     }
 
-    public void setCompletedClass(boolean completedClass) {
-        this.completedClass = completedClass;
-    }
-
     public String getUUID() {
         return uuid;
     }
@@ -160,10 +149,6 @@ public class Course {
 
     public int getPassingGrade() {
         return passingGrade;
-    }
-
-    public boolean getCompletedClass() {
-        return completedClass;
     }
 
     /**

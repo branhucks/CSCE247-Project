@@ -131,7 +131,7 @@ public class UserList {
         }
         if (userType.equalsIgnoreCase("Student")) {
             students.add(new Student((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null,
-                    null, null, 0.0, false, 0, null));
+                    null, null, 0.0, false, 0, null, null));
         } else if (userType.equalsIgnoreCase("Advisor")) {
             advisors.add(new Advisor((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null));
         }

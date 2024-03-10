@@ -4,15 +4,21 @@ import java.util.ArrayList;
  * SemesterPlan class
  */
 public class SemesterPlan {
-    private ArrayList<Course> courses;
+    private ArrayList<String> courses;
+    private String student;
+    private String classYear;
+    private String semester;
 
     /**
      * Creates a new SemesterPlan instance
      * 
      * @param courses | the courses in the semester plan
      */
-    public SemesterPlan(ArrayList<Course> courses) {
-        this.courses = courses;
+    public SemesterPlan(ArrayList<String> courses, String student, String classYear, String semester) {
+        this.courses = new ArrayList<String>();
+        this.student = student;
+        this.classYear = classYear;
+        this.semester = semester;
     }
 
     /**

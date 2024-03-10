@@ -113,7 +113,7 @@ public class FACADE {
             String description, ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites,
             int creditHours, int passingGrade, boolean completedClass) {
         return courseList.addCourse(courseName, courseID, requirement, semester, description, prerequisites,
-                corequisites, creditHours, passingGrade, completedClass);
+                corequisites, creditHours, passingGrade);
     }
 
     /**
@@ -162,7 +162,6 @@ public class FACADE {
     }
 
     /**
-     * NEEDS COMPLETED
      * Gets the courses the student has selected
      * 
      * @return | a list of courses

@@ -98,12 +98,11 @@ public class CourseList {
      */
     public boolean addCourse(String courseName, String courseID, String requirement, Semester semester,
             String description,
-            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade,
-            boolean completedClass) {
+            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade) {
         if (haveCourse(courseID))
             return false;
         courseList.add(new Course((UUID.randomUUID()).toString(), courseName, courseID, requirement, semester,
-                description, prerequisites, corequisites, creditHours, passingGrade, completedClass));
+                description, prerequisites, corequisites, creditHours, passingGrade));
         return true;
     }
 
