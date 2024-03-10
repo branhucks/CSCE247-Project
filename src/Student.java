@@ -13,6 +13,7 @@ public class Student extends User {
     private boolean hasScholarship;
     private int majorProgress;
     private SemesterPlan semesterPlan;
+    private ArrayList<Course> selectedCourses;
 
     /**
      * Creates a new Student instance
@@ -122,9 +123,14 @@ public class Student extends User {
      * 
      * @return | a list of courses
      */
-    public ArrayList<String> selectCourses(ArrayList<String> requiredCourses) {
-        // TODO
-        return null;
+    public void selectCourses(ArrayList<String> requiredCourses) {
+        for (String string : requiredCourses) {
+            this.selectedCourses.add(findCourse(string));
+        }
+    }
+    
+    public ArrayList<Course> getSelectedCourses() {
+        return selectedCourses;
     }
 
     /**
@@ -186,8 +192,8 @@ public class Student extends User {
      * @return | a course
      */
     public Course findCourse(String courseID) {
-        // TODO
-        return null;
+        CourseList courseList= CourseList.getInstance();
+        return courseList.getCourse(courseID);
     }
 
     /**
