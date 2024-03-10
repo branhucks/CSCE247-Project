@@ -19,6 +19,7 @@ public abstract class DataConstants {
     protected static final String STUDENT_HAS_SCHOLARSHIP = "hasScholarship";
     protected static final String STUDENT_MAJOR_PROGRESS = "majorProgress";
     protected static final String STUDENT_SEMESTER_PLAN = "semesterPlan";
+    protected static final String STUDENT_COMPLETED_COURSES = "completedCourses";
 
     // ADVISOR
     protected static final String ADVISOR_ADVISEES = "advisees";
@@ -44,5 +45,4 @@ public abstract class DataConstants {
     protected static final String COURSE_COREQUISITES = "corequisites";
     protected static final String COURSE_CREDIT_HOURS = "creditHours";
     protected static final String COURSE_PASSING_GRADE = "passingGrade";
-    protected static final String COURSE_COMPLETED_CLASS = "completedClass";
 }

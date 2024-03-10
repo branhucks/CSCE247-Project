@@ -40,9 +40,16 @@ public class DataLoader extends DataConstants {
                     boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
                     int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();
                     SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
+                    JSONArray coursesJSON = (JSONArray) personJSON.get(STUDENT_COMPLETED_COURSES);
+                    ArrayList<String> completedCourses = new ArrayList<>();
+                    for (int j = 0; j < coursesJSON.size(); j++) {
+                        JSONObject courseJSON = (JSONObject) coursesJSON.get(j);
+                        String courseUUID = (String) courseJSON.get(COURSE_ID);
+                        completedCourses.add(courseUUID);
+                    }
                     studentList.add(
                             new Student(id, username, firstName, lastName, userType, studentID, major, classYear,
-                                    gpa, hasScholarship, majorProgress, semesterPlan));
+                                    gpa, hasScholarship, majorProgress, semesterPlan, completedCourses));
                 }
             }
             return studentList;
@@ -156,9 +163,8 @@ public class DataLoader extends DataConstants {
                 ArrayList<Course> corequisites = (ArrayList<Course>) courseJSON.get(COURSE_COREQUISITES);
                 int creditHours = (int) courseJSON.get(COURSE_CREDIT_HOURS);
                 int passingGrade = (int) courseJSON.get(COURSE_PASSING_GRADE);
-                boolean completedClass = (boolean) courseJSON.get(COURSE_COMPLETED_CLASS);
                 courseList.add(new Course(id, courseName, courseID, requirement, semester, description, prerequisites,
-                        corequisites, creditHours, passingGrade, completedClass));
+                        corequisites, creditHours, passingGrade));
             }
             return courseList;
         } catch (Exception e) {
