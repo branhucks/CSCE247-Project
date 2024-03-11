@@ -9,6 +9,9 @@ public class FACADE {
     private CourseList courseList;
     private MajorList majorList;
 
+    /**
+     * Initializes the JSON instances
+     */
     FACADE() {
         userList = UserList.getInstance();
         courseList = CourseList.getInstance();
@@ -109,6 +112,21 @@ public class FACADE {
         return userList.addUser(username, firstName, lastName, userType);
     }
 
+    /**
+     * Adds a Course to the system
+     * 
+     * @param courseName     | the course's name
+     * @param courseID       | the course's ID
+     * @param requirement    | the type of requirement of the course
+     * @param semester       | the course's semester availability
+     * @param description    | the description of the course
+     * @param prerequisites  | the course's prerequisites
+     * @param corequisites   | the course's corequisites
+     * @param creditHours    | the amount of credit hours of the course
+     * @param passingGrade   | the passing grade of the course
+     * @param completedClass | if the course has been completed
+     * @return | true or false depending on if the course was successfully added
+     */
     public boolean addCourse(String courseName, String courseID, String requirement, Semester semester,
             String description, ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites,
             int creditHours, int passingGrade, boolean completedClass) {
