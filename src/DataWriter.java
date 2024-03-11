@@ -56,13 +56,6 @@ public class DataWriter extends DataConstants {
         userDetails.put(STUDENT_HAS_SCHOLARSHIP, student.getHasScholarship());
         userDetails.put(STUDENT_MAJOR_PROGRESS, student.getMajorProgress());
         userDetails.put(STUDENT_SEMESTER_PLAN, student.getSemesterPlan());
-        JSONArray coursesArray = new JSONArray();
-        for (String uuid : student.getCompletedCourses()) {
-            JSONObject courseObject = new JSONObject();
-            courseObject.put(COURSE_ID, uuid);
-            coursesArray.add(courseObject);
-        }
-        userDetails.put(STUDENT_COMPLETED_COURSES, coursesArray);
         return userDetails;
     }
 

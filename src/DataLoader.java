@@ -40,16 +40,9 @@ public class DataLoader extends DataConstants {
                     boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
                     int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();
                     SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
-                    JSONArray coursesJSON = (JSONArray) personJSON.get(STUDENT_COMPLETED_COURSES);
-                    ArrayList<String> completedCourses = new ArrayList<>();
-                    for (int j = 0; j < coursesJSON.size(); j++) {
-                        JSONObject courseJSON = (JSONObject) coursesJSON.get(j);
-                        String courseUUID = (String) courseJSON.get(COURSE_ID);
-                        completedCourses.add(courseUUID);
-                    }
                     studentList.add(
                             new Student(id, username, firstName, lastName, userType, studentID, major, classYear,
-                                    gpa, hasScholarship, majorProgress, semesterPlan, completedCourses));
+                                    gpa, hasScholarship, majorProgress, semesterPlan));
                 }
             }
             return studentList;
@@ -87,7 +80,8 @@ public class DataLoader extends DataConstants {
                         String studentID = (String) studentJSON.get(USER_ID);
                         advisees.add(studentID);
                     }
-                    Advisor advisor = new Advisor(id, username, firstName, lastName, userType, advisees);
+                    String department = (String) personJSON.get(ADVISOR_DEPARTMENT);
+                    Advisor advisor = new Advisor(id, username, firstName, lastName, userType, advisees, department);
                     // loop through students array and add the advisor to the student
                     for (Student student : DataLoader.getStudents()) {
                         student.setAdvisor(advisor);
@@ -161,8 +155,8 @@ public class DataLoader extends DataConstants {
                 ArrayList<PrereqOptions> prerequisites = (ArrayList<PrereqOptions>) courseJSON
                         .get(COURSE_PREREQUISITES);
                 ArrayList<Course> corequisites = (ArrayList<Course>) courseJSON.get(COURSE_COREQUISITES);
-                int creditHours = (int) courseJSON.get(COURSE_CREDIT_HOURS);
-                int passingGrade = (int) courseJSON.get(COURSE_PASSING_GRADE);
+                int creditHours = ((Long) courseJSON.get(COURSE_CREDIT_HOURS)).intValue();
+                int passingGrade = ((Long) courseJSON.get(COURSE_PASSING_GRADE)).intValue();
                 courseList.add(new Course(id, courseName, courseID, requirement, semester, description, prerequisites,
                         corequisites, creditHours, passingGrade));
             }

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class Advisor extends User {
     private String uuid;
     private ArrayList<String> advisees;
+    private String department;
+    private UserList studentList;
 
     /**
      * Creates a new Advisor instance
@@ -18,9 +20,10 @@ public class Advisor extends User {
      * @param advisees  | list of advisees
      */
     public Advisor(String uuid, String username, String firstName, String lastName, String userType,
-            ArrayList<String> advisees) {
+            ArrayList<String> advisees, String department) {
         super(uuid, username, firstName, lastName, userType);
         this.advisees = advisees;
+        this.department = department;
     }
 
     /**
@@ -39,6 +42,37 @@ public class Advisor extends User {
      */
     public void setAdvisees(ArrayList<String> advisees) {
         this.advisees = advisees;
+    }
+
+    /**
+     * Getter for the advisor's department
+     * 
+     * @return | a string representation of the department
+     */
+    public String getDepartment() {
+        return department;
+    }
+
+    /**
+     * A setter for the department
+     * 
+     * @param department | the advisor's department
+     */
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void addAdvisee(String studentID) {
+        advisees.add(studentList.getStudentByStudentID(studentID));
+    }
+
+    /**
+     * Lists all the advisor's advisees
+     */
+    public void listAdvisees() {
+        for (String studentUUID : advisees) {
+            System.out.println(studentUUID);
+        }
     }
 
     /**
@@ -92,13 +126,4 @@ public class Advisor extends User {
     public void enterGrades(Student student, ArrayList<Course> courses) {
         // TODO
     }
-
-    /*
-     * public void addStudent(String studentID) {
-     * for(Student s : advisees) {
-     * if(this.searchStudent(s.getStudentID()) != null)
-     * this.advisees.add(studentID);
-     * }
-     * }
-     */ // WORK IN PROGRESS
 }

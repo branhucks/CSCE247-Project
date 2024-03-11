@@ -23,6 +23,7 @@ public abstract class DataConstants {
 
     // ADVISOR
     protected static final String ADVISOR_ADVISEES = "advisees";
+    protected static final String ADVISOR_DEPARTMENT = "department";
 
     // MAJOR
     protected static final String MAJOR_FILE_NAME = "./src/majors.json";

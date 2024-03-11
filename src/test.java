@@ -1,5 +1,7 @@
 
 public class test {
+    private FACADE facade = new FACADE();
+
     public static void main(String[] args) {
         UserList userList = new UserList();
         for (Advisor advisor : userList.getAdvisors()) {
@@ -12,5 +14,4 @@ public class test {
             }
         }
     }
-
 }

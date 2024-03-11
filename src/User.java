@@ -19,7 +19,6 @@ public class User {
      * @param userType  | user type of the user
      */
     public User(String username, String firstName, String lastName, String userType) {
-        // this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
