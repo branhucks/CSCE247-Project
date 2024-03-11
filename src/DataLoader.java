@@ -34,8 +34,8 @@ public class DataLoader extends DataConstants {
                     String lastName = (String) personJSON.get(USER_LAST_NAME);
                     String userType = (String) personJSON.get(USER_USER_TYPE);
                     String studentID = (String) personJSON.get(STUDENT_STUDENT_ID);
-                    Major major = (Major) personJSON.get(STUDENT_MAJOR);
-                    Year classYear = (Year) personJSON.get(STUDENT_CLASS_YEAR);
+                    String major = (String) personJSON.get(STUDENT_MAJOR);
+                    String classYear = (String) personJSON.get(STUDENT_CLASS_YEAR);
                     double gpa = (double) personJSON.get(STUDENT_GPA);
                     boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
                     int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();

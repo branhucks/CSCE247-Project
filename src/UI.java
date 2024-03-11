@@ -4,7 +4,7 @@ public class UI {
     private static final String WELCOME_MESSAGE = "Welcome to the University of South Carolina DegreeWorks";
     private String[] menuOptions = { "Create Account", "Login", "Exit" };
     private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees", "Logout" };
-    private String[] studentOptions = { "Logout" };
+    private String[] studentOptions = { "Hello", "Logout" };
     private Scanner scanner;
     private FACADE facade;
     private User user;
@@ -38,14 +38,13 @@ public class UI {
                     user = login();
                     break;
             }
-
             if (user != null) {
                 System.out.println(user.getUserType());
                 break;
             }
         }
         while (true) {
-            if (user.getUserType().equals("Advisor")) {
+            if (user.getUserType().equalsIgnoreCase("Advisor")) {
                 // Display advisor menu
                 displayAdvisorMenu();
                 // Ask for command from user
@@ -70,7 +69,7 @@ public class UI {
                         listAdvisees();
                         break;
                 }
-            } else if (user.getUserType().equals("Student")) {
+            } else if (user.getUserType().equalsIgnoreCase("Student")) {
                 displayStudentMenu();
                 // Ask for command from user
                 int command = getCommand(studentOptions.length);
@@ -82,10 +81,7 @@ public class UI {
                 }
                 switch (command) {
                     case (0):
-                        createAccount();
-                        break;
-                    case (1):
-                        user = login();
+                        System.out.println("PLACEHOLDER");
                         break;
                 }
             } else {
@@ -136,11 +132,21 @@ public class UI {
         String firstName = getField("First Name");
         String lastName = getField("Last Name");
         String userType = getField("User Type");
-
-        if (facade.registerUser(username, firstName, lastName, userType)) {
-            System.out.println("You have successfully created an account.");
-        } else {
-            System.out.println("Sorry an account with that username already exists.");
+        if (userType.equals("Advisor")) {
+            String department = getField("Department");
+            if (facade.registerAdvisor(username, firstName, lastName, userType, department)) {
+                System.out.println("You have successfully created an Advisor account.");
+            } else {
+                System.out.println("Sorry an account with that username already exists.");
+            }
+        } else if (userType.equals("Student")) {
+            String major = getField("Major");
+            String classYear = getField("Class Year");
+            if (facade.registerStudent(username, firstName, lastName, userType, major, classYear)) {
+                System.out.println("You have successfully created a Student account.");
+            } else {
+                System.out.println("Sorry an account with that username already exists.");
+            }
         }
     }
 

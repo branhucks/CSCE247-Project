@@ -7,7 +7,7 @@ public class Advisor extends User {
     private String uuid;
     private ArrayList<String> advisees;
     private String department;
-    private UserList studentList;
+    private ArrayList<Student> students = DataLoader.getStudents();
 
     /**
      * Creates a new Advisor instance
@@ -22,7 +22,7 @@ public class Advisor extends User {
     public Advisor(String uuid, String username, String firstName, String lastName, String userType,
             ArrayList<String> advisees, String department) {
         super(uuid, username, firstName, lastName, userType);
-        this.advisees = advisees;
+        this.advisees = new ArrayList<String>();
         this.department = department;
     }
 
@@ -63,7 +63,22 @@ public class Advisor extends User {
     }
 
     public void addAdvisee(String studentID) {
-        advisees.add(studentList.getStudentByStudentID(studentID));
+        advisees.add(getStudentByStudentID(studentID));
+    }
+
+    /**
+     * Get student by Student ID
+     * 
+     * @param studentID | the student's ID to be searched
+     * @return | the student retrieved
+     */
+    public String getStudentByStudentID(String studentID) {
+        for (Student student : students) {
+            if (student.getStudentID().equals(studentID)) {
+                return student.getUUID();
+            }
+        }
+        return null;
     }
 
     /**

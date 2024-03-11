@@ -109,8 +109,40 @@ public class FACADE {
      * @param userType  | user type of the user
      * @return | true or false depending on if the user was successfully registered
      */
-    public boolean registerUser(String username, String firstName, String lastName, String userType) {
-        return userList.addUser(username, firstName, lastName, userType);
+    /*
+     * public boolean registerUser(String username, String firstName, String
+     * lastName, String userType) {
+     * return userList.addUser(username, firstName, lastName, userType);
+     * }
+     */
+
+    /**
+     * Register an advisor to the system
+     * 
+     * @param username   | the username of the advisor
+     * @param firstName  | the first name of the advisor
+     * @param lastName   | the last name of the advisor
+     * @param userType   | the type of user
+     * @param department | the department the advisor works for
+     * @return | true or false depending on if the advisor was successfully added
+     */
+    public boolean registerAdvisor(String username, String firstName, String lastName, String userType,
+            String department) {
+        return userList.addAdvisor(username, firstName, lastName, userType, department);
+    }
+
+    /**
+     * Register an student to the system
+     * 
+     * @param username  | the username of the student
+     * @param firstName | the first name of the student
+     * @param lastName  | the last name of the student
+     * @param userType  | the type of user
+     * @return | true or false depending on if the advisor was successfully added
+     */
+    public boolean registerStudent(String username, String firstName, String lastName, String userType,
+            String major, String classYear) {
+        return userList.addStudent(username, firstName, lastName, userType, major, classYear);
     }
 
     /**

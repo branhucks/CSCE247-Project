@@ -1,15 +1,1 @@
-[
-    {
-        "prerequisites": [],
-        "creditHours": 3,
-        "courseName": "Algorithmic Design I",
-        "passingGrade": 70,
-        "corequisites": [],
-        "description": null,
-        "semester": null,
-        "id": "12512345-9b2a-43db-9a74-f0edfe7725d7",
-        "requirement": null,
-        "completedClass": false,
-        "courseID": "CSCE 145"
-    }
-]
+[{"prerequisites":[],"creditHours":3,"courseName":"Algorithmic Design I","passingGrade":70,"corequisites":[],"description":null,"semester":null,"id":"12512345-9b2a-43db-9a74-f0edfe7725d7","requirement":null,"courseID":"CSCE 145"}]

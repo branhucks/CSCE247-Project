@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -9,6 +10,7 @@ public class UserList {
     public static UserList users;
     public ArrayList<Student> students;
     public ArrayList<Advisor> advisors;
+    private ArrayList<Major> majors;
 
     /**
      * Creates a new CourseList instance
@@ -16,6 +18,7 @@ public class UserList {
     public UserList() {
         students = DataLoader.getStudents();
         advisors = DataLoader.getAdvisors();
+        majors = DataLoader.getMajors();
     }
 
     /**
@@ -140,18 +143,91 @@ public class UserList {
      * @param userType  | user type of the user
      * @return | true or flase whether it was added successfully
      */
-    public boolean addUser(String username, String firstName, String lastName, String userType) {
+    /*
+     * public boolean addUser(String username, String firstName, String lastName,
+     * String userType) {
+     * if (haveUser(username)) {
+     * return false;
+     * }
+     * if (userType.equalsIgnoreCase("Student")) {
+     * students.add(new Student((UUID.randomUUID()).toString(), username, firstName,
+     * lastName, userType, null,
+     * null, null, 0.0, false, 0, null));
+     * } else if (userType.equalsIgnoreCase("Advisor")) {
+     * advisors.add(new Advisor((UUID.randomUUID()).toString(), username, firstName,
+     * lastName, userType, null,
+     * null));
+     * }
+     * return true;
+     * }
+     */
+
+    /**
+     * Adds a student to the system
+     * 
+     * @param username  | the username of the student
+     * @param firstName | the first name of the student
+     * @param lastName  | the last name of the student
+     * @param userType  | the type of user
+     * @param major     | the student's major
+     * @param classYear | the student's class year
+     * @return | true or false depending on if the student was successfully added
+     */
+    public boolean addStudent(String username, String firstName, String lastName, String userType, String major,
+            String classYear) {
         if (haveUser(username)) {
             return false;
         }
-        if (userType.equalsIgnoreCase("Student")) {
-            students.add(new Student((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null,
-                    null, null, 0.0, false, 0, null));
-        } else if (userType.equalsIgnoreCase("Advisor")) {
-            advisors.add(new Advisor((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null,
-                    null));
-        }
+        students.add(new Student((UUID.randomUUID()).toString(), username, firstName, lastName, userType,
+                generateStudentID(), getMajorUUIDByName(major),
+                classYear, 0.0, false, 0, null));
         return true;
+    }
+
+    /**
+     * Adds an advisor to the system
+     * 
+     * @param username   | the username of the advisor
+     * @param firstName  | the first name of the advisor
+     * @param lastName   | the last name of the advisor
+     * @param userType   | the type of user
+     * @param department | the department the advisor works for
+     * @return | true or false depending on if the advisor was successfully added
+     */
+    public boolean addAdvisor(String username, String firstName, String lastName, String userType, String department) {
+        if (haveUser(username)) {
+            return false;
+        }
+        advisors.add(
+                new Advisor((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null, department));
+        return true;
+    }
+
+    public String generateStudentID() {
+        // Generate a random uppercase letter
+        char randomLetter = generateRandomUppercaseLetter();
+        // Generate eight random digits
+        String randomDigits = generateRandomDigits(8);
+        // Combine the letter and digits to form the student ID
+        return randomLetter + randomDigits;
+    }
+
+    private char generateRandomUppercaseLetter() {
+        Random random = new Random();
+        // ASCII values for uppercase letters: A=65, Z=90
+        int randomAscii = random.nextInt(26) + 'A';
+        return (char) randomAscii;
+    }
+
+    private String generateRandomDigits(int length) {
+        Random random = new Random();
+        StringBuilder digits = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            // ASCII values for digits: 0=48, 9=57
+            int randomDigit = random.nextInt(10) + '0';
+            digits.append((char) randomDigit);
+        }
+        return digits.toString();
     }
 
     /**
@@ -159,5 +235,13 @@ public class UserList {
      */
     public void saveUsers() {
         DataWriter.saveUsers(students, advisors);
+    }
+
+    public String getMajorUUIDByName(String majorName) {
+        for (Major major : majors) {
+            if (major.getMajorName().equals(majorName))
+                return major.getUUID();
+        }
+        return null;
     }
 }

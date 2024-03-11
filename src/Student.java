@@ -5,10 +5,10 @@ import java.util.ArrayList;
  */
 public class Student extends User {
     private String uuid;
-    private Year classYear;
+    private String classYear;
     private Advisor advisor;
     private double gpa;
-    private Major major;
+    private String major;
     private String studentID;
     private boolean hasScholarship;
     private int majorProgress;
@@ -24,7 +24,7 @@ public class Student extends User {
      * @param userType       | user type of the student
      * @param studentID      | student's ID
      * @param advisor        | the student's advisor
-     * @param major          | the student's major
+     * @param major          | the UUID of the student's major
      * @param classYear      | the student's year
      * @param gpa            | the student's gpa
      * @param hasScholarship | whether the student has a scholarship or not
@@ -32,8 +32,8 @@ public class Student extends User {
      * @param semesterPlan   | the student's semester plan
      */
     public Student(String uuid, String username, String firstName, String lastName, String userType, String studentID,
-            Major major,
-            Year classYear, double gpa, boolean hasScholarship, int majorProgress,
+            String major,
+            String classYear, double gpa, boolean hasScholarship, int majorProgress,
             SemesterPlan eightSemesterPlan) {
         super(uuid, username, firstName, lastName, userType);
         this.studentID = studentID;
@@ -65,22 +65,22 @@ public class Student extends User {
         this.advisor = advisor;
     }
 
-    public Major getMajor() {
+    public String getMajor() {
         return major;
     }
 
-    public void setMajor(Major major) {
+    public void setMajor(String major) {
         if (major == null) {
             this.major = null;
         }
         this.major = major;
     }
 
-    public Year getClassYear() {
+    public String getClassYear() {
         return classYear;
     }
 
-    public void setClassYear(Year classYear) {
+    public void setClassYear(String classYear) {
         this.classYear = classYear;
     }
 
