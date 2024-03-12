@@ -133,5 +133,347 @@
         "semester": null,
         "id": "5df379ae-b7d5-4f2a-8a2b-4139ca864d0c",
         "courseID": "ENGL 101"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 4,
+        "courseName": "Calculus 1",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "a309289c-a400-4556-83b5-e30d53f942b5",
+        "courseID": "MATH 141"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 4,
+        "courseName": "Calculus II",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "3c86aa89-6091-4a48-bb99-c29b6396166c",
+        "courseID": "MATH 142"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "General Chemistry I",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "9f5596ae-a713-4026-9ceb-ef18f68ce720",
+        "courseID": "CHEM 111"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "General Chemistry I Lab",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "e2d1a1de-25b8-434b-857c-2d121e9b0844",
+        "courseID": "CHEM 111L"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Essentials of Physics I",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "c94e2497-3559-4c24-9aae-986eb32692fd",
+        "courseID": "PHYS 211"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "Essentials of Physics I Lab",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "b79293d2-15b4-40e4-a35e-34e21f8038b0",
+        "courseID": "PHYS 211L"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "General Chemistry II",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "4a0422d9-04b4-4f39-a006-612985d063b6",
+        "courseID": "CHEM 112"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "General Chemistry II Lab",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "f2d6d682-96c2-419d-8c66-d64d0c27cf8e",
+        "courseID": "CHEM 112L"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Essentials of Physics II",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "355fd973-a3bb-4a98-b32d-2283368a50a0",
+        "courseID": "PHYS 212"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "Essentials of Physics II Lab",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "28c7f835-5bdc-4d48-997f-8a195bade932",
+        "courseID": "PHYS 212L"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Vector Calculus",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "e30755b8-cd8a-4e8c-bf39-48f8ca96e0f4",
+        "courseID": "MATH 241"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Technical Writing",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "782b1f9a-4de5-42df-b4f0-f659dc6cdbb8",
+        "courseID": "ENGL 462"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Business Writing",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "eee4ba65-1857-4e3d-9ee6-bbbfab5189e2",
+        "courseID": "ENGL 463"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Statistics for Engineers",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "238b9a7d-bfde-41bd-bdc5-50b78fa90ad6",
+        "courseID": "STAT 509"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Applied Linear Algebra",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "ba192ef0-ae7b-4a66-88bc-517618cb795e",
+        "courseID": "MATH 344"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "Applied Linear Algebra Lab",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "f18bfabc-e183-409a-a2d8-13c12b18d2b7",
+        "courseID": "MATH 344L"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Rhetoric and Composition",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "41afb18a-b706-421d-a148-5f2ccee3c5a8",
+        "courseID": "ENGL 102"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Discrete Structures",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "76d7bab2-351f-43b6-b3ae-14f4aa41a717",
+        "courseID": "MATH 374"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Intro. to Computer Networks",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "9536fa9e-4239-4634-ac0d-676cbe42f2a6",
+        "courseID": "CSCE 416"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Capstone Computing Project II",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "b7f0bb09-57ce-4535-b230-d5529635a5c0",
+        "courseID": "CSCE 492"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Calc. for Bus. Admin. & Soc. Sci.",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "7e34b812-73a4-42d7-b066-6b4542d92fd5",
+        "courseID": "MATH 122"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Business Applications Programming",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "e69f88af-0520-49a3-94ab-ec304a508815",
+        "courseID": "CSCE 205"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Client-Server Computing",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "395e92fa-b9a6-4dd5-b6d4-66d1bb6709dd",
+        "courseID": "CSCE 242"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Computer Hardware Foundations",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "2af277af-f46a-4076-aef1-30a25d6e7c04",
+        "courseID": "CSCE 210"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Introduction to Economics",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "8c7cf5ed-e998-4249-bc3d-51c834716169",
+        "courseID": "ECON 224"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Public Communication",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "b7df5b6b-1794-4a6b-ac5b-965ba4fae7f0",
+        "courseID": "SPCH 140"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Online Public Communication",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "60fb53c0-0db4-4259-9537-1ffce9cae5e3",
+        "courseID": "SPCH 145"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Business & Prof. Speaking",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "5567c6e6-a871-4417-bdb4-580c54f177f1",
+        "courseID": "SPCH 230"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Introduction to Computer Security",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "db7ec38e-377b-4d41-b88f-dcbc1607b8c8",
+        "courseID": "CSCE 201"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Discrete Math. for Computer Sci.",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "86c64dd5-a277-480f-bd93-cd40eaa2bcc8",
+        "courseID": "MATH 174"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Computer Info. Systems in Bus.",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "fc61842a-3dd2-4d1c-960f-764ca8ee073e",
+        "courseID": "MGSC 290"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Statistical Methods I",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "a61f147f-b963-461c-b3e6-a2a205e010e4",
+        "courseID": "STAT 515"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Survey of Accounting",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "62a28e03-a27c-4c5c-ae89-80f708a6f073",
+        "courseID": "ACCT 222"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Principles of Management",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "230ca3ae-6df6-43f1-be31-3ae61b55e2bb",
+        "courseID": "MGMT 371"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Database System Design",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "2d1c92aa-115a-42db-9599-8f3f039fbe8e",
+        "courseID": "CSCE 520"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Strategic Mgmt. of Info. Systems",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "51fc6808-c021-46cc-a6c1-4702e020b0bb",
+        "courseID": "CSCE 594"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Statistical Methods II",
+        "passingGrade": 60,
+        "semester": null,
+        "id": "031f5cc1-bb69-4aaf-a55b-a49a48c959a3",
+        "courseID": "STAT 516"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Information Security Principles",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "350a4377-bea0-4ca0-b5f1-3f8166ab3d96",
+        "courseID": "CSCE 522"
     }
 ]
