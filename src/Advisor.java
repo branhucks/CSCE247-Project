@@ -125,11 +125,17 @@ public class Advisor extends User {
     /**
      * Make a note on the student's account
      * 
-     * @param student | the student to write the note to
-     * @param note    | the note to send to the student
+     * @param studentID | the student to write the note to
+     * @param note      | the note to send to the student
      */
-    public void makeNote(Student student, String note) {
-        // TODO
+    public void makeNote(String studentID, String note) {
+        Student realStudent = null;
+        String studentUUID = getStudentByStudentID(studentID);
+        for (Student student : students) {
+            if (student.getUUID().equals(studentUUID))
+                realStudent = student;
+        }
+        realStudent.setNoteFromAdvisor(note);
     }
 
     /**

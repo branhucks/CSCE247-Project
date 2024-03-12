@@ -12,29 +12,32 @@ public class Student extends User {
     private String studentID;
     private boolean hasScholarship;
     private int majorProgress;
-    private SemesterPlan eightSemesterPlan;
+    private SemesterPlan semesterPlan;
+    private String noteFromAdvisor;
 
     /**
      * Creates a new Student instance
      * 
-     * @param uuid           | the student's uuid
-     * @param username       | username of the student
-     * @param firstName      | first name of the student
-     * @param lastName       | last name of the student
-     * @param userType       | user type of the student
-     * @param studentID      | student's ID
-     * @param advisor        | the student's advisor
-     * @param major          | the UUID of the student's major
-     * @param classYear      | the student's year
-     * @param gpa            | the student's gpa
-     * @param hasScholarship | whether the student has a scholarship or not
-     * @param majorProgress  | the student's major progress
-     * @param semesterPlan   | the student's semester plan
+     * @param uuid            | the student's uuid
+     * @param username        | username of the student
+     * @param firstName       | first name of the student
+     * @param lastName        | last name of the student
+     * @param userType        | user type of the student
+     * @param studentID       | student's ID
+     * @param advisor         | the student's advisor
+     * @param major           | the UUID of the student's major
+     * @param classYear       | the student's year
+     * @param gpa             | the student's gpa
+     * @param hasScholarship  | whether the student has a scholarship or not
+     * @param majorProgress   | the student's major progress
+     * @param semesterPlan    | the student's semester plan
+     * @param noteFromAdvisor | the notes the advisor places on the student's
+     *                        account
      */
     public Student(String uuid, String username, String firstName, String lastName, String userType, String studentID,
             String major,
             String classYear, double gpa, boolean hasScholarship, int majorProgress,
-            SemesterPlan eightSemesterPlan) {
+            SemesterPlan semesterPlan, String noteFromAdvisor) {
         super(uuid, username, firstName, lastName, userType);
         this.studentID = studentID;
         this.major = major;
@@ -42,7 +45,8 @@ public class Student extends User {
         this.gpa = gpa;
         this.hasScholarship = hasScholarship;
         this.majorProgress = majorProgress;
-        this.eightSemesterPlan = eightSemesterPlan;
+        this.semesterPlan = semesterPlan;
+        this.noteFromAdvisor = noteFromAdvisor;
     }
 
     // Getters and Setters
@@ -109,11 +113,19 @@ public class Student extends User {
     }
 
     public SemesterPlan getSemesterPlan() {
-        return eightSemesterPlan;
+        return semesterPlan;
     }
 
     public void setSemesterPlan(SemesterPlan semesterPlan) {
-        this.eightSemesterPlan = semesterPlan;
+        this.semesterPlan = semesterPlan;
+    }
+
+    public void setNoteFromAdvisor(String noteFromAdvisor) {
+        this.noteFromAdvisor = noteFromAdvisor;
+    }
+
+    public String getNoteFromAdvisor() {
+        return noteFromAdvisor;
     }
 
     /**

@@ -180,7 +180,7 @@ public class UserList {
         }
         students.add(new Student((UUID.randomUUID()).toString(), username, firstName, lastName, userType,
                 generateStudentID(), getMajorUUIDByName(major),
-                classYear, 0.0, false, 0, null));
+                classYear, 0.0, false, 0, null, null));
         return true;
     }
 
