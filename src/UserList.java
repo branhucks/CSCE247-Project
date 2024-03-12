@@ -39,12 +39,27 @@ public class UserList {
      * Get student by Student ID
      * 
      * @param studentID | the student's ID to be searched
-     * @return | the student retrieved
+     * @return | the student UUID retrieved
      */
-    public String getStudentByStudentID(String studentID) {
+    public String getStudentUUIDByStudentID(String studentID) {
         for (Student student : students) {
             if (student.getStudentID().equals(studentID)) {
                 return student.getUUID();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Get student by Student ID
+     * 
+     * @param studentID | the student's ID to be searched
+     * @return | the student retrieved
+     */
+    public Student getStudentByStudentID(String studentID) {
+        for (Student student : students) {
+            if (student.getStudentID().equals(studentID)) {
+                return student;
             }
         }
         return null;
@@ -179,7 +194,7 @@ public class UserList {
             return false;
         }
         students.add(new Student((UUID.randomUUID()).toString(), username, firstName, lastName, userType,
-                generateStudentID(), getMajorUUIDByName(major),
+                generateStudentID(), null, getMajorUUIDByName(major),
                 classYear, 0.0, false, 0, null, null));
         return true;
     }

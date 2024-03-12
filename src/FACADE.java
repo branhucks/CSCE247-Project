@@ -248,7 +248,10 @@ public class FACADE {
      * List all students in the Advisor's advisees list
      */
     public void listAdvisees() {
-        advisor.listAdvisees();
+        for (String studentUUID : advisor.getAdvisees()) {
+            Student student = userList.getStudentByUUID(studentUUID);
+            System.out.println(student.getFirstName() + " " + student.getLastName());
+        }
     }
 
     /**
@@ -257,7 +260,13 @@ public class FACADE {
      * @param studentID | the student's ID to be added
      */
     public void addAdvisee(String studentID) {
-        advisor.addAdvisee(studentID);
+        String studentUUID = userList.getStudentUUIDByStudentID(studentID);
+        advisor.addAdvisee(studentUUID);
+        for (Student student : userList.getStudents()) {
+            if (advisor.getAdvisees().contains(student.getUUID())) {
+                student.setAdvisor(advisor.getUUID());
+            }
+        }
     }
 
     /**
@@ -266,7 +275,9 @@ public class FACADE {
      * @param studentID | the student to write the note
      */
     public void makeNote(String studentID, String note) {
-        advisor.makeNote(studentID, note);
+        Student student = userList.getStudentByStudentID(studentID);
+        student.setNoteFromAdvisor(note);
+
     }
 
     /**

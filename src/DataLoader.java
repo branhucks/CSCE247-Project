@@ -28,12 +28,13 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
 
                 if (personJSON.get(USER_USER_TYPE).equals("Student")) {
-                    String id = (String) personJSON.get(USER_ID);
+                    String id = (String) personJSON.get(USER_UUID);
                     String username = (String) personJSON.get(USER_USERNAME);
                     String firstName = (String) personJSON.get(USER_FIRST_NAME);
                     String lastName = (String) personJSON.get(USER_LAST_NAME);
                     String userType = (String) personJSON.get(USER_USER_TYPE);
                     String studentID = (String) personJSON.get(STUDENT_STUDENT_ID);
+                    String advisor = (String) personJSON.get(STUDENT_ADVISOR);
                     String major = (String) personJSON.get(STUDENT_MAJOR);
                     String classYear = (String) personJSON.get(STUDENT_CLASS_YEAR);
                     double gpa = (double) personJSON.get(STUDENT_GPA);
@@ -42,8 +43,8 @@ public class DataLoader extends DataConstants {
                     SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
                     String noteFromAdvisor = (String) personJSON.get(STUDENT_NOTE);
                     studentList.add(
-                            new Student(id, username, firstName, lastName, userType, studentID, major, classYear,
-                                    gpa, hasScholarship, majorProgress, semesterPlan, noteFromAdvisor));
+                            new Student(id, username, firstName, lastName, userType, studentID, advisor, major,
+                                    classYear, gpa, hasScholarship, majorProgress, semesterPlan, noteFromAdvisor));
                 }
             }
             return studentList;
@@ -69,7 +70,7 @@ public class DataLoader extends DataConstants {
                 JSONObject personJSON = (JSONObject) peopleJSON.get(i);
 
                 if (personJSON.get(USER_USER_TYPE).equals("Advisor")) {
-                    String id = (String) personJSON.get(USER_ID);
+                    String id = (String) personJSON.get(USER_UUID);
                     String username = (String) personJSON.get(USER_USERNAME);
                     String firstName = (String) personJSON.get(USER_FIRST_NAME);
                     String lastName = (String) personJSON.get(USER_LAST_NAME);
@@ -78,15 +79,11 @@ public class DataLoader extends DataConstants {
                     ArrayList<String> advisees = new ArrayList<>();
                     for (int j = 0; j < adviseesJSON.size(); j++) {
                         JSONObject studentJSON = (JSONObject) adviseesJSON.get(j);
-                        String studentID = (String) studentJSON.get(USER_ID);
-                        advisees.add(studentID);
+                        String studentUUID = (String) studentJSON.get(USER_UUID);
+                        advisees.add(studentUUID);
                     }
                     String department = (String) personJSON.get(ADVISOR_DEPARTMENT);
                     Advisor advisor = new Advisor(id, username, firstName, lastName, userType, advisees, department);
-                    // loop through students array and add the advisor to the student
-                    for (Student student : DataLoader.getStudents()) {
-                        student.setAdvisor(advisor);
-                    }
                     advisorList.add(advisor);
                 }
             }

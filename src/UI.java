@@ -92,7 +92,7 @@ public class UI {
                         System.out.println("PLACEHOLDER");
                         break;
                     case (1):
-                        viewNotes();
+                        viewNote();
                         break;
                 }
             } else {
@@ -208,14 +208,14 @@ public class UI {
     }
 
     private void makeNote() {
-        System.out.println("What student would you like to write a note to?");
+        System.out.println("Please enter the Student ID of the student you would like to write a note to: ");
         String studentID = scanner.nextLine();
-        System.out.println("Enter your Note:");
+        System.out.println("Enter Note: ");
         String note = scanner.nextLine();
         facade.makeNote(studentID, note);
     }
 
-    private void viewNotes() {
+    private void viewNote() {
         System.out.println(facade.viewNote());
     }
 

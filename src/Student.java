@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Student extends User {
     private String uuid;
     private String classYear;
-    private Advisor advisor;
+    private String advisor;
     private double gpa;
     private String major;
     private String studentID;
@@ -35,11 +35,11 @@ public class Student extends User {
      *                        account
      */
     public Student(String uuid, String username, String firstName, String lastName, String userType, String studentID,
-            String major,
-            String classYear, double gpa, boolean hasScholarship, int majorProgress,
+            String advisor, String major, String classYear, double gpa, boolean hasScholarship, int majorProgress,
             SemesterPlan semesterPlan, String noteFromAdvisor) {
         super(uuid, username, firstName, lastName, userType);
         this.studentID = studentID;
+        this.advisor = advisor;
         this.major = major;
         this.classYear = classYear;
         this.gpa = gpa;
@@ -58,14 +58,11 @@ public class Student extends User {
         this.studentID = studentID;
     }
 
-    public Advisor getAdvisor() {
+    public String getAdvisor() {
         return advisor;
     }
 
-    public void setAdvisor(Advisor advisor) {
-        if (advisor == null) {
-            this.advisor = null;
-        }
+    public void setAdvisor(String advisor) {
         this.advisor = advisor;
     }
 

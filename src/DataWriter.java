@@ -43,7 +43,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getStudentJSON(Student student) {
         JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, student.getUUID());
+        userDetails.put(USER_UUID, student.getUUID());
         userDetails.put(USER_USERNAME, student.getUsername());
         userDetails.put(USER_FIRST_NAME, student.getFirstName());
         userDetails.put(USER_LAST_NAME, student.getLastName());
@@ -68,7 +68,7 @@ public class DataWriter extends DataConstants {
      */
     public static JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, advisor.getUUID());
+        userDetails.put(USER_UUID, advisor.getUUID());
         userDetails.put(USER_USERNAME, advisor.getUsername());
         userDetails.put(USER_FIRST_NAME, advisor.getFirstName());
         userDetails.put(USER_LAST_NAME, advisor.getLastName());
@@ -76,7 +76,7 @@ public class DataWriter extends DataConstants {
         JSONArray adviseesArray = new JSONArray();
         for (String uuid : advisor.getAdvisees()) {
             JSONObject adviseeObject = new JSONObject();
-            adviseeObject.put(USER_ID, uuid);
+            adviseeObject.put(USER_UUID, uuid);
             adviseesArray.add(adviseeObject);
         }
         userDetails.put(ADVISOR_ADVISEES, adviseesArray);

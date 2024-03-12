@@ -7,7 +7,6 @@ public class Advisor extends User {
     private String uuid;
     private ArrayList<String> advisees;
     private String department;
-    private ArrayList<Student> students = DataLoader.getStudents();
 
     /**
      * Creates a new Advisor instance
@@ -62,32 +61,8 @@ public class Advisor extends User {
         this.department = department;
     }
 
-    public void addAdvisee(String studentID) {
-        advisees.add(getStudentByStudentID(studentID));
-    }
-
-    /**
-     * Get student by Student ID
-     * 
-     * @param studentID | the student's ID to be searched
-     * @return | the student retrieved
-     */
-    public String getStudentByStudentID(String studentID) {
-        for (Student student : students) {
-            if (student.getStudentID().equals(studentID)) {
-                return student.getUUID();
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Lists all the advisor's advisees
-     */
-    public void listAdvisees() {
-        for (String studentUUID : advisees) {
-            System.out.println(studentUUID);
-        }
+    public void addAdvisee(String studentUUID) {
+        advisees.add(studentUUID);
     }
 
     /**
@@ -120,22 +95,6 @@ public class Advisor extends User {
     public Student selectStudentProfile(String studentID) {
         // TODO
         return null;
-    }
-
-    /**
-     * Make a note on the student's account
-     * 
-     * @param studentID | the student to write the note to
-     * @param note      | the note to send to the student
-     */
-    public void makeNote(String studentID, String note) {
-        Student realStudent = null;
-        String studentUUID = getStudentByStudentID(studentID);
-        for (Student student : students) {
-            if (student.getUUID().equals(studentUUID))
-                realStudent = student;
-        }
-        realStudent.setNoteFromAdvisor(note);
     }
 
     /**
