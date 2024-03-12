@@ -93,9 +93,8 @@ public class CourseList {
      * @param passingGrade  | the passing grade for the course
      * @return | true or false depending on if the course was added successfully
      */
-    public boolean addCourse(String courseName, String courseID, String requirement, Semester semester,
-            String description,
-            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade) {
+    public boolean addCourse(String courseName, String courseID, Semester semester,
+            ArrayList<PrereqOptions> prerequisites, int creditHours, int passingGrade) {
         if (haveCourse(courseID))
             return false;
         courseList.add(new Course((UUID.randomUUID()).toString(), courseName, courseID, semester, prerequisites,

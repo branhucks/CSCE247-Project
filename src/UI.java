@@ -182,7 +182,7 @@ public class UI {
         int creditHours = getIntField("Credit Hours");
         int passingGrade = getIntField("Passing Grade");
 
-        if (facade.addCourse(courseName, courseID, null, null, null, null, null, creditHours, passingGrade, false)) {
+        if (facade.addCourse(courseName, courseID, null, null, creditHours, passingGrade)) {
             System.out.println("You have successfully added a course.");
         } else {
             System.out.println("The course already exists");

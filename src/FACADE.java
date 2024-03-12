@@ -160,11 +160,9 @@ public class FACADE {
      * @param completedClass | if the course has been completed
      * @return | true or false depending on if the course was successfully added
      */
-    public boolean addCourse(String courseName, String courseID, String requirement, Semester semester,
-            String description, ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites,
-            int creditHours, int passingGrade, boolean completedClass) {
-        return courseList.addCourse(courseName, courseID, requirement, semester, description, prerequisites,
-                corequisites, creditHours, passingGrade);
+    public boolean addCourse(String courseName, String courseID, Semester semester,
+            ArrayList<PrereqOptions> prerequisites, int creditHours, int passingGrade) {
+        return courseList.addCourse(courseName, courseID, semester, prerequisites, creditHours, passingGrade);
     }
 
     /**

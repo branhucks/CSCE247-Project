@@ -16,5 +16,122 @@
         "semester": null,
         "id": "02b2b9fe-ab95-4a4a-889b-c968b8d639a3",
         "courseID": "CSCE 190"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 4,
+        "courseName": "Algorithmic Design II",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "3ac17843-d301-41ed-9218-c07105e08ffa",
+        "courseID": "CSCE 146"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "UNIX\/Linux Fundamentals",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "66dfe7a3-9a6f-4f0b-8b0c-685d0cb1d50c",
+        "courseID": "CSCE 215"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Digital Logic Design",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "ca0c5283-006a-4f05-82c8-c5f3e3f909b1",
+        "courseID": "CSCE 211"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Adv. Programming Techniques",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "c34e52d5-43fd-4b75-a48e-ef73875897b7",
+        "courseID": "CSCE 240"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Intro. to Computer Architecture",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "034f1f7d-ef65-43d1-b4d6-f1ec6542c300",
+        "courseID": "CSCE 212"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Software Engineering",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "eb6ddd47-4d0a-4ee9-a467-86743bcc1c41",
+        "courseID": "CSCE 247"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Operating Systems",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "242dd5c1-97d4-496e-b2ac-a9333ff0aa21",
+        "courseID": "CSCE 311"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Prog. Lang. Structures",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "bbe7fc50-487a-4bbb-8d38-0c757fd05a21",
+        "courseID": "CSCE 330"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Data Structures & Algorithms",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "fb20da47-66b2-41d0-b1f4-fe6f7c25d293",
+        "courseID": "CSCE 350"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "Prof. Issues In Comp. Sci. Engr.",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "45921683-bf66-49e5-9036-785189532dc1",
+        "courseID": "CSCE 390"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Capstone Computing Project I",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "d2a4fac8-d4cf-4ebe-9b3a-ec38211b4e8f",
+        "courseID": "CSCE 490"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Foundations of Computation",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "d07adac5-9a7b-421a-a9c9-95da277e1aa4",
+        "courseID": "CSCE 355"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 3,
+        "courseName": "Critical Reading and Composition",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "5df379ae-b7d5-4f2a-8a2b-4139ca864d0c",
+        "courseID": "ENGL 101"
     }
 ]
