@@ -115,11 +115,8 @@ public class DataWriter extends DataConstants {
         courseDetails.put(COURSE_ID, course.getUUID());
         courseDetails.put(COURSE_COURSE_NAME, course.getCourseName());
         courseDetails.put(COURSE_COURSE_ID, course.getCourseID());
-        courseDetails.put(COURSE_REQUIREMENT, course.getRequirement());
         courseDetails.put(COURSE_SEMESTER, course.getSemester());
-        courseDetails.put(COURSE_DESCRIPTION, course.getDescription());
         courseDetails.put(COURSE_PREREQUISITES, course.getPrerequisites());
-        courseDetails.put(COURSE_COREQUISITES, course.getCorequisites());
         courseDetails.put(COURSE_CREDIT_HOURS, course.getCreditHours());
         courseDetails.put(COURSE_PASSING_GRADE, course.getPassingGrade());
         return courseDetails;

@@ -29,6 +29,7 @@ public class UI {
             }
             if (command == menuOptions.length - 1) {
                 facade.logout();
+                break;
             }
             switch (command) {
                 case (0):
@@ -54,6 +55,7 @@ public class UI {
                 }
                 if (command == advisorOptions.length - 1) {
                     facade.logout();
+                    break;
                 }
                 switch (command) {
                     case (0):
@@ -78,6 +80,7 @@ public class UI {
                 }
                 if (command == studentOptions.length - 1) {
                     facade.logout();
+                    break;
                 }
                 switch (command) {
                     case (0):
@@ -176,8 +179,10 @@ public class UI {
     private void addCourse() {
         String courseName = getField("Course Name");
         String courseID = getField("Course ID");
+        int creditHours = getIntField("Credit Hours");
+        int passingGrade = getIntField("Passing Grade");
 
-        if (facade.addCourse(courseName, courseID, null, null, null, null, null, 3, 70, false)) {
+        if (facade.addCourse(courseName, courseID, null, null, null, null, null, creditHours, passingGrade, false)) {
             System.out.println("You have successfully added a course.");
         } else {
             System.out.println("The course already exists");
@@ -197,6 +202,13 @@ public class UI {
     private String getField(String prompt) {
         System.out.print(prompt + ": ");
         return scanner.nextLine();
+    }
+
+    private int getIntField(String prompt) {
+        System.out.print(prompt + ": ");
+        int toReturn = scanner.nextInt();
+        scanner.nextLine();
+        return toReturn;
     }
 
     public static void main(String[] args) {

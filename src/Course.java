@@ -7,11 +7,8 @@ public class Course {
     private String uuid;
     private String courseName;
     private String courseID;
-    private String requirement;
     private Semester semester;
-    private String description;
     private ArrayList<PrereqOptions> prerequisites;
-    private ArrayList<Course> corequisites;
     private int creditHours;
     private int passingGrade;
 
@@ -28,15 +25,12 @@ public class Course {
      * @param creditHours   | credit hours for the course
      * @param passingGrade  | the passing grade for the course
      */
-    public Course(String courseName, String courseID, String requirement, Semester semester, String description,
-            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade) {
+    public Course(String courseName, String courseID, Semester semester,
+            ArrayList<PrereqOptions> prerequisites, int creditHours, int passingGrade) {
         this.courseName = courseName;
         this.courseID = courseID;
-        this.requirement = requirement;
         this.semester = semester;
-        this.description = description;
         this.prerequisites = new ArrayList<PrereqOptions>();
-        this.corequisites = new ArrayList<Course>();
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
     }
@@ -47,25 +41,18 @@ public class Course {
      * @param uuid          | the course's UUID
      * @param courseName
      * @param courseID
-     * @param requirement
      * @param semester
-     * @param description
      * @param prerequisites
-     * @param corequisites
      * @param creditHours
      * @param passingGrade
      */
-    public Course(String uuid, String courseName, String courseID, String requirement, Semester semester,
-            String description,
-            ArrayList<PrereqOptions> prerequisites, ArrayList<Course> corequisites, int creditHours, int passingGrade) {
+    public Course(String uuid, String courseName, String courseID, Semester semester,
+            ArrayList<PrereqOptions> prerequisites, int creditHours, int passingGrade) {
         this.uuid = uuid;
         this.courseName = courseName;
         this.courseID = courseID;
-        this.requirement = requirement;
         this.semester = semester;
-        this.description = description;
         this.prerequisites = new ArrayList<PrereqOptions>();
-        this.corequisites = new ArrayList<Course>();
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
     }
@@ -83,24 +70,12 @@ public class Course {
         this.courseID = courseID;
     }
 
-    public void setRequirement(String requirement) {
-        this.requirement = requirement;
-    }
-
     public void setSemester(Semester semester) {
         this.semester = semester;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public void setPrerequisites(ArrayList<PrereqOptions> prerequisites) {
         this.prerequisites = prerequisites;
-    }
-
-    public void setCorequisites(ArrayList<Course> corequisites) {
-        this.corequisites = corequisites;
     }
 
     public void setCreditHours(int creditHours) {
@@ -123,24 +98,12 @@ public class Course {
         return courseID;
     }
 
-    public String getRequirement() {
-        return requirement;
-    }
-
     public Semester getSemester() {
         return semester;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public ArrayList<PrereqOptions> getPrerequisites() {
         return prerequisites;
-    }
-
-    public ArrayList<Course> getCorequisites() {
-        return corequisites;
     }
 
     public int getCreditHours() {
@@ -167,8 +130,7 @@ public class Course {
      * @return | a String representation of the course's information
      */
     public String toString() {
-        return "UUID: " + uuid + "\nCourse Name: " + courseName + "\nCourse ID: " + courseID + "\nRequirement: "
-                + requirement + "\nSemester: " + semester + "\nCourse Description: " + description + "\nCredit Hours: "
-                + creditHours + "\nPassing Grade: " + passingGrade;
+        return "UUID: " + uuid + "\nCourse Name: " + courseName + "\nCourse ID: " + courseID + "\nSemester: " + semester
+                + "\nCredit Hours: " + creditHours + "\nPassing Grade: " + passingGrade;
     }
 }

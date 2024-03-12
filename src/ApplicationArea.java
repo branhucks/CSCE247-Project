@@ -2,7 +2,9 @@
  * An enumeration repesenting different application areas
  */
 public enum ApplicationArea {
-    ELCT,
-    MATH,
-    STAT;
+    Science,
+    Math,
+    DigitalDesign,
+    Robotics,
+    Speech
 }

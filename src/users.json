@@ -19,11 +19,7 @@
         "lastName": "Long",
         "id": "073b875b-dd00-482a-b708-08ea0809d1c1",
         "userType": "Advisor",
-        "advisees": [
-            {
-                "id": "8b07eebc-d677-4336-8df7-67368a3730be"
-            }
-        ],
+        "advisees": [],
         "username": "klong"
     }
 ]

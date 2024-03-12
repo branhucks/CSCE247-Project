@@ -1,1 +1,18 @@
-[{"electives":{},"id":"9f367eb1-4970-4c43-bae2-d08897eedf06","majorName":"Computer Science","creditsRequired":129,"requiredCourses":[],"applicationArea":null},{"electives":{},"id":"dc6b7328-5992-4f22-928e-b73c72b6e5c7","majorName":"Computer Information Systems","creditsRequired":129,"requiredCourses":[],"applicationArea":null}]
+[
+    {
+        "electives": {},
+        "id": "9f367eb1-4970-4c43-bae2-d08897eedf06",
+        "majorName": "Computer Science",
+        "creditsRequired": 125,
+        "requiredCourses": [],
+        "applicationArea": null
+    },
+    {
+        "electives": {},
+        "id": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
+        "majorName": "Computer Information Systems",
+        "creditsRequired": 125,
+        "requiredCourses": [],
+        "applicationArea": null
+    }
+]

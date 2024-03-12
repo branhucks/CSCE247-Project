@@ -149,16 +149,13 @@ public class DataLoader extends DataConstants {
                 String id = (String) courseJSON.get(COURSE_ID);
                 String courseName = (String) courseJSON.get(COURSE_COURSE_NAME);
                 String courseID = (String) courseJSON.get(COURSE_COURSE_ID);
-                String requirement = (String) courseJSON.get(COURSE_REQUIREMENT);
                 Semester semester = (Semester) courseJSON.get(COURSE_SEMESTER);
-                String description = (String) courseJSON.get(COURSE_DESCRIPTION);
                 ArrayList<PrereqOptions> prerequisites = (ArrayList<PrereqOptions>) courseJSON
                         .get(COURSE_PREREQUISITES);
-                ArrayList<Course> corequisites = (ArrayList<Course>) courseJSON.get(COURSE_COREQUISITES);
                 int creditHours = ((Long) courseJSON.get(COURSE_CREDIT_HOURS)).intValue();
                 int passingGrade = ((Long) courseJSON.get(COURSE_PASSING_GRADE)).intValue();
-                courseList.add(new Course(id, courseName, courseID, requirement, semester, description, prerequisites,
-                        corequisites, creditHours, passingGrade));
+                courseList
+                        .add(new Course(id, courseName, courseID, semester, prerequisites, creditHours, passingGrade));
             }
             return courseList;
         } catch (Exception e) {

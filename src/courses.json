@@ -1,1 +1,20 @@
-[{"prerequisites":[],"creditHours":3,"courseName":"Algorithmic Design I","passingGrade":70,"corequisites":[],"description":null,"semester":null,"id":"12512345-9b2a-43db-9a74-f0edfe7725d7","requirement":null,"courseID":"CSCE 145"}]
+[
+    {
+        "prerequisites": [],
+        "creditHours": 4,
+        "courseName": "Algorithmic Design I",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "d0f89302-33de-4d8f-a172-28340eef4a37",
+        "courseID": "CSCE 145"
+    },
+    {
+        "prerequisites": [],
+        "creditHours": 1,
+        "courseName": "Computing in the Modern World",
+        "passingGrade": 70,
+        "semester": null,
+        "id": "02b2b9fe-ab95-4a4a-889b-c968b8d639a3",
+        "courseID": "CSCE 190"
+    }
+]
