@@ -260,4 +260,22 @@ public class FACADE {
         advisor.addAdvisee(studentID);
     }
 
+    /**
+     * Makes a note to the student
+     * 
+     * @param studentID | the student to write the note
+     */
+    public void makeNote(String studentID, String note) {
+        advisor.makeNote(studentID, note);
+    }
+
+    /**
+     * Views the note from the advisor
+     * 
+     * @return | a string representation of the note from the advisor
+     */
+    public String viewNote() {
+        return student.getNoteFromAdvisor();
+    }
+
 }

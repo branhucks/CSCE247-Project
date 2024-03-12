@@ -1,10 +1,12 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class UI {
     private static final String WELCOME_MESSAGE = "Welcome to the University of South Carolina DegreeWorks";
     private String[] menuOptions = { "Create Account", "Login", "Exit" };
-    private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees", "Logout" };
-    private String[] studentOptions = { "Hello", "Logout" };
+    private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees", "Make Note",
+            "Logout" };
+    private String[] studentOptions = { "View Semester Plan", "View Notes", "Logout" };
     private Scanner scanner;
     private FACADE facade;
     private User user;
@@ -70,6 +72,9 @@ public class UI {
                     case (3):
                         listAdvisees();
                         break;
+                    case (4):
+                        makeNote();
+                        break;
                 }
             } else if (user.getUserType().equalsIgnoreCase("Student")) {
                 displayStudentMenu();
@@ -85,6 +90,9 @@ public class UI {
                 switch (command) {
                     case (0):
                         System.out.println("PLACEHOLDER");
+                        break;
+                    case (1):
+                        viewNotes();
                         break;
                 }
             } else {
@@ -197,6 +205,18 @@ public class UI {
 
     private void listAdvisees() {
         facade.listAdvisees();
+    }
+
+    private void makeNote() {
+        System.out.println("What student would you like to write a note to?");
+        String studentID = scanner.nextLine();
+        System.out.println("Enter your Note:");
+        String note = scanner.nextLine();
+        facade.makeNote(studentID, note);
+    }
+
+    private void viewNotes() {
+        System.out.println(facade.viewNote());
     }
 
     private String getField(String prompt) {

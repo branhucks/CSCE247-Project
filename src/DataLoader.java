@@ -40,9 +40,10 @@ public class DataLoader extends DataConstants {
                     boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
                     int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();
                     SemesterPlan semesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
+                    String noteFromAdvisor = (String) personJSON.get(STUDENT_NOTE);
                     studentList.add(
                             new Student(id, username, firstName, lastName, userType, studentID, major, classYear,
-                                    gpa, hasScholarship, majorProgress, semesterPlan));
+                                    gpa, hasScholarship, majorProgress, semesterPlan, noteFromAdvisor));
                 }
             }
             return studentList;
