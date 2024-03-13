@@ -20,15 +20,15 @@
         "hasScholarship": false,
         "majorProgress": 0,
         "semesterPlan": null,
-        "studentID": "P22480158",
+        "studentID": "A39579237",
         "firstName": "Tawnie",
-        "advisor": "453666d4-2350-4895-be43-4bd94b63890a",
+        "advisor": "109334fb-7a90-49c8-a032-acd32be2eb86",
         "major": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
         "gpa": 0.0,
-        "id": "7c7f60a0-dd54-453b-ae0a-47c8fab38e0b",
+        "id": "ecf1943f-8eb1-43b3-b4f3-bdba7887a3fd",
         "userType": "Student",
         "classYear": "Freshman",
-        "noteFromAdvisor": "I suggest that you pick STATs as your Application Area.",
+        "noteFromAdvisor": "You should declare STAT as your application area.",
         "username": "thill"
     },
     {
@@ -42,13 +42,9 @@
     {
         "firstName": "Osbert",
         "lastName": "Odden",
-        "id": "453666d4-2350-4895-be43-4bd94b63890a",
+        "id": "109334fb-7a90-49c8-a032-acd32be2eb86",
         "userType": "Advisor",
-        "advisees": [
-            {
-                "id": "7c7f60a0-dd54-453b-ae0a-47c8fab38e0b"
-            }
-        ],
+        "advisees": [],
         "username": "oodden"
     }
 ]

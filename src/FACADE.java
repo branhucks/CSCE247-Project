@@ -101,20 +101,11 @@ public class FACADE {
     }
 
     /**
-     * Register a user to the system
-     * 
-     * @param username  | username of the user
-     * @param firstName | first name of the user
-     * @param lastName  | last name of the user
-     * @param userType  | user type of the user
-     * @return | true or false depending on if the user was successfully registered
+     * Saves users to the system
      */
-    /*
-     * public boolean registerUser(String username, String firstName, String
-     * lastName, String userType) {
-     * return userList.addUser(username, firstName, lastName, userType);
-     * }
-     */
+    public void saveUsers() {
+        userList.saveUsers();
+    }
 
     /**
      * Register an advisor to the system
@@ -251,7 +242,8 @@ public class FACADE {
     public void listAdvisees() {
         for (String studentUUID : advisor.getAdvisees()) {
             Student student = userList.getStudentByUUID(studentUUID);
-            System.out.println(student.getFirstName() + " " + student.getLastName());
+            System.out.println("Name: " + student.getFirstName() + " " + student.getLastName() + " StudentID: "
+                    + student.getStudentID());
         }
     }
 

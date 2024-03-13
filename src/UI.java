@@ -1,12 +1,11 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class UI {
     private static final String WELCOME_MESSAGE = "Welcome to the University of South Carolina DegreeWorks";
     private String[] menuOptions = { "Create Account", "Login", "Exit" };
     private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees", "Make Note",
             "Logout" };
-    private String[] studentOptions = { "View Semester Plan", "View Notes", "Logout" };
+    private String[] studentOptions = { "View Progress", "View Notes", "Logout" };
     private Scanner scanner;
     private FACADE facade;
     private User user;
@@ -30,76 +29,80 @@ public class UI {
                 System.out.println("Invalid command.");
             }
             if (command == menuOptions.length - 1) {
-                facade.logout();
+                System.out.println("Exiting program. Goodbye!");
                 break;
             }
             switch (command) {
-                case (0):
+                case 0:
                     createAccount();
                     break;
-                case (1):
+                case 1:
                     user = login();
-                    break;
+                    if (user != null) {
+                        System.out.println(user.getUserType());
+                        break;
+                    }
             }
-            if (user != null) {
-                System.out.println(user.getUserType());
-                break;
+
+            while (user != null) {
+                if (user.getUserType().equalsIgnoreCase("Advisor")) {
+                    // Display advisor menu
+                    displayAdvisorMenu();
+                    // Ask for command from user
+                    command = getCommand(advisorOptions.length);
+                    if (command < 0) {
+                        System.out.println("Invalid command.");
+                    }
+                    if (command == advisorOptions.length - 1) {
+                        facade.logout();
+                        user = null;
+                        break;
+                    }
+                    switch (command) {
+                        case 0:
+                            addMajor();
+                            break;
+                        case 1:
+                            addCourse();
+                            break;
+                        case 2:
+                            addAdvisee();
+                            break;
+                        case 3:
+                            listAdvisees();
+                            break;
+                        case 4:
+                            makeNote();
+                            break;
+                    }
+                } else if (user.getUserType().equalsIgnoreCase("Student")) {
+                    displayStudentMenu();
+                    // Ask for command from user
+                    command = getCommand(studentOptions.length);
+                    if (command < 0) {
+                        System.out.println("Invalid command.");
+                    }
+                    if (command == studentOptions.length - 1) {
+                        facade.logout();
+                        user = null;
+                        break;
+                    }
+                    switch (command) {
+                        case 0:
+                            System.out.println("PLACEHOLDER");
+                            break;
+                        case 1:
+                            viewNote();
+                            break;
+                    }
+                } else {
+                    System.out.println("Unknown User Type.");
+                    user = null;
+                    break;
+                }
             }
         }
-        while (true) {
-            if (user.getUserType().equalsIgnoreCase("Advisor")) {
-                // Display advisor menu
-                displayAdvisorMenu();
-                // Ask for command from user
-                int command = getCommand(advisorOptions.length);
-                if (command < 0) {
-                    System.out.println("Invalid command.");
-                }
-                if (command == advisorOptions.length - 1) {
-                    facade.logout();
-                    break;
-                }
-                switch (command) {
-                    case (0):
-                        addMajor();
-                        break;
-                    case (1):
-                        addCourse();
-                        break;
-                    case (2):
-                        addAdvisee();
-                        break;
-                    case (3):
-                        listAdvisees();
-                        break;
-                    case (4):
-                        makeNote();
-                        break;
-                }
-            } else if (user.getUserType().equalsIgnoreCase("Student")) {
-                displayStudentMenu();
-                // Ask for command from user
-                int command = getCommand(studentOptions.length);
-                if (command < 0) {
-                    System.out.println("Invalid command.");
-                }
-                if (command == studentOptions.length - 1) {
-                    facade.logout();
-                    break;
-                }
-                switch (command) {
-                    case (0):
-                        System.out.println("PLACEHOLDER");
-                        break;
-                    case (1):
-                        viewNote();
-                        break;
-                }
-            } else {
-                System.out.println("Unknown User Type.");
-                break;
-            }
-        }
+        scanner.close();
     }
 
     private void displayMenu() {
@@ -159,6 +162,7 @@ public class UI {
                 System.out.println("Sorry an account with that username already exists.");
             }
         }
+        facade.saveUsers();
     }
 
     private User login() {
@@ -209,7 +213,7 @@ public class UI {
     }
 
     private void makeNote() {
-        System.out.println("Please enter the Student ID of the student you would like to write a note to: ");
+        System.out.println("Enter the Student's ID: ");
         String studentID = scanner.nextLine();
         System.out.println("Enter Note: ");
         String note = scanner.nextLine();
