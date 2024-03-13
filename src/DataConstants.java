@@ -3,7 +3,7 @@
  */
 public abstract class DataConstants {
     // USER
-    protected static final String USER_FILE_NAME = "./src/users.json";
+    protected static final String USER_FILE_NAME = "./src/json/users.json";
     protected static final String USER_UUID = "id";
     protected static final String USER_USERNAME = "username";
     protected static final String USER_FIRST_NAME = "firstName";
@@ -27,7 +27,7 @@ public abstract class DataConstants {
     protected static final String ADVISOR_DEPARTMENT = "department";
 
     // MAJOR
-    protected static final String MAJOR_FILE_NAME = "./src/majors.json";
+    protected static final String MAJOR_FILE_NAME = "./src/json/majors.json";
     protected static final String MAJOR_ID = "id";
     protected static final String MAJOR_MAJOR_NAME = "majorName";
     protected static final String MAJOR_REQUIRED_COURSES = "requiredCourses";
@@ -36,7 +36,7 @@ public abstract class DataConstants {
     protected static final String MAJOR_CREDITS_REQUIRED = "creditsRequired";
 
     // COURSE
-    protected static final String COURSE_FILE_NAME = "./src/courses.json";
+    protected static final String COURSE_FILE_NAME = "./src/json/courses.json";
     protected static final String COURSE_ID = "id";
     protected static final String COURSE_COURSE_NAME = "courseName";
     protected static final String COURSE_SUBJECT = "subject";
