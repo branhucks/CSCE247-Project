@@ -112,10 +112,15 @@ public class UI {
                             
                             Student student = facade.getStudent();
                             ArrayList<Course> completedCourses = student.viewCompletedCourses();
-                            for (int i = 0; i<completedCourses.size(); i++){
-                                System.out.println("Course: " + completedCourses.get(i).getCourseName() +
-                                " Grade: " + completedCourses.get(i).courseID());
+                            if(completedCourses != null){
+                                for (int i = 0; i<completedCourses.size(); i++){
+                                    System.out.println("Course: " + completedCourses.get(i).getCourseName() +
+                                    " Grade: " + completedCourses.get(i).courseID());
+                                }
+                            } else{
+                                System.out.println("No completed courses");
                             }
+                            
 
                             // Courses needed
                             ArrayList<Course> incompleteCourses = student.viewIncompleteCourses();
