@@ -228,14 +228,14 @@ public class FACADE {
      * @return | a Semester Plan
      */
     public SemesterPlan getEightSemesterPlan() {
-        return student.getSemesterPlan();
+        return student.getEightSemesterPlan();
     }
 
     /**
      * Creates a transcript of the student's data
      */
-    public void makeTranscript() {
-        student.printTranscript();
+    public void printEightSemesterPlan() {
+        student.printEightSemesterPlan();
     }
 
     /**

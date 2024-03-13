@@ -65,4 +65,8 @@ public class StudentCourse {
     public void setPassed(boolean passed) {
         this.passed = passed;
     }
+
+    public String toString() {
+        return this.courseID + "\t" + this.status + "\t" + this.grade + "\t" + this.passed;
+    }
 }

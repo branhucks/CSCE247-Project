@@ -15,28 +15,23 @@ public class SemesterPlan {
         this.studentCourses = courses;
     }
 
-    public void addCourse(String courseID, int semester) {
-        StudentCourse newCourse = new StudentCourse(courseID, semester, "Planned", 0, false);
+    public void addCourse(String subject, String number, int semester) {
+        StudentCourse newCourse = new StudentCourse(subject + " " + number, semester, "Planned", 0, false);
         studentCourses.add(newCourse);
     }
 
-    public void removeCourse(String courseID) {
+    public void removeCourse(String subject, String number) {
         for (StudentCourse course : studentCourses) {
-            if (course.getCourseID() == courseID)
+            if (course.getCourseID().equals(subject + " " + number))
                 studentCourses.remove(course);
         }
     }
 
-    public SemesterPlan getSemesterPlan() {
-        return null;
+    public void setStudentCourses(ArrayList<StudentCourse> courses) {
+        this.studentCourses = courses;
     }
 
-    /**
-     * View semester plan
-     * 
-     * @return | a semester plan
-     */
-    public String toString() {
-        return "";
+    public ArrayList<StudentCourse> getStudentCourses() {
+        return studentCourses;
     }
 }

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * The Student class represents a student in the system
@@ -12,7 +14,7 @@ public class Student extends User {
     private String studentID;
     private boolean hasScholarship;
     private int majorProgress;
-    private SemesterPlan semesterPlan;
+    private SemesterPlan eightSemesterPlan;
     private String noteFromAdvisor;
 
     /**
@@ -36,7 +38,7 @@ public class Student extends User {
      */
     public Student(String uuid, String username, String firstName, String lastName, String userType, String studentID,
             String advisor, String major, String classYear, double gpa, boolean hasScholarship, int majorProgress,
-            SemesterPlan semesterPlan, String noteFromAdvisor) {
+            SemesterPlan eightSemesterPlan, String noteFromAdvisor) {
         super(uuid, username, firstName, lastName, userType);
         this.studentID = studentID;
         this.advisor = advisor;
@@ -45,7 +47,7 @@ public class Student extends User {
         this.gpa = gpa;
         this.hasScholarship = hasScholarship;
         this.majorProgress = majorProgress;
-        this.semesterPlan = semesterPlan;
+        this.eightSemesterPlan = eightSemesterPlan;
         this.noteFromAdvisor = noteFromAdvisor;
     }
 
@@ -109,12 +111,12 @@ public class Student extends User {
         this.majorProgress = majorProgress;
     }
 
-    public SemesterPlan getSemesterPlan() {
-        return semesterPlan;
+    public SemesterPlan getEightSemesterPlan() {
+        return eightSemesterPlan;
     }
 
-    public void setSemesterPlan(SemesterPlan semesterPlan) {
-        this.semesterPlan = semesterPlan;
+    public void setSemesterPlan(SemesterPlan eightSemesterPlan) {
+        this.eightSemesterPlan = eightSemesterPlan;
     }
 
     public void setNoteFromAdvisor(String noteFromAdvisor) {
@@ -149,11 +151,25 @@ public class Student extends User {
     }
 
     /**
-     * NEEDS COMPLETED
-     * Prints a copy of the transcript
+     * Prints the eight semester plan beautifully to a file
      */
-    public void printTranscript() {
-        // TODO
+    public void printEightSemesterPlan() {
+        try {
+            FileWriter writer = new FileWriter("SemesterPlan.txt");
+            for (int semesterNum = 1; semesterNum <= 8; semesterNum++) {
+                writer.write("Semester " + semesterNum + "\n\n");
+                for (StudentCourse course : eightSemesterPlan.getStudentCourses()) {
+                    if (course.getSemesterNum() == semesterNum) {
+                        writer.write(course.toString() + "\n");
+                    }
+                }
+                writer.write("\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
     }
 
     /**
