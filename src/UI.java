@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UI {
@@ -89,7 +90,19 @@ public class UI {
                     }
                     switch (command) {
                         case 0:
-                            System.out.println("PLACEHOLDER");
+                            /**
+                             * TODO taken courses
+                             * Grades eared in courses (pass/failed)
+                             * Courses needed to take
+                             * GFL elective- what courses satisfy it
+                             * application area topics
+                             * generate and print formatted textfile of 8 symester plan
+                             * 
+                             */
+                            ArrayList<String> courseList = facade.getStudentCourses();
+                            for (String course : courseList) {
+                                System.out.println(course + ", ");
+                            }
                             break;
                         case 1:
                             viewNote();

@@ -208,7 +208,9 @@ public class FACADE {
      * @return | a list of courses
      */
     public ArrayList<String> getStudentCourses() {
-        return null;
+        String studentMajorUUID = student.getMajor();
+        Major studentsMajor = majorList.getMajorByUUID(studentMajorUUID);
+        return studentsMajor.getRequiredCourses();
     }
 
     /**
