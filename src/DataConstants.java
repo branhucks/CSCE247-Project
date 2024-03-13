@@ -51,4 +51,11 @@ public abstract class DataConstants {
     protected static final String PREREQOPTIONS_MINGRADE = "minGrade";
     protected static final String PREREQOPTIONS_CHOICES = "choices";
     protected static final String PREREQOPTIONS_COURSES = "courses";
+
+    // STUDENT COURSE
+    protected static final String STUDENT_COURSE_COURSEID = "courseID";
+    protected static final String STUDENT_COURSE_SEMESTERNUM = "semesterNum";
+    protected static final String STUDENT_COURSE_STATUS = "status";
+    protected static final String STUDENT_COURSE_GRADE = "grade";
+    protected static final String STUDENT_COURSE_PASSED = "passed";
 }

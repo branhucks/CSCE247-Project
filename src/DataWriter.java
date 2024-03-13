@@ -55,7 +55,17 @@ public class DataWriter extends DataConstants {
         userDetails.put(STUDENT_GPA, student.getGPA());
         userDetails.put(STUDENT_HAS_SCHOLARSHIP, student.getHasScholarship());
         userDetails.put(STUDENT_MAJOR_PROGRESS, student.getMajorProgress());
-        userDetails.put(STUDENT_SEMESTER_PLAN, student.getEightSemesterPlan());
+        JSONArray semesterPlanArray = new JSONArray();
+        for (StudentCourse course : student.getEightSemesterPlan().getStudentCourses()) {
+            JSONObject courseObject = new JSONObject();
+            courseObject.put(STUDENT_COURSE_COURSEID, course.getCourseID());
+            courseObject.put(STUDENT_COURSE_SEMESTERNUM, course.getSemesterNum());
+            courseObject.put(STUDENT_COURSE_STATUS, course.getStatus());
+            courseObject.put(STUDENT_COURSE_GRADE, course.getGrade());
+            courseObject.put(STUDENT_COURSE_PASSED, course.getPassed());
+            semesterPlanArray.add(courseObject);
+        }
+        userDetails.put(STUDENT_SEMESTER_PLAN, semesterPlanArray);
         userDetails.put(STUDENT_NOTE, student.getNoteFromAdvisor());
         return userDetails;
     }

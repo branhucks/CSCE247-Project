@@ -40,7 +40,18 @@ public class DataLoader extends DataConstants {
                     double gpa = (double) personJSON.get(STUDENT_GPA);
                     boolean hasScholarship = (boolean) personJSON.get(STUDENT_HAS_SCHOLARSHIP);
                     int majorProgress = ((Long) personJSON.get(STUDENT_MAJOR_PROGRESS)).intValue();
-                    SemesterPlan eightSemesterPlan = (SemesterPlan) personJSON.get(STUDENT_SEMESTER_PLAN);
+                    JSONArray eightSemesterPlanJSON = (JSONArray) personJSON.get(STUDENT_SEMESTER_PLAN);
+                    ArrayList<StudentCourse> semesterCourses = new ArrayList<>();
+                    for (int j = 0; j < eightSemesterPlanJSON.size(); j++) {
+                        JSONObject courseJSON = (JSONObject) eightSemesterPlanJSON.get(j);
+                        String courseID = (String) courseJSON.get(STUDENT_COURSE_COURSEID);
+                        int semesterNum = ((Long) courseJSON.get(STUDENT_COURSE_SEMESTERNUM)).intValue();
+                        String status = (String) courseJSON.get(STUDENT_COURSE_STATUS);
+                        int grade = ((Long) courseJSON.get(STUDENT_COURSE_GRADE)).intValue();
+                        boolean passed = (boolean) courseJSON.get(STUDENT_COURSE_PASSED);
+                        semesterCourses.add(new StudentCourse(courseID, semesterNum, status, grade, passed));
+                    }
+                    SemesterPlan eightSemesterPlan = new SemesterPlan(semesterCourses);
                     String noteFromAdvisor = (String) personJSON.get(STUDENT_NOTE);
                     studentList.add(
                             new Student(id, username, firstName, lastName, userType, studentID, advisor, major,
