@@ -146,14 +146,22 @@ public class DataLoader extends DataConstants {
                 JSONObject courseJSON = (JSONObject) coursesJSON.get(i);
                 String id = (String) courseJSON.get(COURSE_ID);
                 String courseName = (String) courseJSON.get(COURSE_COURSE_NAME);
-                String courseID = (String) courseJSON.get(COURSE_COURSE_ID);
-                Semester semester = (Semester) courseJSON.get(COURSE_SEMESTER);
-                ArrayList<PrereqOptions> prerequisites = (ArrayList<PrereqOptions>) courseJSON
-                        .get(COURSE_PREREQUISITES);
-                int creditHours = ((Long) courseJSON.get(COURSE_CREDIT_HOURS)).intValue();
-                int passingGrade = ((Long) courseJSON.get(COURSE_PASSING_GRADE)).intValue();
-                courseList
-                        .add(new Course(id, courseName, courseID, semester, prerequisites, creditHours, passingGrade));
+                String subject = (String) courseJSON.get(COURSE_SUBJECT);
+                String number = (String) courseJSON.get(COURSE_NUMBER);
+                String semester = (String) courseJSON.get(COURSE_SEMESTER);
+                // ArrayList<PrereqOptions> prerequisites = (ArrayList<PrereqOptions>)
+                // courseJSON.get(COURSE_PREREQUISITES);
+                JSONArray corequisitesJSON = (JSONArray) courseJSON.get(COURSE_COREQUISITES);
+                ArrayList<String> corequisites = new ArrayList<>();
+                for (int j = 0; j < corequisitesJSON.size(); j++) {
+                    String corequisite = (String) corequisitesJSON.get(j);
+                    corequisites.add(corequisite);
+                }
+                int creditHours = Integer.parseInt((String) courseJSON.get(COURSE_CREDIT_HOURS));
+                // int passingGrade = Integer.parseInt((String)
+                // courseJSON.get(COURSE_PASSING_GRADE));
+                courseList.add(new Course(id, courseName, subject, number, semester, null, corequisites,
+                        creditHours, 70));
             }
             return courseList;
         } catch (Exception e) {

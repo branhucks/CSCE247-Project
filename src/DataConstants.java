@@ -39,10 +39,9 @@ public abstract class DataConstants {
     protected static final String COURSE_FILE_NAME = "./src/courses.json";
     protected static final String COURSE_ID = "id";
     protected static final String COURSE_COURSE_NAME = "courseName";
-    protected static final String COURSE_COURSE_ID = "courseID";
-    protected static final String COURSE_REQUIREMENT = "requirement";
+    protected static final String COURSE_SUBJECT = "subject";
+    protected static final String COURSE_NUMBER = "number";
     protected static final String COURSE_SEMESTER = "semester";
-    protected static final String COURSE_DESCRIPTION = "description";
     protected static final String COURSE_PREREQUISITES = "prerequisites";
     protected static final String COURSE_COREQUISITES = "corequisites";
     protected static final String COURSE_CREDIT_HOURS = "creditHours";

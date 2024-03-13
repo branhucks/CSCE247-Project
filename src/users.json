@@ -22,7 +22,7 @@
         "semesterPlan": null,
         "studentID": "P22480158",
         "firstName": "Tawnie",
-        "advisor": null,
+        "advisor": "453666d4-2350-4895-be43-4bd94b63890a",
         "major": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
         "gpa": 0.0,
         "id": "7c7f60a0-dd54-453b-ae0a-47c8fab38e0b",
@@ -36,11 +36,7 @@
         "lastName": "Long",
         "id": "073b875b-dd00-482a-b708-08ea0809d1c1",
         "userType": "Advisor",
-        "advisees": [
-            {
-                "id": "8b07eebc-d677-4336-8df7-67368a3730be"
-            }
-        ],
+        "advisees": [],
         "username": "klong"
     },
     {
@@ -48,7 +44,11 @@
         "lastName": "Odden",
         "id": "453666d4-2350-4895-be43-4bd94b63890a",
         "userType": "Advisor",
-        "advisees": [],
+        "advisees": [
+            {
+                "id": "7c7f60a0-dd54-453b-ae0a-47c8fab38e0b"
+            }
+        ],
         "username": "oodden"
     }
 ]

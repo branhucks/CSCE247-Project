@@ -6,9 +6,11 @@ import java.util.ArrayList;
 public class Course {
     private String uuid;
     private String courseName;
-    private String courseID;
-    private Semester semester;
+    private String subject;
+    private String number;
+    private String semester;
     private ArrayList<PrereqOptions> prerequisites;
+    private ArrayList<String> corequisites;
     private int creditHours;
     private int passingGrade;
 
@@ -25,12 +27,14 @@ public class Course {
      * @param creditHours   | credit hours for the course
      * @param passingGrade  | the passing grade for the course
      */
-    public Course(String courseName, String courseID, Semester semester,
-            ArrayList<PrereqOptions> prerequisites, int creditHours, int passingGrade) {
+    public Course(String courseName, String subject, String number, String semester,
+            ArrayList<PrereqOptions> prerequisites, ArrayList<String> corequisites, int creditHours, int passingGrade) {
         this.courseName = courseName;
-        this.courseID = courseID;
+        this.subject = subject;
+        this.number = number;
         this.semester = semester;
         this.prerequisites = new ArrayList<PrereqOptions>();
+        this.corequisites = new ArrayList<String>();
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
     }
@@ -46,13 +50,15 @@ public class Course {
      * @param creditHours
      * @param passingGrade
      */
-    public Course(String uuid, String courseName, String courseID, Semester semester,
-            ArrayList<PrereqOptions> prerequisites, int creditHours, int passingGrade) {
+    public Course(String uuid, String courseName, String subject, String number, String semester,
+            ArrayList<PrereqOptions> prerequisites, ArrayList<String> corequisites, int creditHours, int passingGrade) {
         this.uuid = uuid;
         this.courseName = courseName;
-        this.courseID = courseID;
+        this.subject = subject;
+        this.number = number;
         this.semester = semester;
         this.prerequisites = new ArrayList<PrereqOptions>();
+        this.corequisites = new ArrayList<String>();
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
     }
@@ -66,11 +72,15 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public void setCourseID(String courseID) {
-        this.courseID = courseID;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public void setSemester(Semester semester) {
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public void setSemester(String semester) {
         this.semester = semester;
     }
 
@@ -78,11 +88,15 @@ public class Course {
         this.prerequisites = prerequisites;
     }
 
+    public void setCorequisites(ArrayList<String> corequisites) {
+        this.corequisites = corequisites;
+    }
+
     public void setCreditHours(int creditHours) {
         this.creditHours = creditHours;
     }
 
-    public void setPassingGrade(char passingGrade) {
+    public void setPassingGrade(int passingGrade) {
         this.passingGrade = passingGrade;
     }
 
@@ -94,16 +108,28 @@ public class Course {
         return courseName;
     }
 
-    public String getCourseID() {
-        return courseID;
+    public String getSubject() {
+        return subject;
     }
 
-    public Semester getSemester() {
+    public String getNumber() {
+        return number;
+    }
+
+    public String courseID() {
+        return this.subject + " " + this.number;
+    }
+
+    public String getSemester() {
         return semester;
     }
 
     public ArrayList<PrereqOptions> getPrerequisites() {
         return prerequisites;
+    }
+
+    public ArrayList<String> getCorequisites() {
+        return corequisites;
     }
 
     public int getCreditHours() {
@@ -129,8 +155,11 @@ public class Course {
      * 
      * @return | a String representation of the course's information
      */
-    public String toString() {
-        return "UUID: " + uuid + "\nCourse Name: " + courseName + "\nCourse ID: " + courseID + "\nSemester: " + semester
-                + "\nCredit Hours: " + creditHours + "\nPassing Grade: " + passingGrade;
-    }
+    /*
+     * public String toString() {
+     * return "UUID: " + uuid + "\nCourse Name: " + courseName + "\nCourse ID: " +
+     * courseID + "\nSemester: " + semester
+     * + "\nCredit Hours: " + creditHours + "\nPassing Grade: " + passingGrade;
+     * }
+     */
 }

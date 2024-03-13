@@ -186,11 +186,12 @@ public class UI {
 
     private void addCourse() {
         String courseName = getField("Course Name");
-        String courseID = getField("Course ID");
+        String subject = getField("Subject");
+        String number = getField("Number");
         int creditHours = getIntField("Credit Hours");
         int passingGrade = getIntField("Passing Grade");
 
-        if (facade.addCourse(courseName, courseID, null, null, creditHours, passingGrade)) {
+        if (facade.addCourse(courseName, subject, number, null, null, null, creditHours, passingGrade)) {
             System.out.println("You have successfully added a course.");
         } else {
             System.out.println("The course already exists");

@@ -43,6 +43,21 @@ public class CourseList {
     }
 
     /**
+     * Get course by Course ID
+     * 
+     * @param courseID | the course's course ID
+     * @return | the Course retrieved
+     */
+    public Course getCourseByCourseID(String courseID) {
+        for (Course course : courseList) {
+            if (course.courseID().equals(courseID)) {
+                return course;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Validates whether the course exists
      * 
      * @param courseID | the course's ID to search
@@ -50,7 +65,7 @@ public class CourseList {
      */
     public boolean haveCourse(String courseID) {
         for (Course course : courseList) {
-            if (course.getCourseID().equals(courseID)) {
+            if (course.courseID().equals(courseID)) {
                 return true;
             }
         }
@@ -65,7 +80,7 @@ public class CourseList {
      */
     public Course getCourse(String courseID) {
         for (Course course : courseList) {
-            if (course.getCourseID().equals(courseID)) {
+            if (course.courseID().equals(courseID)) {
                 return course;
             }
         }
@@ -93,12 +108,12 @@ public class CourseList {
      * @param passingGrade  | the passing grade for the course
      * @return | true or false depending on if the course was added successfully
      */
-    public boolean addCourse(String courseName, String courseID, Semester semester,
-            ArrayList<PrereqOptions> prerequisites, int creditHours, int passingGrade) {
-        if (haveCourse(courseID))
+    public boolean addCourse(String courseName, String subject, String number, String semester,
+            ArrayList<PrereqOptions> prerequisites, ArrayList<String> corequisites, int creditHours, int passingGrade) {
+        if (haveCourse(subject + " " + number))
             return false;
-        courseList.add(new Course((UUID.randomUUID()).toString(), courseName, courseID, semester, prerequisites,
-                creditHours, passingGrade));
+        courseList.add(new Course((UUID.randomUUID()).toString(), courseName, subject, number, semester, prerequisites,
+                corequisites, creditHours, passingGrade));
         return true;
     }
 
