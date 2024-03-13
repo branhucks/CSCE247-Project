@@ -1,33 +1,46 @@
-import java.util.HashMap;
 import java.util.ArrayList;
 
 /**
  * PrereqOptions class
  */
 public class PrereqOptions {
-    private HashMap<Course, Integer> course;
+    private int choices;
+    private int minGrade;
+    private ArrayList<String> courses;
 
     /**
      * Creates a new PrereqOptions instance
      * 
      * @param course | the prerequisite course
      */
-    public PrereqOptions(HashMap<Course, Integer> course) {
-        this.course = course;
+    public PrereqOptions(int choices, int minGrade, ArrayList<String> courses) {
+        this.choices = choices;
+        this.minGrade = minGrade;
+        this.courses = courses;
     }
 
     // Getter and setter methods for course HashMap
-    public HashMap<Course, Integer> getCourse() {
-        return course;
+    public void setChoices(int choices) {
+        this.choices = choices;
     }
 
-    public void setCourse(HashMap<Course, Integer> course) {
-        this.course = course;
+    public void setMinGrade(int minGrade) {
+        this.minGrade = minGrade;
     }
 
-    public void addPrerequisite(ArrayList<Course> list) {
-        for (Course tempCourse : list) {
-            this.course.put(tempCourse, tempCourse.getPassingGrade());
-        }
+    public void setCourses(ArrayList<String> courses) {
+        this.courses = courses;
+    }
+
+    public int getChoices() {
+        return choices;
+    }
+
+    public int getMinGrade() {
+        return minGrade;
+    }
+
+    public ArrayList<String> getCourses() {
+        return courses;
     }
 }

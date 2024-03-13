@@ -151,19 +151,30 @@ public class DataLoader extends DataConstants {
                 String subject = (String) courseJSON.get(COURSE_SUBJECT);
                 String number = (String) courseJSON.get(COURSE_NUMBER);
                 String semester = (String) courseJSON.get(COURSE_SEMESTER);
-                // ArrayList<PrereqOptions> prerequisites = (ArrayList<PrereqOptions>)
-                // courseJSON.get(COURSE_PREREQUISITES);
+                JSONArray prerequisitesJSON = (JSONArray) courseJSON.get(COURSE_PREREQUISITES);
+                ArrayList<PrereqOptions> prerequisites = new ArrayList<>();
+                for (int j = 0; j < prerequisitesJSON.size(); j++) {
+                    JSONObject prereqJSON = (JSONObject) prerequisitesJSON.get(j);
+                    int choices = ((Long) prereqJSON.get(PREREQOPTIONS_CHOICES)).intValue();
+                    int minGrade = ((Long) prereqJSON.get(PREREQOPTIONS_MINGRADE)).intValue();
+                    JSONArray coursesArray = (JSONArray) prereqJSON.get(PREREQOPTIONS_COURSES);
+                    ArrayList<String> courses = new ArrayList<>();
+                    for (int k = 0; k < coursesArray.size(); k++) {
+                        String courseUUID = (String) coursesArray.get(k);
+                        courses.add(courseUUID);
+                    }
+                    prerequisites.add(new PrereqOptions(choices, minGrade, courses));
+                }
                 JSONArray corequisitesJSON = (JSONArray) courseJSON.get(COURSE_COREQUISITES);
                 ArrayList<String> corequisites = new ArrayList<>();
                 for (int j = 0; j < corequisitesJSON.size(); j++) {
                     String corequisite = (String) corequisitesJSON.get(j);
                     corequisites.add(corequisite);
                 }
-                int creditHours = Integer.parseInt((String) courseJSON.get(COURSE_CREDIT_HOURS));
-                // int passingGrade = Integer.parseInt((String)
-                // courseJSON.get(COURSE_PASSING_GRADE));
-                courseList.add(new Course(id, courseName, subject, number, semester, null, corequisites,
-                        creditHours, 70));
+                int creditHours = ((Long) courseJSON.get(COURSE_CREDIT_HOURS)).intValue();
+                int passingGrade = ((Long) courseJSON.get(COURSE_PASSING_GRADE)).intValue();
+                courseList.add(new Course(id, courseName, subject, number, semester, prerequisites, corequisites,
+                        creditHours, passingGrade));
             }
             return courseList;
         } catch (Exception e) {

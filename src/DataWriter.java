@@ -118,7 +118,21 @@ public class DataWriter extends DataConstants {
         courseDetails.put(COURSE_SUBJECT, course.getSubject());
         courseDetails.put(COURSE_NUMBER, course.getNumber());
         courseDetails.put(COURSE_SEMESTER, course.getSemester());
-        courseDetails.put(COURSE_PREREQUISITES, course.getPrerequisites());
+        JSONArray prerequisitesArray = new JSONArray();
+        for (PrereqOptions prereq : course.getPrerequisites()) {
+            JSONObject prereqObject = new JSONObject();
+            prereqObject.put(PREREQOPTIONS_CHOICES, prereq.getChoices());
+            prereqObject.put(PREREQOPTIONS_MINGRADE, prereq.getMinGrade());
+            JSONArray coursesArray = new JSONArray();
+            for (String courseUUID : prereq.getCourses()) {
+                JSONObject courseObject = new JSONObject();
+                courseObject.put(COURSE_ID, courseUUID);
+                coursesArray.add(courseObject);
+            }
+            prereqObject.put(PREREQOPTIONS_COURSES, coursesArray);
+            prerequisitesArray.add(prereqObject);
+        }
+        courseDetails.put(COURSE_PREREQUISITES, prerequisitesArray);
         JSONArray corequisitesArray = new JSONArray();
         for (String uuid : course.getCorequisites()) {
             JSONObject corequisiteObject = new JSONObject();
