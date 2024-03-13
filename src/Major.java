@@ -26,8 +26,8 @@ public class Major {
             ApplicationArea applicationArea,
             int creditsRequired) {
         this.majorName = majorName;
-        this.requiredCourses = new ArrayList<String>();
-        this.electives = new HashMap<ElectiveType, Electives>();
+        this.requiredCourses = requiredCourses;
+        this.electives = electives;
         this.applicationArea = applicationArea;
         this.creditsRequired = creditsRequired;
     }
@@ -47,8 +47,8 @@ public class Major {
             int creditsRequired) {
         this.uuid = uuid;
         this.majorName = majorName;
-        this.requiredCourses = new ArrayList<String>();
-        this.electives = new HashMap<ElectiveType, Electives>();
+        this.requiredCourses = requiredCourses;
+        this.electives = electives;
         this.applicationArea = applicationArea;
         this.creditsRequired = creditsRequired;
     }

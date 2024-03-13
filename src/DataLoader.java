@@ -77,9 +77,11 @@ public class DataLoader extends DataConstants {
                     String userType = (String) personJSON.get(USER_USER_TYPE);
                     JSONArray adviseesJSON = (JSONArray) personJSON.get(ADVISOR_ADVISEES);
                     ArrayList<String> advisees = new ArrayList<>();
+                    System.out.println("JSON Size: " + adviseesJSON.size());
                     for (int j = 0; j < adviseesJSON.size(); j++) {
                         JSONObject studentJSON = (JSONObject) adviseesJSON.get(j);
                         String studentUUID = (String) studentJSON.get(USER_UUID);
+                        System.out.println("Student UUID: " + studentUUID);
                         advisees.add(studentUUID);
                     }
                     String department = (String) personJSON.get(ADVISOR_DEPARTMENT);

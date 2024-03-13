@@ -12,7 +12,7 @@ public class SemesterPlan {
      * @param courses | the courses in the semester plan
      */
     public SemesterPlan(ArrayList<StudentCourse> courses) {
-        this.studentCourses = new ArrayList<StudentCourse>();
+        this.studentCourses = courses;
     }
 
     public void addCourse(String courseID, int semester) {

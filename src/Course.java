@@ -33,8 +33,8 @@ public class Course {
         this.subject = subject;
         this.number = number;
         this.semester = semester;
-        this.prerequisites = new ArrayList<PrereqOptions>();
-        this.corequisites = new ArrayList<String>();
+        this.prerequisites = prerequisites;
+        this.corequisites = corequisites;
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
     }
@@ -57,8 +57,8 @@ public class Course {
         this.subject = subject;
         this.number = number;
         this.semester = semester;
-        this.prerequisites = new ArrayList<PrereqOptions>();
-        this.corequisites = new ArrayList<String>();
+        this.prerequisites = prerequisites;
+        this.corequisites = corequisites;
         this.creditHours = creditHours;
         this.passingGrade = passingGrade;
     }

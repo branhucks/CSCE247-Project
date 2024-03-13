@@ -15,7 +15,7 @@ public class Electives {
      */
     public Electives(int minHours, ArrayList<Course> courses) {
         this.minHours = minHours;
-        courses = new ArrayList<Course>();
+        this.courses = courses;
     }
 
     /**
