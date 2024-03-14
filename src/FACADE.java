@@ -45,6 +45,10 @@ public class FACADE {
         return this.majorList;
     }
 
+    public Major getMajorByUUID(String UUID){
+        return this.majorList.getMajorByUUID(UUID);
+    }
+
     /**
      * Getter for User
      * 

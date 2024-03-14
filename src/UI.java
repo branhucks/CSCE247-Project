@@ -227,7 +227,6 @@ public class UI {
     private void getStudentCourses() {
         /**
          * TODO
-         * Grades eared in courses (pass/failed)
          * GFL elective- what courses satisfy it
          * application area topics
          * generate and print formatted textfile of 8 symester plan
@@ -242,15 +241,20 @@ public class UI {
                 System.out.println(courseList.get(i) + ", ");
             }
         }
-        // Prints the grades earned in each course
-        // TODO get grade
+        // Prints the grades earned in each course and if passed or failed
 
         Student student = facade.getStudent();
         ArrayList<Course> completedCourses = student.viewCompletedCourses();
+        SemesterPlan semesterPlan = student.getEightSemesterPlan();
         if (completedCourses != null) {
             for (int i = 0; i < completedCourses.size(); i++) {
-                System.out.println("Course: " + completedCourses.get(i).getCourseName() +
-                        " Grade: " + completedCourses.get(i).courseID());
+                System.out.print("Course: " + completedCourses.get(i).getCourseName() +
+                        " Grade: " + semesterPlan.getStudentCourses().get(i).getGrade());
+                        if (semesterPlan.getStudentCourses().get(i).getPassed()){
+                            System.out.println("Passed");
+                        } else{
+                            System.out.println("Failed");
+                        }
             }
         } else {
             System.out.println("No completed courses");
