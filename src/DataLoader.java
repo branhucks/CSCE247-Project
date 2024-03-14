@@ -49,7 +49,8 @@ public class DataLoader extends DataConstants {
                         String status = (String) courseJSON.get(STUDENT_COURSE_STATUS);
                         int grade = ((Long) courseJSON.get(STUDENT_COURSE_GRADE)).intValue();
                         boolean passed = (boolean) courseJSON.get(STUDENT_COURSE_PASSED);
-                        semesterCourses.add(new StudentCourse(courseID, semesterNum, status, grade, passed));
+                        semesterCourses.add(new StudentCourse(courseID, semesterNum, status, grade,
+                                passed));
                     }
                     SemesterPlan eightSemesterPlan = new SemesterPlan(semesterCourses);
                     String noteFromAdvisor = (String) personJSON.get(STUDENT_NOTE);
@@ -191,7 +192,8 @@ public class DataLoader extends DataConstants {
                 JSONArray corequisitesJSON = (JSONArray) courseJSON.get(COURSE_COREQUISITES);
                 ArrayList<String> corequisites = new ArrayList<>();
                 for (int j = 0; j < corequisitesJSON.size(); j++) {
-                    String corequisite = (String) corequisitesJSON.get(j);
+                    JSONObject corequisiteJSON = (JSONObject) corequisitesJSON.get(j);
+                    String corequisite = (String) corequisiteJSON.get(COURSE_ID);
                     corequisites.add(corequisite);
                 }
                 int creditHours = ((Long) courseJSON.get(COURSE_CREDIT_HOURS)).intValue();
