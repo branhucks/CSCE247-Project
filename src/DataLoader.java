@@ -130,7 +130,7 @@ public class DataLoader extends DataConstants {
                     String courseUUID = (String) courseJSON.get(COURSE_ID);
                     requiredCourses.add(courseUUID);
                 }
-                HashMap<ElectiveType, Electives> electives = (HashMap<ElectiveType, Electives>) majorJSON
+                ArrayList<Electives> electives = (ArrayList<Electives>) majorJSON
                         .get(MAJOR_ELECTIVES);
                 ApplicationArea applicationArea = (ApplicationArea) majorJSON.get(MAJOR_APPLICATION_AREA);
                 int creditsRequired = ((Long) majorJSON.get(MAJOR_CREDITS_REQUIRED)).intValue();

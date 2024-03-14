@@ -5,26 +5,44 @@ import java.util.ArrayList;
  */
 public class Electives {
     private int minHours;
-    private ArrayList<Course> courses;
+    private ElectiveType electiveType;
+    private ArrayList<String> courses;
 
     /**
      * Creates a new instance of Electives
      * 
-     * @param credits         | credit hours for each elective
-     * @param electiveCourses | the elective courses
+     * @param minHours
+     * @param electiveType
+     * @param courses
      */
-    public Electives(int minHours, ArrayList<Course> courses) {
+    public Electives(int minHours, ElectiveType electiveType, ArrayList<String> courses) {
         this.minHours = minHours;
+        this.electiveType = electiveType;
         this.courses = courses;
     }
 
-    /**
-     * Lists the Elective courses
-     * 
-     * @param electiveType | the type of elective
-     * @return | a list of courses
-     */
-    public ArrayList<Course> listElectives(ElectiveType electiveType) {
-        return this.courses;
+    // Getters and Setters
+    public void setMinHours(int minHours) {
+        this.minHours = minHours;
+    }
+
+    public int getMinHours() {
+        return minHours;
+    }
+
+    public void setElectiveType(ElectiveType electiveType) {
+        this.electiveType = electiveType;
+    }
+
+    public ElectiveType getElectiveType() {
+        return electiveType;
+    }
+
+    public void setCourses(ArrayList<String> courses) {
+        this.courses = courses;
+    }
+
+    public ArrayList<String> getCourses() {
+        return courses;
     }
 }

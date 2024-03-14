@@ -93,7 +93,7 @@ public class MajorList {
      * @return | true or false depending on if the major was added successfully
      */
     public boolean addMajor(String majorName, ArrayList<String> requiredCourses,
-            HashMap<ElectiveType, Electives> electives, ApplicationArea applicationArea, int creditsRequired) {
+            ArrayList<Electives> electives, ApplicationArea applicationArea, int creditsRequired) {
         if (haveMajor(majorName))
             return false;
         majorList.add(new Major((UUID.randomUUID()).toString(), majorName, requiredCourses, electives, applicationArea,

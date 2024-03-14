@@ -9,7 +9,7 @@ public class Major {
     private String uuid;
     private String majorName;
     private ArrayList<String> requiredCourses;
-    private HashMap<ElectiveType, Electives> electives;
+    private ArrayList<Electives> electives;
     private ApplicationArea applicationArea;
     private int creditsRequired;
 
@@ -22,7 +22,7 @@ public class Major {
      * @param applicationArea | the chosen application area
      * @param creditsRequired | the total number of required credits
      */
-    public Major(String majorName, ArrayList<String> requiredCourses, HashMap<ElectiveType, Electives> electives,
+    public Major(String majorName, ArrayList<String> requiredCourses, ArrayList<Electives> electives,
             ApplicationArea applicationArea,
             int creditsRequired) {
         this.majorName = majorName;
@@ -43,7 +43,7 @@ public class Major {
      * @param creditsRequired
      */
     public Major(String uuid, String majorName, ArrayList<String> requiredCourses,
-            HashMap<ElectiveType, Electives> electives, ApplicationArea applicationArea,
+            ArrayList<Electives> electives, ApplicationArea applicationArea,
             int creditsRequired) {
         this.uuid = uuid;
         this.majorName = majorName;
@@ -92,11 +92,11 @@ public class Major {
         this.requiredCourses = requiredCourses;
     }
 
-    public HashMap<ElectiveType, Electives> getElectives() {
+    public ArrayList<Electives> getElectives() {
         return this.electives;
     }
 
-    public void setElectives(HashMap<ElectiveType, Electives> electives) {
+    public void setElectives(ArrayList<Electives> electives) {
         this.electives = electives;
     }
 
@@ -114,21 +114,5 @@ public class Major {
 
     public void setCreditsRequired(int creditsRequired) {
         this.creditsRequired = creditsRequired;
-    }
-
-    /**
-     * THIS METHOD NEEDS TO BE IMPLEMENTED DIFFERENTLY
-     * Calculates the student's progress within their major
-     * 
-     * @param finishedCourses | a list of completed courses
-     * @return | an integer representation of the progress
-     */
-    public int getProgress(ArrayList<Course> finishedCourses) {
-        double total = 0;
-        for (Course course : finishedCourses)
-            total += course.getCreditHours();
-        total = this.creditsRequired;
-        int ret = (int) ((total / this.creditsRequired) * 100);
-        return ret;
     }
 }

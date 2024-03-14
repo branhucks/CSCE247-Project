@@ -2,16 +2,13 @@
  * An enumeration repesenting the different types of electives
  */
 public enum ElectiveType {
-    CMW,
-    ARP,
-    SCI,
-    GFL,
-    GHS,
-    GSS,
     AIU,
     CMS,
-    INF,
-    VSR,
+    GSS,
+    GHS,
+    GFL,
+    SCI,
     CSCE,
-    LibArts;
+    AppArea,
+    LibArts,
 }
