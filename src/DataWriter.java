@@ -188,14 +188,29 @@ public class DataWriter extends DataConstants {
         JSONObject majorDetails = new JSONObject();
         majorDetails.put(MAJOR_ID, major.getUUID());
         majorDetails.put(MAJOR_MAJOR_NAME, major.getMajorName());
-        JSONArray coursesArray = new JSONArray();
+        JSONArray requiredCoursesArray = new JSONArray();
         for (String uuid : major.getRequiredCourses()) {
             JSONObject courseObject = new JSONObject();
             courseObject.put(COURSE_ID, uuid);
-            coursesArray.add(courseObject);
+            requiredCoursesArray.add(courseObject);
         }
-        majorDetails.put(MAJOR_REQUIRED_COURSES, coursesArray);
+        majorDetails.put(MAJOR_REQUIRED_COURSES, requiredCoursesArray);
         majorDetails.put(MAJOR_ELECTIVES, major.getElectives());
+        JSONArray electivesArray = new JSONArray();
+        for (Electives elective : major.getElectives()) {
+            JSONObject electiveObject = new JSONObject();
+            electiveObject.put(ELECTIVE_MINHOURS, elective.getMinHours());
+            electiveObject.put(ELECTIVE_TYPE, elective.getElectiveType().toString());
+            JSONArray coursesArray = new JSONArray();
+            for (String uuid : elective.getCourses()) {
+                JSONObject courseObject = new JSONObject();
+                courseObject.put(COURSE_ID, uuid);
+                coursesArray.add(courseObject);
+            }
+            electiveObject.put(ELECTIVE_COURSES, coursesArray);
+            electivesArray.add(electiveObject);
+        }
+        majorDetails.put(MAJOR_ELECTIVES, electivesArray);
         majorDetails.put(MAJOR_APPLICATION_AREA, major.getApplicationArea());
         majorDetails.put(MAJOR_CREDITS_REQUIRED, major.getCreditsRequired());
         return majorDetails;

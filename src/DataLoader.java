@@ -88,11 +88,9 @@ public class DataLoader extends DataConstants {
                     String userType = (String) personJSON.get(USER_USER_TYPE);
                     JSONArray adviseesJSON = (JSONArray) personJSON.get(ADVISOR_ADVISEES);
                     ArrayList<String> advisees = new ArrayList<>();
-                    System.out.println("JSON Size: " + adviseesJSON.size());
                     for (int j = 0; j < adviseesJSON.size(); j++) {
                         JSONObject studentJSON = (JSONObject) adviseesJSON.get(j);
                         String studentUUID = (String) studentJSON.get(USER_UUID);
-                        System.out.println("Student UUID: " + studentUUID);
                         advisees.add(studentUUID);
                     }
                     String department = (String) personJSON.get(ADVISOR_DEPARTMENT);
@@ -130,8 +128,21 @@ public class DataLoader extends DataConstants {
                     String courseUUID = (String) courseJSON.get(COURSE_ID);
                     requiredCourses.add(courseUUID);
                 }
-                ArrayList<Electives> electives = (ArrayList<Electives>) majorJSON
-                        .get(MAJOR_ELECTIVES);
+                JSONArray electivesJSON = (JSONArray) majorJSON.get(MAJOR_ELECTIVES);
+                ArrayList<Electives> electives = new ArrayList<>();
+                for (int j = 0; j < electivesJSON.size(); j++) {
+                    JSONObject electiveJSON = (JSONObject) electivesJSON.get(j);
+                    int minHours = ((Long) electiveJSON.get(ELECTIVE_MINHOURS)).intValue();
+                    ElectiveType electiveType = ElectiveType.valueOf((String) electiveJSON.get(ELECTIVE_TYPE));
+                    JSONArray coursesArray = (JSONArray) electiveJSON.get(ELECTIVE_COURSES);
+                    ArrayList<String> courses = new ArrayList<>();
+                    for (int k = 0; k < coursesArray.size(); k++) {
+                        JSONObject courseJSON = (JSONObject) coursesArray.get(k);
+                        String courseUUID = (String) courseJSON.get(COURSE_ID);
+                        courses.add(courseUUID);
+                    }
+                    electives.add(new Electives(minHours, electiveType, courses));
+                }
                 ApplicationArea applicationArea = (ApplicationArea) majorJSON.get(MAJOR_APPLICATION_AREA);
                 int creditsRequired = ((Long) majorJSON.get(MAJOR_CREDITS_REQUIRED)).intValue();
                 majorList.add(new Major(id, majorName, requiredCourses, electives, applicationArea, creditsRequired));
@@ -171,7 +182,8 @@ public class DataLoader extends DataConstants {
                     JSONArray coursesArray = (JSONArray) prereqJSON.get(PREREQOPTIONS_COURSES);
                     ArrayList<String> courses = new ArrayList<>();
                     for (int k = 0; k < coursesArray.size(); k++) {
-                        String courseUUID = (String) coursesArray.get(k);
+                        JSONObject course2JSON = (JSONObject) coursesArray.get(k);
+                        String courseUUID = (String) course2JSON.get(COURSE_ID);
                         courses.add(courseUUID);
                     }
                     prerequisites.add(new PrereqOptions(choices, minGrade, courses));

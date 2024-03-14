@@ -35,6 +35,11 @@ public abstract class DataConstants {
     protected static final String MAJOR_APPLICATION_AREA = "applicationArea";
     protected static final String MAJOR_CREDITS_REQUIRED = "creditsRequired";
 
+    // ELECTIVES
+    protected static final String ELECTIVE_MINHOURS = "minHours";
+    protected static final String ELECTIVE_TYPE = "electiveType";
+    protected static final String ELECTIVE_COURSES = "courses";
+
     // COURSE
     protected static final String COURSE_FILE_NAME = "./src/courses.json";
     protected static final String COURSE_ID = "id";
