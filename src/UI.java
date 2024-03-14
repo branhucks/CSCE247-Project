@@ -6,7 +6,7 @@ public class UI {
     private String[] menuOptions = { "Create Account", "Login", "Exit" };
     private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees", "Make Note",
             "Logout" };
-    private String[] studentOptions = { "View Progress", "View Notes", "Logout" };
+    private String[] studentOptions = { "View Courses", "View Notes", "Print Eight Semester Plan", "Logout" };
     private Scanner scanner;
     private FACADE facade;
     private User user;
@@ -90,47 +90,13 @@ public class UI {
                     }
                     switch (command) {
                         case 0:
-                            /**
-                             * TODO 
-                             * Grades eared in courses (pass/failed)
-                             * GFL elective- what courses satisfy it
-                             * application area topics
-                             * generate and print formatted textfile of 8 symester plan
-                             * 
-                             */
-                            // Prints the taken courses
-                            ArrayList<String> courseList = facade.getStudentCourses();
-                            for (int i=0; i < courseList.size(); i++) {
-                                if(i == courseList.size()){
-                                    System.out.println(courseList.get(i));
-                                } else{
-                                    System.out.println(courseList.get(i) + ", ");
-                                }
-                            }
-                            // Prints the grades earned in each course
-                            //TODO get grade
-                            
-                            Student student = facade.getStudent();
-                            ArrayList<Course> completedCourses = student.viewCompletedCourses();
-                            if(completedCourses != null){
-                                for (int i = 0; i<completedCourses.size(); i++){
-                                    System.out.println("Course: " + completedCourses.get(i).getCourseName() +
-                                    " Grade: " + completedCourses.get(i).courseID());
-                                }
-                            } else{
-                                System.out.println("No completed courses");
-                            }
-                            
-
-                            // Courses needed
-                            ArrayList<Course> incompleteCourses = student.viewIncompleteCourses();
-                            for(Course course : incompleteCourses){
-                                System.out.println(course.getCourseName());
-                            }
-
+                            getStudentCourses();
                             break;
                         case 1:
                             viewNote();
+                            break;
+                        case 2:
+                            printEightSemesterPlan();
                             break;
                     }
                 } else {
@@ -258,8 +224,51 @@ public class UI {
         facade.makeNote(studentID, note);
     }
 
+    private void getStudentCourses() {
+        /**
+         * TODO
+         * Grades eared in courses (pass/failed)
+         * GFL elective- what courses satisfy it
+         * application area topics
+         * generate and print formatted textfile of 8 symester plan
+         * 
+         */
+        // Prints the taken courses
+        ArrayList<String> courseList = facade.getStudentCourses();
+        for (int i = 0; i < courseList.size(); i++) {
+            if (i == courseList.size()) {
+                System.out.println(courseList.get(i));
+            } else {
+                System.out.println(courseList.get(i) + ", ");
+            }
+        }
+        // Prints the grades earned in each course
+        // TODO get grade
+
+        Student student = facade.getStudent();
+        ArrayList<Course> completedCourses = student.viewCompletedCourses();
+        if (completedCourses != null) {
+            for (int i = 0; i < completedCourses.size(); i++) {
+                System.out.println("Course: " + completedCourses.get(i).getCourseName() +
+                        " Grade: " + completedCourses.get(i).courseID());
+            }
+        } else {
+            System.out.println("No completed courses");
+        }
+
+        // Courses needed
+        ArrayList<Course> incompleteCourses = student.viewIncompleteCourses();
+        for (Course course : incompleteCourses) {
+            System.out.println(course.getCourseName());
+        }
+    }
+
     private void viewNote() {
         System.out.println(facade.viewNote());
+    }
+
+    private void printEightSemesterPlan() {
+        facade.printEightSemesterPlan();
     }
 
     private String getField(String prompt) {
