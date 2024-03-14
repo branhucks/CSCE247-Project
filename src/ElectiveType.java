@@ -3,6 +3,7 @@
  */
 public enum ElectiveType {
     AIU,
+    BIM,
     CMS,
     GSS,
     GHS,
