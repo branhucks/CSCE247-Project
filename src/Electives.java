@@ -13,7 +13,7 @@ public class Electives {
      * 
      * @param minHours
      * @param electiveType
-     * @param courses
+     * @param courses - Stores the UUID of the courses
      */
     public Electives(int minHours, ElectiveType electiveType, ArrayList<String> courses) {
         this.minHours = minHours;
