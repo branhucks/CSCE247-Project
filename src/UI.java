@@ -305,7 +305,7 @@ public class UI {
         ArrayList<ApplicationArea> majorAppAreas = major.getApplicationAreas();
 
         // Prints List of options
-        System.out.println("Possible application areas for your major:");
+        System.out.println("Application Areas:");
         for (int i = 0; i < majorAppAreas.size(); i++) {
             System.out.println((i + 1) + ": " + majorAppAreas.get(i).getType().name());
         }
@@ -315,16 +315,15 @@ public class UI {
         ApplicationArea studentAppArea = majorAppAreas.get(choice);
         facade.setApplicationType(studentAppArea.getType());
 
-        
-
         // Gets the users choice and allows them to add any number of classes from the
         // list
         boolean checker = true;
         while (checker) {
             // Prints the List of courses in the selected application area
-            System.out.println("Please slelect a class that fits your applicaation area:");
+            System.out.println("Please select a class for this application area:");
             for (int i = 0; i < studentAppArea.getCourses().size(); i++) {
-                System.out.println((i + 1) + ": " + facade.getCourseByUUID(studentAppArea.getCourses().get(i)).getCourseName());
+                System.out.println(
+                        (i + 1) + ": " + facade.getCourseByUUID(studentAppArea.getCourses().get(i)).getCourseName());
             }
             choice = (scanner.nextInt() - 1);
             scanner.nextLine();
@@ -339,7 +338,7 @@ public class UI {
     }
 
     private void addCourse(Course course) {
-        System.out.println("What Semester number do you plan to take " + course.getCourseName() + "?");
+        System.out.println("Which semester would you like to take " + course.getCourseName() + "?");
         String input = scanner.nextLine();
         int choice = Integer.parseInt(input);
         facade.getEightSemesterPlan().addCourse(course.getSubject(), course.getNumber(), choice);

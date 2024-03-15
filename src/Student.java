@@ -188,6 +188,27 @@ public class Student extends User {
                 }
             }
         }
+        // Print Application Area Progress
+        System.out.println("\n********** Application Area Progress **********");
+        if (getApplicationType().toString().equals("NULL")) {
+            System.out.println("No Application Area Selected.\tCredits Needed: 9");
+            return;
+        } else {
+            System.out.println("Application Area: " + getApplicationType().toString() + "\tCredits Needed: 9");
+        }
+        for (ApplicationArea applicationArea : applicationAreas) {
+            if (applicationArea.getType().toString().equals(getApplicationType().toString())) {
+                for (String aaCourseUUID : applicationArea.getCourses()) {
+                    for (StudentCourse studentCourse : eightSemesterPlan.getStudentCourses()) {
+                        if (studentCourse.getCourseID().equals(courseList.getCourseIDByCourseUUID(aaCourseUUID))
+                                && studentCourse.getStatus().equals("Completed")) {
+                            System.out.println("Course ID: " + studentCourse.getCourseID() + "\tGrade: "
+                                    + studentCourse.getGrade() + "\tPassed " + studentCourse.getPassed());
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /**

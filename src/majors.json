@@ -93,10 +93,72 @@
             {
                 "courses": [
                     {
-                        "id": "a87ed298-b059-48ae-8b45-cb91e4c376e6"
+                        "id": "6df385a5-518b-4fd4-8ec2-52c24db480df"
+                    },
+                    {
+                        "id": "4762a324-b55c-4816-bd96-c11c1bdbf0b9"
+                    },
+                    {
+                        "id": "3cd395f8-d6d5-4bed-919a-cc412514ad15"
                     }
                 ],
                 "type": "DigitalDesign"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "5ec1b729-0227-4f20-9ad0-f3944d86a0b1"
+                    },
+                    {
+                        "id": "d6c94856-cd9a-4741-9dbb-056affb123ea"
+                    },
+                    {
+                        "id": "f36ec9b7-430d-4fc5-88dd-0f284650da0e"
+                    }
+                ],
+                "type": "Science"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "2e0285db-981b-4204-87b8-04aa7fab7ed3"
+                    },
+                    {
+                        "id": "56c36d9d-b24b-4cc1-b11c-c50774c05555"
+                    },
+                    {
+                        "id": "8eb88808-590a-46c2-9177-bfeaf1a08cb3"
+                    }
+                ],
+                "type": "Math"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "7ff23b34-bdcf-498d-8314-1d510bc8ffef"
+                    },
+                    {
+                        "id": "9ca16a4a-bf04-488c-a7b7-83699aa46cee"
+                    },
+                    {
+                        "id": "d9dc6c36-b50a-4288-b4d8-15d37a6fec6e"
+                    }
+                ],
+                "type": "Robotics"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "bca81410-e509-4dae-a331-e5df1b43ff76"
+                    },
+                    {
+                        "id": "6c6678cc-59c4-47e0-aa93-66663eae1bfd"
+                    },
+                    {
+                        "id": "3e52cd47-2db6-4577-a7df-d062eaaf000b"
+                    }
+                ],
+                "type": "Speech"
             }
         ],
         "id": "9f367eb1-4970-4c43-bae2-d08897eedf06",
@@ -211,7 +273,95 @@
         ]
     },
     {
-        "electives": [],
+        "electives": [
+            {
+                "courses": [
+                    {
+                        "id": "5844e157-e966-4ca8-a60b-a86f76903c6d"
+                    },
+                    {
+                        "id": "a5f4b8c7-539a-47ba-9931-17e47b78959f"
+                    },
+                    {
+                        "id": "5d44445a-761c-493b-84f2-805a7c6b2af4"
+                    }
+                ],
+                "minHours": 3,
+                "electiveType": "AIU"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "1e45ee57-74aa-47f0-ae20-46d973457505"
+                    },
+                    {
+                        "id": "3e52cd47-2db6-4577-a7df-d062eaaf000b"
+                    },
+                    {
+                        "id": "b08931d4-1c51-42df-96b6-aef74900873a"
+                    }
+                ],
+                "minHours": 3,
+                "electiveType": "CMS"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "2bf59b38-42f3-4a2c-a689-53e6e4ab4f2b"
+                    },
+                    {
+                        "id": "b0687a3a-9e0f-479a-8df8-14f5478ef547"
+                    },
+                    {
+                        "id": "642f3119-63f7-4bdb-bdf1-4f1ed4b4a4de"
+                    }
+                ],
+                "minHours": 3,
+                "electiveType": "GSS"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "d9ee653d-4c4f-4943-857c-9ad95bea5264"
+                    },
+                    {
+                        "id": "542433a9-cc0e-4d8c-8038-c5d3179c2d64"
+                    },
+                    {
+                        "id": "193087e4-a523-4b5f-9ce2-3aa1b5e614b3"
+                    }
+                ],
+                "minHours": 9,
+                "electiveType": "LibArts"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "0fb4ac09-b5df-47a0-a95b-566e31940f04"
+                    },
+                    {
+                        "id": "3ad398a2-c2b4-438a-ac0a-b0525030bf9d"
+                    },
+                    {
+                        "id": "cd9dc2fc-7414-47be-83ea-35519a9db40f"
+                    }
+                ],
+                "minHours": 3,
+                "electiveType": "GHS"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "8699fb7e-844c-4fcd-b212-7a5ac8f5303e"
+                    },
+                    {
+                        "id": "06fd9a7c-6141-4ca3-ba63-efc1c4f8dce4"
+                    }
+                ],
+                "minHours": 6,
+                "electiveType": "GFL"
+            }
+        ],
         "applicationAreas": [
             {
                 "courses": [
