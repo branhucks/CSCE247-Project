@@ -315,19 +315,20 @@ public class UI {
         ApplicationArea studentAppArea = majorAppAreas.get(choice);
         facade.setApplicationType(studentAppArea.getType());
 
-        // Prints the List of courses in the selected application area
-        System.out.println("Please slelect a class that fits your applicaation area:");
-        for (int i = 0; i < studentAppArea.getCourses().size(); i++) {
-            System.out.println((i + 1) + ": " + facade.getCourseByUUID(studentAppArea.getCourses().get(i)));
-        }
+        
 
         // Gets the users choice and allows them to add any number of classes from the
         // list
         boolean checker = true;
         while (checker) {
+            // Prints the List of courses in the selected application area
+            System.out.println("Please slelect a class that fits your applicaation area:");
+            for (int i = 0; i < studentAppArea.getCourses().size(); i++) {
+                System.out.println((i + 1) + ": " + facade.getCourseByUUID(studentAppArea.getCourses().get(i)).getCourseName());
+            }
             choice = (scanner.nextInt() - 1);
             scanner.nextLine();
-            Course selectedCourse = facade.getCourseByCode(studentAppArea.getCourses().get(choice));
+            Course selectedCourse = facade.getCourseByUUID(studentAppArea.getCourses().get(choice));
             addCourse(selectedCourse);
             System.out.println("Add another class? (Y/N)");
             String selectedString = scanner.nextLine();
