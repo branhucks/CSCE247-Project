@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class FACADE {
     private User user;
@@ -45,10 +44,22 @@ public class FACADE {
         return this.majorList;
     }
 
+    /**
+     * Get Major by the major's UUID
+     * 
+     * @param UUID | the UUID of the major
+     * @return | the Major
+     */
     public Major getMajorByUUID(String UUID) {
         return this.majorList.getMajorByUUID(UUID);
     }
 
+    /**
+     * Get Course by the course's UUID
+     * 
+     * @param UUID | the UUID of the course
+     * @return | the Course
+     */
     public Course getCourseByUUID(String UUID) {
         return this.courseList.getCourseByUUID(UUID);
     }
@@ -145,18 +156,16 @@ public class FACADE {
     }
 
     /**
-     * Adds a Course to the system
+     * Adds a course to the system
      * 
-     * @param courseName     | the course's name
-     * @param courseID       | the course's ID
-     * @param requirement    | the type of requirement of the course
-     * @param semester       | the course's semester availability
-     * @param description    | the description of the course
-     * @param prerequisites  | the course's prerequisites
-     * @param corequisites   | the course's corequisites
-     * @param creditHours    | the amount of credit hours of the course
-     * @param passingGrade   | the passing grade of the course
-     * @param completedClass | if the course has been completed
+     * @param courseName    | the course's name
+     * @param subject       | the course's subject
+     * @param number        | the course's number
+     * @param semester      | the course's semester availability
+     * @param prerequisites | the course's prerequisites
+     * @param corequisites  | the course's corequisites
+     * @param creditHours   | the course's credit hours
+     * @param passingGrade  | the passing grade for the course
      * @return | true or false depending on if the course was successfully added
      */
     public boolean addCourse(String courseName, String subject, String number, String semester,
@@ -177,11 +186,11 @@ public class FACADE {
     /**
      * Adds a Major to the system
      * 
-     * @param majorName       | the name of the major
-     * @param requiredCourses | the major's required courses
-     * @param electives       | the major's elective courses
-     * @param applicationArea | a possible application area
-     * @param creditsRequired | total amount of credits
+     * @param majorName        | the name of the major
+     * @param requiredCourses  | the major's required courses
+     * @param electives        | the major's elective courses
+     * @param applicationAreas | a possible application area
+     * @param creditsRequired  | total amount of credits
      * @return | true or false depending on if the major was successfully added
      */
     public boolean addMajor(String majorName, ArrayList<String> requiredCourses,
@@ -221,15 +230,6 @@ public class FACADE {
     }
 
     /**
-     * Gets the student's major progress
-     * 
-     * @return | an integer representation of the user's progress
-     */
-    public int getStudentProgress() {
-        return student.getStudentProgress();
-    }
-
-    /**
      * Gets the student's eight semester plan
      * 
      * @return | a Semester Plan
@@ -242,7 +242,7 @@ public class FACADE {
      * Creates a transcript of the student's data
      */
     public void printEightSemesterPlan() {
-        student.printEightSemesterPlan();
+        student.printEightSemesterPlan(student.getClassYear());
     }
 
     /**
@@ -289,6 +289,21 @@ public class FACADE {
      */
     public String viewNote() {
         return student.getNoteFromAdvisor();
+    }
+
+    /**
+     * Prints a student's degree progress to the console
+     */
+    public void viewProgress() {
+        SemesterPlan eightSemesterPlan = student.getEightSemesterPlan();
+        String majorUUID = student.getMajor();
+        Major studentMajor = majorList.getMajorByUUID(majorUUID);
+        ArrayList<String> requiredCoursesUUIDs = studentMajor.getRequiredCourses();
+        ArrayList<Course> requiredCourses = new ArrayList<>();
+        for (String uuid : requiredCoursesUUIDs) {
+            requiredCourses.add(getCourseByUUID(uuid));
+        }
+        student.viewProgress(eightSemesterPlan, requiredCourses, studentMajor.getElectives(), courseList, majorList);
     }
 
 }

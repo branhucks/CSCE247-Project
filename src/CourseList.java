@@ -58,6 +58,21 @@ public class CourseList {
     }
 
     /**
+     * Get a course's UUID by its Course ID
+     * 
+     * @param courseID | the course's course ID
+     * @return | the Course's UUID
+     */
+    public String getCourseIDByCourseUUID(String courseUUID) {
+        for (Course course : courseList) {
+            if (course.getUUID().equals(courseUUID)) {
+                return course.courseID();
+            }
+        }
+        return null;
+    }
+
+    /**
      * Validates whether the course exists
      * 
      * @param courseID | the course's ID to search
@@ -97,16 +112,17 @@ public class CourseList {
     }
 
     /**
-     * Add a Course to the list
+     * Adds a new Course to the list of courses
      * 
-     * @param courseName    | the name of the course
-     * @param courseID      | the course's identifier
-     * @param requirement   | the requirement type
-     * @param semester      | the semester it is available
-     * @param prerequisites | the course's prerequisites
-     * @param creditHours   | credit hours for the course
-     * @param passingGrade  | the passing grade for the course
-     * @return | true or false depending on if the course was added successfully
+     * @param courseName    | the course's name
+     * @param subject       | the course's subject
+     * @param number        | the course's number
+     * @param semester      | the course's semester availablity
+     * @param prerequisites | the prerequisites of the course
+     * @param corequisites  | the corequisites of the course
+     * @param creditHours   | the course's credit hours
+     * @param passingGrade  | the passing grade of the course
+     * @return | true or false depending on if the course was successfully added
      */
     public boolean addCourse(String courseName, String subject, String number, String semester,
             ArrayList<PrereqOptions> prerequisites, ArrayList<String> corequisites, int creditHours, int passingGrade) {

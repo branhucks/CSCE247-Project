@@ -139,27 +139,4 @@ public class Course {
     public int getPassingGrade() {
         return passingGrade;
     }
-
-    /**
-     * Prints all required prerequisites
-     * 
-     * @param course | the course to be identified
-     * @return | a list of prerequisites
-     */
-    public ArrayList<PrereqOptions> printPrerequisites(Course course) {
-        return null;
-    }
-
-    /**
-     * Display the course's information
-     * 
-     * @return | a String representation of the course's information
-     */
-    /*
-     * public String toString() {
-     * return "UUID: " + uuid + "\nCourse Name: " + courseName + "\nCourse ID: " +
-     * courseID + "\nSemester: " + semester
-     * + "\nCredit Hours: " + creditHours + "\nPassing Grade: " + passingGrade;
-     * }
-     */
 }

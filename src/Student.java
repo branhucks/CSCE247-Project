@@ -128,14 +128,55 @@ public class Student extends User {
     }
 
     /**
-     * NEEDS COMPLETED
-     * View the student's major progression
+     * Prints the student's degree progression to the console
      * 
-     * @return | an integer representation of the student's major progress
+     * @param eightSemesterPlan | the student's eight semester plan
+     * @param requiredCourses   | the major's required courses
      */
-    public int getStudentProgress() {
-        // TODO
-        return 0;
+    public void viewProgress(SemesterPlan eightSemesterPlan, ArrayList<Course> requiredCourses,
+            ArrayList<Electives> majorElectives, CourseList courseList, MajorList majorList) {
+        System.out.println("\nMajor: " + majorList.getMajorByUUID(getMajor()).getMajorName() + "\t\tClassification: "
+                + this.classYear);
+        // Print completed required courses
+        System.out.println("\n********* Completed Courses **********");
+        for (Course requiredCourse : requiredCourses) {
+            for (StudentCourse studentCourse : eightSemesterPlan.getStudentCourses()) {
+                if (requiredCourse.courseID().equals(studentCourse.getCourseID())
+                        && studentCourse.getStatus().equals("Completed")) {
+                    System.out
+                            .println("Course ID: " + requiredCourse.courseID() + "\tGrade: " + studentCourse.getGrade()
+                                    + "\tPassed: " + studentCourse.getPassed());
+                }
+            }
+        }
+        // Print incomplete required courses
+        System.out.println("\n********* Incomplete Courses **********");
+        for (Course requiredCourse : requiredCourses) {
+            for (StudentCourse studentCourse : eightSemesterPlan.getStudentCourses()) {
+                if (requiredCourse.courseID().equals(studentCourse.getCourseID())
+                        && studentCourse.getStatus().equals("Planned")) {
+                    System.out.println("Course ID: " + requiredCourse.courseID());
+                }
+            }
+        }
+        // Print Electives progress
+        System.out.println("\n********* Elective Progress **********");
+        for (Electives electives : majorElectives) {
+            // Format Elective type and minHours
+            String formatString = "%-20s Credits Needed: %d";
+            System.out.printf(formatString, electives.getElectiveType() + " Elective", electives.getMinHours());
+            System.out.println();
+
+            for (String electiveUUID : electives.getCourses()) {
+                for (StudentCourse studentCourse : eightSemesterPlan.getStudentCourses()) {
+                    if (studentCourse.getCourseID().equals(courseList.getCourseIDByCourseUUID(electiveUUID))
+                            && studentCourse.getStatus().equals("Completed")) {
+                        System.out.println("\tCourse ID: " + studentCourse.getCourseID() + "\tGrade: "
+                                + studentCourse.getGrade() + "\tPassed " + studentCourse.getPassed());
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -153,14 +194,21 @@ public class Student extends User {
     /**
      * Prints the eight semester plan beautifully to a file
      */
-    public void printEightSemesterPlan() {
+    public void printEightSemesterPlan(String classYear) {
         try {
             FileWriter writer = new FileWriter("SemesterPlan.txt");
             for (int semesterNum = 1; semesterNum <= 8; semesterNum++) {
                 writer.write("Semester " + semesterNum + "\n");
                 for (StudentCourse course : eightSemesterPlan.getStudentCourses()) {
                     if (course.getSemesterNum() == semesterNum) {
-                        writer.write(course.toString() + "\n");
+                        if (course.getStatus().equals("Completed")) {
+                            String formatString = "Course ID: %-10s Grade: %-5s Passed: %-7s Status: %s\n";
+                            writer.write(String.format(formatString, course.getCourseID(), course.getGrade(),
+                                    course.getPassed(), course.getStatus()));
+                        } else if (course.getStatus().equals("Planned")) {
+                            String formatString = "Course ID: %-10s Status: %s\n";
+                            writer.write(String.format(formatString, course.getCourseID(), course.getStatus()));
+                        }
                     }
                 }
                 writer.write("\n");
@@ -170,89 +218,5 @@ public class Student extends User {
             System.out.println("An error occurred while writing to the file.");
             e.printStackTrace();
         }
-    }
-
-    /**
-     * View the eight semester plan
-     * 
-     * @return | an eight semester plan
-     */
-    public SemesterPlan viewSemesterPlan() {
-        // TODO
-        return null;
-    }
-
-    /**
-     * View a "What-if" of a major change
-     * 
-     * @param major | the major to be changed to
-     * @return | an eight semester plan
-     */
-    public SemesterPlan viewWhatIf(Major major) {
-        // TODO
-        return null;
-    }
-
-    /**
-     * Find a course by its ID
-     * 
-     * @param courseID | the course's ID to be searched
-     * @return | a course
-     */
-    public Course findCourse(String courseID) {
-        CourseList courseList = CourseList.getInstance();
-        return courseList.getCourse(courseID);
-    }
-
-    /**
-     * Views the details of a course
-     * 
-     * @param courseID | the course's ID to be searched
-     * @return | a course
-     */
-    public Course viewCourseDetails(String courseID) {
-        // TODO
-        return null;
-    }
-
-    /**
-     * View all completed courses
-     * 
-     * @return | a list of completed courses
-     */
-    public ArrayList<Course> viewCompletedCourses() {
-        // TODO
-        return null;
-    }
-
-    /**
-     * View all incompleted courses
-     * 
-     * @return | a list of incompleted courses
-     */
-    public ArrayList<Course> viewIncompleteCourses() {
-        // Implementation here
-        return null;
-    }
-
-    /**
-     * View all in-progress courses
-     * 
-     * @return | a list of in-progress courses
-     */
-    public ArrayList<Course> viewInProgressCourses() {
-        // TODO
-        return null;
-    }
-
-    /**
-     * Whether or not the student is at risk of failure
-     * 
-     * @param gpa | the student's gpa
-     * @return | true or false depending on if the student is at risk
-     */
-    public boolean riskOfFailure(double gpa) {
-        // TODO
-        return false;
     }
 }

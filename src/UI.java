@@ -6,7 +6,8 @@ public class UI {
     private String[] menuOptions = { "Create Account", "Login", "Exit" };
     private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees", "Make Note",
             "Logout" };
-    private String[] studentOptions = { "View Courses", "View Notes", "Print Eight Semester Plan", "Pick GFL Elective", "Pick Application Area", "Logout" };
+    private String[] studentOptions = { "View Degree Progress", "View Notes", "Print Eight Semester Plan",
+            "Pick GFL Elective", "Pick Application Area", "Logout" };
     private Scanner scanner;
     private FACADE facade;
     private User user;
@@ -21,7 +22,6 @@ public class UI {
         System.out.println(WELCOME_MESSAGE);
 
         while (true) {
-            // Display first menu until user logs in
             displayMenu();
 
             // Ask for command from user
@@ -40,7 +40,6 @@ public class UI {
                 case 1:
                     user = login();
                     if (user != null) {
-                        System.out.println(user.getUserType());
                         break;
                     }
             }
@@ -90,7 +89,7 @@ public class UI {
                     }
                     switch (command) {
                         case 0:
-                            getStudentCourses();
+                            viewProgress();
                             break;
                         case 1:
                             viewNote();
@@ -182,7 +181,7 @@ public class UI {
 
         if (facade.login(username)) {
             user = facade.getUser();
-            System.out.println("Welcome " + user.getFirstName() + " " + user.getLastName());
+            System.out.println("\nWelcome " + user.getFirstName() + " " + user.getLastName());
         } else {
             System.out.println("Invalid username.");
         }
@@ -231,7 +230,15 @@ public class UI {
         facade.makeNote(studentID, note);
     }
 
-    private void pickGFLElective(){
+    private void viewProgress() {
+        facade.viewProgress();
+    }
+
+    private void viewNote() {
+        System.out.println(facade.viewNote());
+    }
+
+    private void pickGFLElective() {
 
         /*
          * gets the GFL elective
@@ -244,41 +251,41 @@ public class UI {
          */
         Major studentsMajor = facade.getMajorByUUID(facade.getStudent().getMajor());
         ArrayList<Electives> electives = studentsMajor.getElectives();
-        ArrayList<String> GFLElective = new ArrayList<String>(); //list of strings of possible classes to take
+        ArrayList<String> GFLElective = new ArrayList<String>(); // list of strings of possible classes to take
         System.out.println("Please choose an elective:");
 
         // loops though the electives to find the GFL elective
-        for(int i = 0; i<electives.size(); i++){
+        for (int i = 0; i < electives.size(); i++) {
             // Stores the elective to a varible
             Electives elective = studentsMajor.getElectives().get(i);
 
-            if(elective.getElectiveType().equals(ElectiveType.GFL)){
+            if (elective.getElectiveType().equals(ElectiveType.GFL)) {
                 // Loops through the courses to print out each option
-                for(int j = 0; j<elective.getCourses().size(); j++){
+                for (int j = 0; j < elective.getCourses().size(); j++) {
                     // Gets an instance of the course that the elective holds
                     String GFLCourse = elective.getCourses().get(j);
 
                     Boolean taken = false; // Boolean to see if the course was taken
 
                     // loops though the list of courses taken to see if it has been taken
-                    for(int k = 0; k<facade.getStudentCourses().size(); k++){
-                        if(facade.getStudentCourses().get(k).equals(GFLCourse)){
+                    for (int k = 0; k < facade.getStudentCourses().size(); k++) {
+                        if (facade.getStudentCourses().get(k).equals(GFLCourse)) {
                             taken = true;
                         }
                     }
                     // if it wasn't taken it prints it as a choice and adds it to the list
-                    if(!taken){
+                    if (!taken) {
                         GFLElective.add(GFLCourse);
-                        System.out.println((j+1) + " " + facade.getCourseByUUID(GFLCourse).getCourseName());
+                        System.out.println((j + 1) + " " + facade.getCourseByUUID(GFLCourse).getCourseName());
                     }
-                     
+
                 }
             }
         }
         // adds the choice to the semesterplan2
 
         int choice = getCommand(GFLElective.size());
-        //This is the UUID of the selected elective
+        // This is the UUID of the selected elective
         Course selectedCourse = facade.getCourseByUUID(GFLElective.get((choice)));
         System.out.println("What Semester number do you plan to take " + selectedCourse.getCourseName() + "?");
         String input = scanner.nextLine();
@@ -287,51 +294,10 @@ public class UI {
 
     }
 
-    private void pickApplicationArea(){
-        // Application area topics, 
-        //see the topics and pick one then pick classes
+    private void pickApplicationArea() {
+        // Application area topics,
+        // see the topics and pick one then pick classes
         // TODO
-    }
-
-    private void getStudentCourses() {
-        // Prints the taken courses
-        ArrayList<String> courseList = facade.getStudentCourses();
-        Student student = facade.getStudent();
-        ArrayList<Course> completedCourses = student.viewCompletedCourses();
-        SemesterPlan semesterPlan = student.getEightSemesterPlan();
-
-        for (int i = 0; i < courseList.size(); i++) {
-            if (i == courseList.size()) {
-                System.out.println(courseList.get(i));
-            } else {
-                System.out.println(courseList.get(i) + ", ");
-            }
-        }
-
-        // Prints the grades earned in each course and if passed or failed   
-        if (completedCourses != null) {
-            for (int i = 0; i < completedCourses.size(); i++) {
-                System.out.print("Course: " + completedCourses.get(i).getCourseName() +
-                        " Grade: " + semesterPlan.getStudentCourses().get(i).getGrade());
-                        if (semesterPlan.getStudentCourses().get(i).getPassed()){
-                            System.out.println("Passed");
-                        } else{
-                            System.out.println("Failed");
-                        }
-            }
-        } else {
-            System.out.println("No completed courses");
-        }
-
-        // Courses needed
-        ArrayList<Course> incompleteCourses = student.viewIncompleteCourses();
-        for (Course course : incompleteCourses) {
-            System.out.println(course.getCourseName());
-        }  
-    }
-
-    private void viewNote() {
-        System.out.println(facade.viewNote());
     }
 
     private void printEightSemesterPlan() {

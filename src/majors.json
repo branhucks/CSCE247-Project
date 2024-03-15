@@ -2,8 +2,6 @@
     {
         "electives": [
             {
-                "minHours": 3,
-                "electiveType": "AIU",
                 "courses": [
                     {
                         "id": "5844e157-e966-4ca8-a60b-a86f76903c6d"
@@ -14,11 +12,11 @@
                     {
                         "id": "5d44445a-761c-493b-84f2-805a7c6b2af4"
                     }
-                ]
+                ],
+                "minHours": 3,
+                "electiveType": "AIU"
             },
             {
-                "minHours": 3,
-                "electiveType": "CMS",
                 "courses": [
                     {
                         "id": "1e45ee57-74aa-47f0-ae20-46d973457505"
@@ -29,11 +27,11 @@
                     {
                         "id": "b08931d4-1c51-42df-96b6-aef74900873a"
                     }
-                ]
+                ],
+                "minHours": 3,
+                "electiveType": "CMS"
             },
             {
-                "minHours": 3,
-                "electiveType": "GSS",
                 "courses": [
                     {
                         "id": "2bf59b38-42f3-4a2c-a689-53e6e4ab4f2b"
@@ -44,11 +42,11 @@
                     {
                         "id": "642f3119-63f7-4bdb-bdf1-4f1ed4b4a4de"
                     }
-                ]
+                ],
+                "minHours": 3,
+                "electiveType": "GSS"
             },
             {
-                "minHours": 9,
-                "electiveType": "LibArts",
                 "courses": [
                     {
                         "id": "d9ee653d-4c4f-4943-857c-9ad95bea5264"
@@ -59,11 +57,11 @@
                     {
                         "id": "193087e4-a523-4b5f-9ce2-3aa1b5e614b3"
                     }
-                ]
+                ],
+                "minHours": 9,
+                "electiveType": "LibArts"
             },
             {
-                "minHours": 3,
-                "electiveType": "GHS",
                 "courses": [
                     {
                         "id": "0fb4ac09-b5df-47a0-a95b-566e31940f04"
@@ -74,11 +72,11 @@
                     {
                         "id": "cd9dc2fc-7414-47be-83ea-35519a9db40f"
                     }
-                ]
+                ],
+                "minHours": 3,
+                "electiveType": "GHS"
             },
             {
-                "minHours": 6,
-                "electiveType": "GFL",
                 "courses": [
                     {
                         "id": "8699fb7e-844c-4fcd-b212-7a5ac8f5303e"
@@ -86,7 +84,19 @@
                     {
                         "id": "06fd9a7c-6141-4ca3-ba63-efc1c4f8dce4"
                     }
-                ]
+                ],
+                "minHours": 6,
+                "electiveType": "GFL"
+            }
+        ],
+        "applicationAreas": [
+            {
+                "courses": [
+                    {
+                        "id": "a87ed298-b059-48ae-8b45-cb91e4c376e6"
+                    }
+                ],
+                "type": "DigitalDesign"
             }
         ],
         "id": "9f367eb1-4970-4c43-bae2-d08897eedf06",
@@ -198,11 +208,20 @@
             {
                 "id": "f425f91f-92da-4261-be45-347d81b6ab9d"
             }
-        ],
-        "applicationArea": null
+        ]
     },
     {
         "electives": [],
+        "applicationAreas": [
+            {
+                "courses": [
+                    {
+                        "id": "a87ed298-b059-48ae-8b45-cb91e4c376e6"
+                    }
+                ],
+                "type": "DigitalDesign"
+            }
+        ],
         "id": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
         "majorName": "Computer Information Systems",
         "creditsRequired": 125,
@@ -312,7 +331,6 @@
             {
                 "id": "f425f91f-92da-4261-be45-347d81b6ab9d"
             }
-        ],
-        "applicationArea": null
+        ]
     }
 ]
