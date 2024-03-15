@@ -3,7 +3,22 @@
         "lastName": "Hucks",
         "hasScholarship": false,
         "majorProgress": 0,
-        "semesterPlan": null,
+        "semesterPlan": [
+            {
+                "grade": 92,
+                "passed": true,
+                "semesterNum": 1,
+                "courseID": "CSCE 145",
+                "status": "Completed"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 2,
+                "courseID": "FREN 109",
+                "status": "Planned"
+            }
+        ],
         "studentID": "I74913108",
         "firstName": "Brandon",
         "advisor": "073b875b-dd00-482a-b708-08ea0809d1c1",
@@ -14,22 +29,6 @@
         "classYear": "Freshman",
         "noteFromAdvisor": "Testing note to student",
         "username": "bhucks"
-    },
-    {
-        "lastName": "Hill",
-        "hasScholarship": false,
-        "majorProgress": 0,
-        "semesterPlan": null,
-        "studentID": "A39579237",
-        "firstName": "Tawnie",
-        "advisor": "109334fb-7a90-49c8-a032-acd32be2eb86",
-        "major": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
-        "gpa": 0.0,
-        "id": "ecf1943f-8eb1-43b3-b4f3-bdba7887a3fd",
-        "userType": "Student",
-        "classYear": "Freshman",
-        "noteFromAdvisor": "You should declare STAT as your application area.",
-        "username": "thill"
     },
     {
         "firstName": "Kyle",

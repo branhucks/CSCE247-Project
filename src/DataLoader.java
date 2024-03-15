@@ -1,6 +1,7 @@
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -144,9 +145,23 @@ public class DataLoader extends DataConstants {
                     }
                     electives.add(new Electives(minHours, electiveType, courses));
                 }
-                ApplicationArea applicationArea = (ApplicationArea) majorJSON.get(MAJOR_APPLICATION_AREA);
+                JSONArray applicationAreasJSON = (JSONArray) majorJSON.get(MAJOR_APPLICATION_AREAS);
+                ArrayList<ApplicationArea> applicationAreas = new ArrayList<>();
+                for (int j = 0; j < applicationAreasJSON.size(); j++) {
+                    JSONObject applicationAreaJSON = (JSONObject) applicationAreasJSON.get(j);
+                    ApplicationType applicationType = ApplicationType
+                            .valueOf((String) applicationAreaJSON.get(APPLICATION_AREA_TYPE));
+                    JSONArray coursesArray = (JSONArray) applicationAreaJSON.get(APPLICATION_AREA_COURSES);
+                    ArrayList<String> courses = new ArrayList<>();
+                    for (int k = 0; k < coursesArray.size(); k++) {
+                        JSONObject courseJSON = (JSONObject) coursesArray.get(k);
+                        String courseUUID = (String) courseJSON.get(COURSE_ID);
+                        courses.add(courseUUID);
+                    }
+                    applicationAreas.add(new ApplicationArea(applicationType, courses));
+                }
                 int creditsRequired = ((Long) majorJSON.get(MAJOR_CREDITS_REQUIRED)).intValue();
-                majorList.add(new Major(id, majorName, requiredCourses, electives, applicationArea, creditsRequired));
+                majorList.add(new Major(id, majorName, requiredCourses, electives, applicationAreas, creditsRequired));
             }
             return majorList;
         } catch (Exception e) {

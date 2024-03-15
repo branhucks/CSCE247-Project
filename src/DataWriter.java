@@ -211,7 +211,20 @@ public class DataWriter extends DataConstants {
             electivesArray.add(electiveObject);
         }
         majorDetails.put(MAJOR_ELECTIVES, electivesArray);
-        majorDetails.put(MAJOR_APPLICATION_AREA, major.getApplicationArea());
+        JSONArray applicationAreasArray = new JSONArray();
+        for (ApplicationArea applicationArea : major.getApplicationAreas()) {
+            JSONObject applicationAreaObject = new JSONObject();
+            applicationAreaObject.put(APPLICATION_AREA_TYPE, applicationArea.getType().toString());
+            JSONArray coursesArray = new JSONArray();
+            for (String uuid : applicationArea.getCourses()) {
+                JSONObject courseObject = new JSONObject();
+                courseObject.put(COURSE_ID, uuid);
+                coursesArray.add(courseObject);
+            }
+            applicationAreaObject.put(APPLICATION_AREA_COURSES, coursesArray);
+            applicationAreasArray.add(applicationAreaObject);
+        }
+        majorDetails.put(MAJOR_APPLICATION_AREAS, applicationAreasArray);
         majorDetails.put(MAJOR_CREDITS_REQUIRED, major.getCreditsRequired());
         return majorDetails;
     }

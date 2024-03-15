@@ -157,7 +157,7 @@ public class Student extends User {
         try {
             FileWriter writer = new FileWriter("SemesterPlan.txt");
             for (int semesterNum = 1; semesterNum <= 8; semesterNum++) {
-                writer.write("Semester " + semesterNum + "\n\n");
+                writer.write("Semester " + semesterNum + "\n");
                 for (StudentCourse course : eightSemesterPlan.getStudentCourses()) {
                     if (course.getSemesterNum() == semesterNum) {
                         writer.write(course.toString() + "\n");

@@ -85,18 +85,18 @@ public class MajorList {
     /**
      * Adds a major to the list of majors
      * 
-     * @param majorName       | the name of the major
-     * @param requiredCourses | the required courses of the major
-     * @param electives       | the major's electives
-     * @param applicationArea | a possible application area
-     * @param creditsRequired | the total amount of required credits
+     * @param majorName        | the name of the major
+     * @param requiredCourses  | the required courses of the major
+     * @param electives        | the major's electives
+     * @param applicationAreas | a possible application area
+     * @param creditsRequired  | the total amount of required credits
      * @return | true or false depending on if the major was added successfully
      */
     public boolean addMajor(String majorName, ArrayList<String> requiredCourses,
-            ArrayList<Electives> electives, ApplicationArea applicationArea, int creditsRequired) {
+            ArrayList<Electives> electives, ArrayList<ApplicationArea> applicationAreas, int creditsRequired) {
         if (haveMajor(majorName))
             return false;
-        majorList.add(new Major((UUID.randomUUID()).toString(), majorName, requiredCourses, electives, applicationArea,
+        majorList.add(new Major((UUID.randomUUID()).toString(), majorName, requiredCourses, electives, applicationAreas,
                 creditsRequired));
         return true;
     }

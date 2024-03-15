@@ -67,6 +67,7 @@ public class StudentCourse {
     }
 
     public String toString() {
-        return this.courseID + "\t" + this.status + "\t" + this.grade + "\t" + this.passed;
+        return "Course ID: " + this.courseID + "\tStatus: " + this.status + "\tGrade: " + this.grade
+                + "\tPassed: " + this.passed;
     }
 }

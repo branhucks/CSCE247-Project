@@ -49,7 +49,7 @@ public class FACADE {
         return this.majorList.getMajorByUUID(UUID);
     }
 
-    public Course getCourseByUUID(String UUID){
+    public Course getCourseByUUID(String UUID) {
         return this.courseList.getCourseByUUID(UUID);
     }
 
@@ -185,9 +185,9 @@ public class FACADE {
      * @return | true or false depending on if the major was successfully added
      */
     public boolean addMajor(String majorName, ArrayList<String> requiredCourses,
-            ArrayList<Electives> electives, ApplicationArea applicationArea,
+            ArrayList<Electives> electives, ArrayList<ApplicationArea> applicationAreas,
             int creditsRequired) {
-        return majorList.addMajor(majorName, requiredCourses, electives, applicationArea, creditsRequired);
+        return majorList.addMajor(majorName, requiredCourses, electives, applicationAreas, creditsRequired);
     }
 
     /**

@@ -10,25 +10,24 @@ public class Major {
     private String majorName;
     private ArrayList<String> requiredCourses;
     private ArrayList<Electives> electives;
-    private ApplicationArea applicationArea;
+    private ArrayList<ApplicationArea> applicationAreas;
     private int creditsRequired;
 
     /**
      * Creates a new Major instance
      * 
-     * @param majorName       | the major's name
-     * @param requiredCourses | the major's required courses
-     * @param electives       | the list of electives
-     * @param applicationArea | the chosen application area
-     * @param creditsRequired | the total number of required credits
+     * @param majorName        | the major's name
+     * @param requiredCourses  | the major's required courses
+     * @param electives        | the list of electives
+     * @param applicationAreas | the chosen application area
+     * @param creditsRequired  | the total number of required credits
      */
     public Major(String majorName, ArrayList<String> requiredCourses, ArrayList<Electives> electives,
-            ApplicationArea applicationArea,
-            int creditsRequired) {
+            ArrayList<ApplicationArea> applicationAreas, int creditsRequired) {
         this.majorName = majorName;
         this.requiredCourses = requiredCourses;
         this.electives = electives;
-        this.applicationArea = applicationArea;
+        this.applicationAreas = applicationAreas;
         this.creditsRequired = creditsRequired;
     }
 
@@ -43,13 +42,13 @@ public class Major {
      * @param creditsRequired
      */
     public Major(String uuid, String majorName, ArrayList<String> requiredCourses,
-            ArrayList<Electives> electives, ApplicationArea applicationArea,
+            ArrayList<Electives> electives, ArrayList<ApplicationArea> applicationAreas,
             int creditsRequired) {
         this.uuid = uuid;
         this.majorName = majorName;
         this.requiredCourses = requiredCourses;
         this.electives = electives;
-        this.applicationArea = applicationArea;
+        this.applicationAreas = applicationAreas;
         this.creditsRequired = creditsRequired;
     }
 
@@ -100,12 +99,12 @@ public class Major {
         this.electives = electives;
     }
 
-    public ApplicationArea getApplicationArea() {
-        return this.applicationArea;
+    public ArrayList<ApplicationArea> getApplicationAreas() {
+        return this.applicationAreas;
     }
 
-    public void setApplicationArea(ApplicationArea applicationArea) {
-        this.applicationArea = applicationArea;
+    public void setApplicationArea(ArrayList<ApplicationArea> applicationAreas) {
+        this.applicationAreas = applicationAreas;
     }
 
     public int getCreditsRequired() {
