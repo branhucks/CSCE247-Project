@@ -1,0 +1,49 @@
+Semester 1
+Course ID: ENGL 101   Grade: 97    Passed: true    Status: Completed
+Course ID: MATH 141   Grade: 84    Passed: true    Status: Completed
+Course ID: CSCE 145   Grade: 92    Passed: true    Status: Completed
+Course ID: CSCE 190   Grade: 99    Passed: true    Status: Completed
+Course ID: ARTE 101   Grade: 97    Passed: true    Status: Completed
+
+Semester 2
+Course ID: ENGL 102   Grade: 89    Passed: true    Status: Completed
+Course ID: MATH 142   Grade: 86    Passed: true    Status: Completed
+Course ID: PHYS 211   Grade: 91    Passed: true    Status: Completed
+Course ID: PHYS 211L  Grade: 91    Passed: true    Status: Completed
+Course ID: CSCE 146   Grade: 94    Passed: true    Status: Completed
+Course ID: CSCE 215   Grade: 96    Passed: true    Status: Completed
+
+Semester 3
+Course ID: CSCE 211   Grade: 78    Passed: true    Status: Completed
+Course ID: CSCE 240   Grade: 95    Passed: true    Status: Completed
+Course ID: MATH 374   Grade: 84    Passed: true    Status: Completed
+Course ID: PHYS 212   Grade: 83    Passed: true    Status: Completed
+Course ID: PHYS 212L  Grade: 83    Passed: true    Status: Completed
+Course ID: PHIL 213   Grade: 94    Passed: true    Status: Completed
+
+Semester 4
+Course ID: CSCE 212   Grade: 98    Passed: true    Status: Completed
+Course ID: CSCE 247   Grade: 91    Passed: true    Status: Completed
+Course ID: MATH 241   Grade: 93    Passed: true    Status: Completed
+Course ID: ANTH 212   Grade: 96    Passed: true    Status: Completed
+
+Semester 5
+Course ID: CSCE 311   Grade: 87    Passed: true    Status: Completed
+Course ID: CSCE 330   Grade: 91    Passed: true    Status: Completed
+Course ID: CSCE 350   Grade: 76    Passed: true    Status: Completed
+Course ID: CSCE 390   Grade: 100   Passed: true    Status: Completed
+Course ID: ENGL 463   Grade: 87    Passed: true    Status: Completed
+
+Semester 6
+Course ID: CSCE 416   Status: Planned
+Course ID: STAT 509   Status: Planned
+
+Semester 7
+Course ID: CSCE 490   Status: Planned
+Course ID: CSCE 355   Status: Planned
+Course ID: MATH 344   Status: Planned
+Course ID: MATH 344L  Status: Planned
+
+Semester 8
+Course ID: CSCE 492   Status: Planned
+

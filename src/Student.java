@@ -175,7 +175,6 @@ public class Student extends User {
         // Print Electives progress
         System.out.println("\n********* Elective Progress **********");
         for (Electives electives : majorElectives) {
-            // Format Elective type and minHours
             String formatString = "%-20s Credits Needed: %d";
             System.out.printf(formatString, electives.getElectiveType() + " Elective", electives.getMinHours());
             System.out.println();

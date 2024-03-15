@@ -1,6 +1,7 @@
 [
     {
         "lastName": "West",
+        "applicationType": "NULL",
         "hasScholarship": false,
         "majorProgress": 0,
         "semesterPlan": [
