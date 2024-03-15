@@ -269,17 +269,18 @@ public class UI {
                     // if it wasn't taken it prints it as a choice and adds it to the list
                     if(!taken){
                         GFLElective.add(GFLCourse);
-                        System.out.println((i+1) + " " + facade.getCourseByCode(GFLCourse).getCourseName());
+                        System.out.println((j+1) + " " + facade.getCourseByUUID(GFLCourse).getCourseName());
                     }
                      
                 }
             }
         }
-        // adds the choice to the semesterplan
+        // adds the choice to the semesterplan2
+
         int choice = getCommand(GFLElective.size());
         //This is the UUID of the selected elective
-        Course selectedCourse = facade.getCourseByCode(GFLElective.get((choice)));
-        System.out.println("What Semester number do you plan to take" + selectedCourse.getCourseName() + "?");
+        Course selectedCourse = facade.getCourseByUUID(GFLElective.get((choice)));
+        System.out.println("What Semester number do you plan to take " + selectedCourse.getCourseName() + "?");
         String input = scanner.nextLine();
         choice = Integer.parseInt(input);
         facade.getEightSemesterPlan().addCourse(selectedCourse.getSubject(), selectedCourse.getNumber(), choice);
