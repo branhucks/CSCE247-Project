@@ -21,6 +21,7 @@ public abstract class DataConstants {
     protected static final String STUDENT_SEMESTER_PLAN = "semesterPlan";
     protected static final String STUDENT_COMPLETED_COURSES = "completedCourses";
     protected static final String STUDENT_NOTE = "noteFromAdvisor";
+    protected static final String STUDENT_APPLICATION_TYPE = "applicationType";
 
     // ADVISOR
     protected static final String ADVISOR_ADVISEES = "advisees";

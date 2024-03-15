@@ -150,34 +150,6 @@ public class UserList {
     }
 
     /**
-     * Adds a User to the list
-     * 
-     * @param username  | username of the user
-     * @param firstName | first name of the user
-     * @param lastName  | last name of the user
-     * @param userType  | user type of the user
-     * @return | true or flase whether it was added successfully
-     */
-    /*
-     * public boolean addUser(String username, String firstName, String lastName,
-     * String userType) {
-     * if (haveUser(username)) {
-     * return false;
-     * }
-     * if (userType.equalsIgnoreCase("Student")) {
-     * students.add(new Student((UUID.randomUUID()).toString(), username, firstName,
-     * lastName, userType, null,
-     * null, null, 0.0, false, 0, null));
-     * } else if (userType.equalsIgnoreCase("Advisor")) {
-     * advisors.add(new Advisor((UUID.randomUUID()).toString(), username, firstName,
-     * lastName, userType, null,
-     * null));
-     * }
-     * return true;
-     * }
-     */
-
-    /**
      * Adds a student to the system
      * 
      * @param username  | the username of the student
@@ -195,7 +167,7 @@ public class UserList {
         }
         students.add(new Student((UUID.randomUUID()).toString(), username, firstName, lastName, userType,
                 generateStudentID(), null, getMajorUUIDByName(major),
-                classYear, 0.0, false, 0, null, null));
+                classYear, 0.0, false, 0, null, null, null));
         return true;
     }
 

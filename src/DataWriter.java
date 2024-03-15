@@ -67,6 +67,7 @@ public class DataWriter extends DataConstants {
         }
         userDetails.put(STUDENT_SEMESTER_PLAN, semesterPlanArray);
         userDetails.put(STUDENT_NOTE, student.getNoteFromAdvisor());
+        userDetails.put(STUDENT_APPLICATION_TYPE, student.getApplicationType().toString());
         return userDetails;
     }
 

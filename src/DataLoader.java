@@ -53,9 +53,12 @@ public class DataLoader extends DataConstants {
                     }
                     SemesterPlan eightSemesterPlan = new SemesterPlan(semesterCourses);
                     String noteFromAdvisor = (String) personJSON.get(STUDENT_NOTE);
+                    ApplicationType applicationType = ApplicationType
+                            .valueOf((String) personJSON.get(STUDENT_APPLICATION_TYPE));
                     studentList.add(
                             new Student(id, username, firstName, lastName, userType, studentID, advisor, major,
-                                    classYear, gpa, hasScholarship, majorProgress, eightSemesterPlan, noteFromAdvisor));
+                                    classYear, gpa, hasScholarship, majorProgress, eightSemesterPlan, noteFromAdvisor,
+                                    applicationType));
                 }
             }
             return studentList;

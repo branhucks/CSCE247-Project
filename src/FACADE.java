@@ -246,6 +246,24 @@ public class FACADE {
     }
 
     /**
+     * Gets the student's application type
+     * 
+     * @return | the type of application area
+     */
+    public ApplicationType getApplicationType() {
+        return student.getApplicationType();
+    }
+
+    /**
+     * Sets the student's application type
+     * 
+     * @param applicationType | the type of application area
+     */
+    public void setApplicationType(ApplicationType applicationType) {
+        student.setApplicationType(applicationType);
+    }
+
+    /**
      * List all students in the Advisor's advisees list
      */
     public void listAdvisees() {
@@ -303,7 +321,8 @@ public class FACADE {
         for (String uuid : requiredCoursesUUIDs) {
             requiredCourses.add(getCourseByUUID(uuid));
         }
-        student.viewProgress(eightSemesterPlan, requiredCourses, studentMajor.getElectives(), courseList, majorList);
+        student.viewProgress(eightSemesterPlan, requiredCourses, studentMajor.getElectives(),
+                studentMajor.getApplicationAreas(), courseList, majorList);
     }
 
 }

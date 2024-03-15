@@ -16,6 +16,7 @@ public class Student extends User {
     private int majorProgress;
     private SemesterPlan eightSemesterPlan;
     private String noteFromAdvisor;
+    private ApplicationType applicationType;
 
     /**
      * Creates a new Student instance
@@ -35,10 +36,12 @@ public class Student extends User {
      * @param semesterPlan    | the student's semester plan
      * @param noteFromAdvisor | the notes the advisor places on the student's
      *                        account
+     * @param applicationType | the application type of the student's application
+     *                        area
      */
     public Student(String uuid, String username, String firstName, String lastName, String userType, String studentID,
             String advisor, String major, String classYear, double gpa, boolean hasScholarship, int majorProgress,
-            SemesterPlan eightSemesterPlan, String noteFromAdvisor) {
+            SemesterPlan eightSemesterPlan, String noteFromAdvisor, ApplicationType applicationType) {
         super(uuid, username, firstName, lastName, userType);
         this.studentID = studentID;
         this.advisor = advisor;
@@ -49,6 +52,7 @@ public class Student extends User {
         this.majorProgress = majorProgress;
         this.eightSemesterPlan = eightSemesterPlan;
         this.noteFromAdvisor = noteFromAdvisor;
+        this.applicationType = applicationType;
     }
 
     // Getters and Setters
@@ -127,6 +131,14 @@ public class Student extends User {
         return noteFromAdvisor;
     }
 
+    public void setApplicationType(ApplicationType applicationType) {
+        this.applicationType = applicationType;
+    }
+
+    public ApplicationType getApplicationType() {
+        return applicationType;
+    }
+
     /**
      * Prints the student's degree progression to the console
      * 
@@ -134,7 +146,8 @@ public class Student extends User {
      * @param requiredCourses   | the major's required courses
      */
     public void viewProgress(SemesterPlan eightSemesterPlan, ArrayList<Course> requiredCourses,
-            ArrayList<Electives> majorElectives, CourseList courseList, MajorList majorList) {
+            ArrayList<Electives> majorElectives, ArrayList<ApplicationArea> applicationAreas, CourseList courseList,
+            MajorList majorList) {
         System.out.println("\nMajor: " + majorList.getMajorByUUID(getMajor()).getMajorName() + "\t\tClassification: "
                 + this.classYear);
         // Print completed required courses
@@ -166,7 +179,6 @@ public class Student extends User {
             String formatString = "%-20s Credits Needed: %d";
             System.out.printf(formatString, electives.getElectiveType() + " Elective", electives.getMinHours());
             System.out.println();
-
             for (String electiveUUID : electives.getCourses()) {
                 for (StudentCourse studentCourse : eightSemesterPlan.getStudentCourses()) {
                     if (studentCourse.getCourseID().equals(courseList.getCourseIDByCourseUUID(electiveUUID))
