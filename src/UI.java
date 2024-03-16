@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class UI {
     private static final String WELCOME_MESSAGE = "Welcome to the University of South Carolina DegreeWorks";
     private String[] menuOptions = { "Create Account", "Login", "Exit" };
-    private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees", "Make Note",
-            "Logout" };
+    private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees",
+            "View Student's Progress", "Make Note", "Logout" };
     private String[] studentOptions = { "View Degree Progress", "View Notes", "Print Eight Semester Plan",
             "Pick GFL Elective", "Pick Application Area", "Logout" };
     private Scanner scanner;
@@ -72,6 +72,9 @@ public class UI {
                             listAdvisees();
                             break;
                         case 4:
+                            viewStudentProgress();
+                            break;
+                        case 5:
                             makeNote();
                             break;
                     }
@@ -220,6 +223,12 @@ public class UI {
 
     private void listAdvisees() {
         facade.listAdvisees();
+    }
+
+    private void viewStudentProgress() {
+        System.out.println("Enter the Student's ID: ");
+        String studentID = scanner.nextLine();
+        facade.viewStudentProgress(studentID);
     }
 
     private void makeNote() {

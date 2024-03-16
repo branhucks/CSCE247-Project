@@ -87,6 +87,18 @@
                 ],
                 "minHours": 6,
                 "electiveType": "GFL"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "a379a182-57c9-4b28-950d-35903009bce3"
+                    },
+                    {
+                        "id": "b6bf4208-6933-4e10-a961-118f12d7acba"
+                    }
+                ],
+                "minHours": 4,
+                "electiveType": "LabScience"
             }
         ],
         "applicationAreas": [
@@ -360,6 +372,51 @@
                 ],
                 "minHours": 6,
                 "electiveType": "GFL"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "6390e71f-3219-4036-8347-5f8545de9a32"
+                    },
+                    {
+                        "id": "95e7009a-e959-4a3d-a546-293748d5d4f0"
+                    }
+                ],
+                "minHours": 6,
+                "electiveType": "BIM"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "a67e8606-4253-4960-a68a-008efcc844c2"
+                    }
+                ],
+                "minHours": 3,
+                "electiveType": "CIS"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "c85eb519-e97b-488b-ba02-2947764cfe92"
+                    },
+                    {
+                        "id": "732e0849-4531-43d5-ae8e-363b59958631"
+                    }
+                ],
+                "minHours": 8,
+                "electiveType": "SCI"
+            },
+            {
+                "courses": [
+                    {
+                        "id": "4b04470e-717c-4ac8-a5ca-34fd0572f148"
+                    },
+                    {
+                        "id": "174f9767-44a3-4e5b-99b0-51b2ee649397"
+                    }
+                ],
+                "minHours": 0,
+                "electiveType": "Unused"
             }
         ],
         "applicationAreas": [
@@ -374,16 +431,16 @@
         ],
         "id": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
         "majorName": "Computer Information Systems",
-        "creditsRequired": 125,
+        "creditsRequired": 120,
         "requiredCourses": [
             {
                 "id": "12224407-e656-4fe7-9078-88f1d9dc8325"
             },
             {
-                "id": "f8e10b3a-146b-4d43-a3d8-647028c98641"
+                "id": "4bd274cb-260e-47a5-9893-203a3943d704"
             },
             {
-                "id": "4bd274cb-260e-47a5-9893-203a3943d704"
+                "id": "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627"
             },
             {
                 "id": "3cca9c4e-a195-4759-a761-cfe09adb20b8"
@@ -401,9 +458,6 @@
                 "id": "9583ee33-5e0b-43fe-9bc7-7ef3816da225"
             },
             {
-                "id": "e4c7001a-fadb-481d-b4e6-162dfa25744c"
-            },
-            {
                 "id": "f9bc9ca2-9fe9-43eb-8444-2f0fc53da6c3"
             },
             {
@@ -413,22 +467,10 @@
                 "id": "04c17131-ab1f-45f7-ac5e-a7d0091f41c7"
             },
             {
-                "id": "1e45ee57-74aa-47f0-ae20-46d973457505"
-            },
-            {
-                "id": "20cef024-e96e-48a6-b9f1-ed1dd1657c63"
-            },
-            {
-                "id": "3e52cd47-2db6-4577-a7df-d062eaaf000b"
-            },
-            {
                 "id": "cecc9003-5bf5-4d17-b01d-895f24ea03a2"
             },
             {
                 "id": "39046cda-f913-4f9b-a002-f06e7c59f235"
-            },
-            {
-                "id": "a014f77a-2ac5-4f22-87d7-f0ab623dce64"
             },
             {
                 "id": "928eb174-dea9-4b98-80b1-ac594c4360f8"
@@ -443,9 +485,6 @@
                 "id": "96cd3d5d-590a-4567-9cc3-787e03cc5140"
             },
             {
-                "id": "a442d36a-1afb-4864-83f7-e1bb46a29f6d"
-            },
-            {
                 "id": "f4b55e57-6034-4462-81ca-13c559697988"
             },
             {
@@ -453,9 +492,6 @@
             },
             {
                 "id": "01f15c99-15af-4569-8cf0-4fe263053ed8"
-            },
-            {
-                "id": "7100ca89-33cf-40da-acbe-84af49e92c3c"
             },
             {
                 "id": "c30f5f36-fc9c-49d4-b5c4-baec9cc82194"

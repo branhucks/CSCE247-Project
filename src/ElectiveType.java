@@ -4,12 +4,15 @@
 public enum ElectiveType {
     AIU,
     BIM,
+    CIS,
     CMS,
     GSS,
     GHS,
     GFL,
     SCI,
     CSCE,
+    Unused,
     AppArea,
     LibArts,
+    LabScience
 }

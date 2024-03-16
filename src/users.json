@@ -139,6 +139,20 @@
                 "status": "Completed"
             },
             {
+                "grade": 86,
+                "passed": true,
+                "semesterNum": 4,
+                "courseID": "CHEM 111",
+                "status": "Completed"
+            },
+            {
+                "grade": 86,
+                "passed": true,
+                "semesterNum": 4,
+                "courseID": "CHEM 111L",
+                "status": "Completed"
+            },
+            {
                 "grade": 93,
                 "passed": true,
                 "semesterNum": 4,
@@ -249,6 +263,269 @@
         "username": "bwest"
     },
     {
+        "lastName": "Hill",
+        "applicationType": "NULL",
+        "hasScholarship": false,
+        "majorProgress": 0,
+        "semesterPlan": [
+            {
+                "grade": 94,
+                "passed": true,
+                "semesterNum": 1,
+                "courseID": "ENGL 101",
+                "status": "Completed"
+            },
+            {
+                "grade": 89,
+                "passed": true,
+                "semesterNum": 1,
+                "courseID": "MATH 141",
+                "status": "Completed"
+            },
+            {
+                "grade": 97,
+                "passed": true,
+                "semesterNum": 1,
+                "courseID": "CSCE 145",
+                "status": "Completed"
+            },
+            {
+                "grade": 98,
+                "passed": true,
+                "semesterNum": 1,
+                "courseID": "CSCE 190",
+                "status": "Completed"
+            },
+            {
+                "grade": 96,
+                "passed": true,
+                "semesterNum": 1,
+                "courseID": "ASTR 101",
+                "status": "Completed"
+            },
+            {
+                "grade": 92,
+                "passed": true,
+                "semesterNum": 2,
+                "courseID": "ENGL 102",
+                "status": "Completed"
+            },
+            {
+                "grade": 86,
+                "passed": true,
+                "semesterNum": 2,
+                "courseID": "BIOL 101",
+                "status": "Completed"
+            },
+            {
+                "grade": 95,
+                "passed": true,
+                "semesterNum": 2,
+                "courseID": "CSCE 146",
+                "status": "Completed"
+            },
+            {
+                "grade": 81,
+                "passed": true,
+                "semesterNum": 2,
+                "courseID": "CSCE 215",
+                "status": "Completed"
+            },
+            {
+                "grade": 94,
+                "passed": true,
+                "semesterNum": 2,
+                "courseID": "FAMS 240",
+                "status": "Completed"
+            },
+            {
+                "grade": 84,
+                "passed": true,
+                "semesterNum": 3,
+                "courseID": "CSCE 205",
+                "status": "Completed"
+            },
+            {
+                "grade": 73,
+                "passed": true,
+                "semesterNum": 3,
+                "courseID": "CSCE 210",
+                "status": "Completed"
+            },
+            {
+                "grade": 87,
+                "passed": true,
+                "semesterNum": 3,
+                "courseID": "CSCE 247",
+                "status": "Completed"
+            },
+            {
+                "grade": 98,
+                "passed": true,
+                "semesterNum": 3,
+                "courseID": "ECON 224",
+                "status": "Completed"
+            },
+            {
+                "grade": 99,
+                "passed": true,
+                "semesterNum": 3,
+                "courseID": "PHIL 213",
+                "status": "Completed"
+            },
+            {
+                "grade": 93,
+                "passed": true,
+                "semesterNum": 4,
+                "courseID": "CSCE 201",
+                "status": "Completed"
+            },
+            {
+                "grade": 88,
+                "passed": true,
+                "semesterNum": 4,
+                "courseID": "CSCE 240",
+                "status": "Completed"
+            },
+            {
+                "grade": 90,
+                "passed": true,
+                "semesterNum": 4,
+                "courseID": "MATH 374",
+                "status": "Completed"
+            },
+            {
+                "grade": 99,
+                "passed": true,
+                "semesterNum": 4,
+                "courseID": "MGSC 290",
+                "status": "Completed"
+            },
+            {
+                "grade": 86,
+                "passed": true,
+                "semesterNum": 4,
+                "courseID": "STAT 206",
+                "status": "Completed"
+            },
+            {
+                "grade": 77,
+                "passed": true,
+                "semesterNum": 5,
+                "courseID": "CSCE 350",
+                "status": "Completed"
+            },
+            {
+                "grade": 98,
+                "passed": true,
+                "semesterNum": 5,
+                "courseID": "CSCE 390",
+                "status": "Completed"
+            },
+            {
+                "grade": 91,
+                "passed": true,
+                "semesterNum": 5,
+                "courseID": "STAT 509",
+                "status": "Completed"
+            },
+            {
+                "grade": 83,
+                "passed": true,
+                "semesterNum": 5,
+                "courseID": "ACCT 222",
+                "status": "Completed"
+            },
+            {
+                "grade": 94,
+                "passed": true,
+                "semesterNum": 5,
+                "courseID": "MGMT 371",
+                "status": "Completed"
+            },
+            {
+                "grade": 85,
+                "passed": true,
+                "semesterNum": 5,
+                "courseID": "ENGL 463",
+                "status": "Completed"
+            },
+            {
+                "grade": 97,
+                "passed": true,
+                "semesterNum": 6,
+                "courseID": "CSCE 520",
+                "status": "Completed"
+            },
+            {
+                "grade": 92,
+                "passed": true,
+                "semesterNum": 6,
+                "courseID": "CSCE 594",
+                "status": "Completed"
+            },
+            {
+                "grade": 74,
+                "passed": true,
+                "semesterNum": 6,
+                "courseID": "STAT 516",
+                "status": "Completed"
+            },
+            {
+                "grade": 87,
+                "passed": true,
+                "semesterNum": 6,
+                "courseID": "ACCT 324",
+                "status": "Completed"
+            },
+            {
+                "grade": 93,
+                "passed": true,
+                "semesterNum": 6,
+                "courseID": "STAT 301",
+                "status": "Completed"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 7,
+                "courseID": "CSCE 490",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 7,
+                "courseID": "CSCE 416",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 7,
+                "courseID": "CSCE 522",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 8,
+                "courseID": "CSCE 492",
+                "status": "Planned"
+            }
+        ],
+        "studentID": "W19375679",
+        "firstName": "Tawnie",
+        "advisor": "",
+        "major": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
+        "gpa": 0.0,
+        "id": "e83bb729-498d-4e57-8928-1ea40b947577",
+        "userType": "Student",
+        "classYear": "Junior",
+        "noteFromAdvisor": "",
+        "username": "thill"
+    },
+    {
         "firstName": "Kyle",
         "lastName": "Long",
         "id": "073b875b-dd00-482a-b708-08ea0809d1c1",
@@ -259,17 +536,5 @@
             }
         ],
         "username": "klong"
-    },
-    {
-        "firstName": "Osbert",
-        "lastName": "Odden",
-        "id": "109334fb-7a90-49c8-a032-acd32be2eb86",
-        "userType": "Advisor",
-        "advisees": [
-            {
-                "id": "ecf1943f-8eb1-43b3-b4f3-bdba7887a3fd"
-            }
-        ],
-        "username": "oodden"
     }
 ]

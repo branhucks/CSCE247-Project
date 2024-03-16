@@ -148,7 +148,8 @@ public class Student extends User {
     public void viewProgress(SemesterPlan eightSemesterPlan, ArrayList<Course> requiredCourses,
             ArrayList<Electives> majorElectives, ArrayList<ApplicationArea> applicationAreas, CourseList courseList,
             MajorList majorList) {
-        System.out.println("\nMajor: " + majorList.getMajorByUUID(getMajor()).getMajorName() + "\t\tClassification: "
+        System.out.println("Student: " + getFirstName() + " " + getLastName() + "\tMajor: "
+                + majorList.getMajorByUUID(getMajor()).getMajorName() + "\t\tClassification: "
                 + this.classYear);
         // Print completed required courses
         System.out.println("\n********* Completed Courses **********");
@@ -228,7 +229,7 @@ public class Student extends User {
      */
     public void printEightSemesterPlan(String classYear) {
         try {
-            FileWriter writer = new FileWriter("SemesterPlan.txt");
+            FileWriter writer = new FileWriter(getStudentID() + "_SemesterPlan.txt");
             for (int semesterNum = 1; semesterNum <= 8; semesterNum++) {
                 writer.write("Semester " + semesterNum + "\n");
                 for (StudentCourse course : eightSemesterPlan.getStudentCourses()) {

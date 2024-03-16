@@ -290,6 +290,25 @@ public class FACADE {
     }
 
     /**
+     * View student's degree progress as an advisor
+     * 
+     * @param studentID | the student to check their progress
+     */
+    public void viewStudentProgress(String studentID) {
+        Student student = userList.getStudentByStudentID(studentID);
+        SemesterPlan eightSemesterPlan = student.getEightSemesterPlan();
+        String majorUUID = student.getMajor();
+        Major studentMajor = majorList.getMajorByUUID(majorUUID);
+        ArrayList<String> requiredCoursesUUIDs = studentMajor.getRequiredCourses();
+        ArrayList<Course> requiredCourses = new ArrayList<>();
+        for (String uuid : requiredCoursesUUIDs) {
+            requiredCourses.add(getCourseByUUID(uuid));
+        }
+        student.viewProgress(eightSemesterPlan, requiredCourses, studentMajor.getElectives(),
+                studentMajor.getApplicationAreas(), courseList, majorList);
+    }
+
+    /**
      * Makes a note to the student
      * 
      * @param studentID | the student to write the note
@@ -324,5 +343,4 @@ public class FACADE {
         student.viewProgress(eightSemesterPlan, requiredCourses, studentMajor.getElectives(),
                 studentMajor.getApplicationAreas(), courseList, majorList);
     }
-
 }
