@@ -61,19 +61,13 @@ public class Advisor extends User {
         this.department = department;
     }
 
+    /**
+     * Adds an advisee to the advisee list
+     * 
+     * @param studentUUID | the student's UUID
+     */
     public void addAdvisee(String studentUUID) {
         advisees.add(studentUUID);
-    }
-
-    /**
-     * Search for a student by student ID
-     * 
-     * @param studentID | the ID to find the student
-     * @return | the student found
-     */
-    public Student searchStudent(String studentID) {
-        // TODO
-        return null;
     }
 
     /**

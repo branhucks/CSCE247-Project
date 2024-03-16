@@ -213,18 +213,6 @@ public class Student extends User {
     }
 
     /**
-     * NEEDS COMPLETED
-     * Creates an eight semester plan
-     * 
-     * @param courses | the courses to create the plan from
-     * @return | an eight semester plan
-     */
-    public SemesterPlan createSemesterPlan(ArrayList<Course> courses) {
-        // TODO
-        return null;
-    }
-
-    /**
      * Prints the eight semester plan beautifully to a file
      */
     public void printEightSemesterPlan(String classYear) {

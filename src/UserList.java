@@ -10,7 +10,7 @@ public class UserList {
     public static UserList users;
     public ArrayList<Student> students;
     public ArrayList<Advisor> advisors;
-    private ArrayList<Major> majors;
+    public ArrayList<Major> majors;
 
     /**
      * Creates a new CourseList instance
