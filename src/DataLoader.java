@@ -91,10 +91,14 @@ public class DataLoader extends DataConstants {
                     String userType = (String) personJSON.get(USER_USER_TYPE);
                     JSONArray adviseesJSON = (JSONArray) personJSON.get(ADVISOR_ADVISEES);
                     ArrayList<String> advisees = new ArrayList<>();
-                    for (int j = 0; j < adviseesJSON.size(); j++) {
-                        JSONObject studentJSON = (JSONObject) adviseesJSON.get(j);
-                        String studentUUID = (String) studentJSON.get(USER_UUID);
-                        advisees.add(studentUUID);
+                    if (adviseesJSON == null) {
+                        advisees = new ArrayList<String>();
+                    } else {
+                        for (int j = 0; j < adviseesJSON.size(); j++) {
+                            JSONObject studentJSON = (JSONObject) adviseesJSON.get(j);
+                            String studentUUID = (String) studentJSON.get(USER_UUID);
+                            advisees.add(studentUUID);
+                        }
                     }
                     String department = (String) personJSON.get(ADVISOR_DEPARTMENT);
                     Advisor advisor = new Advisor(id, username, firstName, lastName, userType, advisees, department);

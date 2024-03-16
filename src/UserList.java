@@ -186,7 +186,8 @@ public class UserList {
             return false;
         }
         advisors.add(
-                new Advisor((UUID.randomUUID()).toString(), username, firstName, lastName, userType, null, department));
+                new Advisor((UUID.randomUUID()).toString(), username, firstName, lastName, userType,
+                        new ArrayList<String>(), department));
         return true;
     }
 

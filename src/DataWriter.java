@@ -85,12 +85,16 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_LAST_NAME, advisor.getLastName());
         userDetails.put(USER_USER_TYPE, advisor.getUserType());
         JSONArray adviseesArray = new JSONArray();
-        for (String uuid : advisor.getAdvisees()) {
-            JSONObject adviseeObject = new JSONObject();
-            adviseeObject.put(USER_UUID, uuid);
-            adviseesArray.add(adviseeObject);
+        if (advisor.getAdvisees() == null) {
+            userDetails.put(ADVISOR_ADVISEES, new ArrayList<String>());
+        } else {
+            for (String uuid : advisor.getAdvisees()) {
+                JSONObject adviseeObject = new JSONObject();
+                adviseeObject.put(USER_UUID, uuid);
+                adviseesArray.add(adviseeObject);
+            }
+            userDetails.put(ADVISOR_ADVISEES, adviseesArray);
         }
-        userDetails.put(ADVISOR_ADVISEES, adviseesArray);
         return userDetails;
     }
 
