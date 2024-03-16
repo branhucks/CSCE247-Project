@@ -7,7 +7,7 @@ public class UI {
     private String[] advisorOptions = { "Add Major", "Add Course", "Add Advisee", "List Advisees",
             "View Student's Progress", "Make Note", "Logout" };
     private String[] studentOptions = { "View Degree Progress", "View Notes", "Print Eight Semester Plan",
-            "Pick GFL Elective", "Pick Application Area", "Logout" };
+            "Choose GFL Elective Courses", "Select Application Area", "Logout" };
     private Scanner scanner;
     private FACADE facade;
     private User user;

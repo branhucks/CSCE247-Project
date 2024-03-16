@@ -1,7 +1,7 @@
 [
     {
         "lastName": "West",
-        "applicationType": "NULL",
+        "applicationType": "DigitalDesign",
         "hasScholarship": false,
         "majorProgress": 0,
         "semesterPlan": [
@@ -248,6 +248,41 @@
                 "passed": false,
                 "semesterNum": 8,
                 "courseID": "CSCE 492",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 6,
+                "courseID": "FREN 109",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 8,
+                "courseID": "FREN 110",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 6,
+                "courseID": "ARTS 102",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 7,
+                "courseID": "ARTS 245",
+                "status": "Planned"
+            },
+            {
+                "grade": 0,
+                "passed": false,
+                "semesterNum": 8,
+                "courseID": "ARTS 246",
                 "status": "Planned"
             }
         ],
@@ -516,13 +551,13 @@
         ],
         "studentID": "W19375679",
         "firstName": "Tawnie",
-        "advisor": "",
+        "advisor": "371b2206-440a-4723-b2f0-8b5651c83c37",
         "major": "dc6b7328-5992-4f22-928e-b73c72b6e5c7",
         "gpa": 0.0,
         "id": "e83bb729-498d-4e57-8928-1ea40b947577",
         "userType": "Student",
         "classYear": "Junior",
-        "noteFromAdvisor": "",
+        "noteFromAdvisor": "It would be helpful if you added STAT as your application area.",
         "username": "thill"
     },
     {
@@ -536,5 +571,17 @@
             }
         ],
         "username": "klong"
+    },
+    {
+        "firstName": "Osbert",
+        "lastName": "Odden",
+        "id": "371b2206-440a-4723-b2f0-8b5651c83c37",
+        "userType": "Advisor",
+        "advisees": [
+            {
+                "id": "e83bb729-498d-4e57-8928-1ea40b947577"
+            }
+        ],
+        "username": "oodden"
     }
 ]
