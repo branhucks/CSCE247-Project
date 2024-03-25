@@ -2,10 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
 
-/**
- * A UserList class (Singeton Design Pattern)
- * Provides method to access and modify users in the list
- */
+
 public class UserList {
     public static UserList users;
     public ArrayList<Student> students;
